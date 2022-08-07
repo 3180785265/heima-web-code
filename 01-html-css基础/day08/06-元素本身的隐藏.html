@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 占位隐藏，但不会脱离文档流 */
+            /* visibility: hidden; */
+
+            /* 不占位的隐藏，会脱离文档流，它是将元素的显示模式转换 */
+            display: none;
+
+        }
+
+        .two {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(201, 192, 255);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one">
+
+    </div>
+    <div class="two"></div>
+</body>
+
+</html>
+
+
+<!-- 
+    占位的隐藏, 会隐藏但是不会脱离文档流
+    visibility:hidden
+    不占位的隐藏,会脱离文档流，并且元素不占为
+    display:none 
+
+ -->

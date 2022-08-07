@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function Star(uname, age) {
+
+            // 这些都是实例的成员
+            this.uname = uname;
+            this.age = age
+            this.cing = function () {
+                console.log('唱歌')
+            }
+        }
+
+
+        // 实例化对象
+
+        let obj = new Star('刘德华', 18)
+
+        // 1.打印这个函数本身。它也属于对象
+        // Strt构造函数也属于对象，对象身上就可以添加属性和方法
+
+        // 2.我们把在构造函数身上直接添加的成员，称为静态成员(静态属性和静态方法)
+        //   构造函数内部为实例对象准备的成员，称为实例成员.
+
+        Star.languge = '汉语';
+        Star.skin = '黄皮肤';
+        Star.chi = function () {
+            console.log('吃饭')
+        }
+        console.log(Star)
+        console.log(obj.uname)
+        console.log(obj.languge)
+        console.log(Star.languge)
+        console.log(Star.uname)
+
+        // 静态成员只能由构造函数访问
+        // 实例成员只能通过实例对象访问
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+
+    0.我们把对象中的属性和方法，也叫做成员，键值对
+
+    1.静态成员指的是添加到构造函数本身的属性和方法
+         // 静态成员只能由构造函数访问
+        // 实例成员只能通过实例对象访问
+
+      一般公共特征的属性或方法静态成员设置为静态成员
+
+      静态成员方法中的 this 指向构造函数本身
+
+ -->

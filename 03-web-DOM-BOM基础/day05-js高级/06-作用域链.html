@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = 2;
+        function fn() {
+            // 是否有申明这个变量
+            // 如果当前作用域下没有这个变量，就会去上局作用域查找， 如果有，就近原则使用
+            n = 3;
+            console.log(n);
+        }
+
+        fn();
+        // 如果当前作用域不存在一个变量的话，就会去上级作用域查找
+
+        let m = 6;
+        function fn2() {
+
+            // 局部函数
+            function fun3() {
+                console.log(m);//2. 先去自己的作用域找，如果没有，就去上级找，如果没有在向上级找，如果全局变量还是没有，就会报错了。
+
+            }
+
+            fun3()//1.执行函数
+        }
+        fn2()
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    作用域: 一直往上查找，形成一个作用域链, 就是由不同的作用域串联起来的链
+
+ -->

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .warpper {
+            margin: 0 auto;
+            width: 1226px;
+        }
+
+        /* 高度由内容撑开 */
+        .box {
+            display: flex;
+
+
+
+        }
+
+        .header {
+            height: 50px;
+            background-color: pink;
+        }
+
+        .box .left {
+            width: 234px;
+            height: 614px;
+            background-color: gold;
+
+        }
+
+        .box .right {
+            flex: 1;
+
+        }
+
+        .box .right ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box .right li {
+            width: 234px;
+            height: 300px;
+            background-color: red;
+            margin-left: 14px;
+            margin-bottom: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header warpper"></div>
+
+    <div class="box warpper">
+        <div class="left"></div>
+        <div class="right">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script></script>
+
+</body>
+
+</html>

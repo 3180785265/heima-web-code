@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 1rem =1html 的字号大小 */
+        html {
+            font-size: 32px;
+        }
+
+        .box {
+            width: 1rem;
+            height: 1rem;
+            margin-left: 1rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>
+<!-- 
+
+    目标：网页宽度和设备宽度(分辨率)相同。
+    l 解决办法：添加视口标签。
+    l 视口：显示HTML网页的区域，用来约束HTML尺寸。
+
+    rem 单位
+    相对单位
+    rem单位是相对于html标签的字号计算结果
+    1rem=1HTML字号大小, 所以要先让html跟标签有字号大小，就会计算出1rem= 多少px
+
+    利用了媒体查询，设置网页的不同的 font-size根字号
+    1rem= 1 网页的根字号，
+    根据不同的 html font-size根字号， 并利用媒体查询设置不同设备的根字号，然后让网页的元素的尺寸单位换成 rem, 就能让
+    元素根据不同的根字号变化，让元素的尺寸也发生变化
+
+
+
+
+
+
+ -->

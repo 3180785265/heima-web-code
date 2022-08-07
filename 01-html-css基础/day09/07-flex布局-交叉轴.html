@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            /*块级元素的 宽度 默认跟随父级100%*/
+
+            height: 100px;
+
+            /* 水平排列：默认主轴在水平，弹性盒子都是沿着主轴排列 */
+            display: flex;
+
+            /* 元素在交叉轴上面的对齐方式 为垂直居中 */
+            align-items: center;   
+
+            /*默认值， 如果子元素没有设置高度， 元素在交叉轴，会拉伸 */
+            align-items: stretch;
+            border:1px solid #333;
+            
+        }
+
+        .box >div{
+            width: 40px;
+            /* height: 40px; */
+            background-color: pink;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+    </div>
+</body>
+</html>
+
+<!-- 
+   弹性容器： 父级标签叫做弹性容器
+   弹性盒子：父级标签中的子级标签叫弹性盒子
+    display:flex: 也是加在父元素的选择器上面，它的作用是改变弹性容器的显示模式
+    justify-content和 align-items都是加在父元素的选择器上面，能控制弹性容器中所有的弹性盒子的对齐方式
+    align-self: 而这个则是控制单个弹性子元素，是加在子元素的选择器上，能单独控制某个子元素的对齐方式 
+    注意：align-items有两个值，center是控制弹性容器中交叉轴上的元素的对齐方式为垂直居中，
+       而align-items:stretch,  是默认值，当弹性盒子没有设置高度的时候，会将弹性盒子沿着交叉轴拉伸铺满容器的高度 
+
+    加在父元素上面
+    justify-content: 主轴上元素的对齐方式 center , space-around , space-between ,space-evenly
+        justify-content如果没有设置， 默认值也是 justify-content:sterrch, 并且元素没有设置宽度的时候，
+        弹性盒子的宽度就会随的内容撑开。
+
+
+
+    加在父元素上面
+    align-items: 侧轴(交叉轴)上元素的对齐方式,
+     1.center:
+     2.stretch
+    align-self
+
+
+
+    注意：如果弹性容器中的 "弹性盒子" 没有设置高度，并且也没有加样式align-items(弹性盒子在交叉轴上的对齐方式)
+        此时align-items的默认值就会是align-items:stretch  , 这个属性会使没有设置高度的弹性盒子，拉伸铺满容器的高度，
+        如果没有设置弹性盒子的高度，但设置了align-items:center，此时弹性盒子会垂直居中，并且高度默认由内容撑开
+
+
+
+
+
+        如果弹性盒子没有设置高度，并且没有设置align-items,默认值就会是align-items:stretch， 会使弹性盒子的高度拉伸成弹性容器(父元素)的高度
+        如果弹性盒子没有设置宽度，但设置了display, 弹性盒子就会在水平排列，并且弹性盒子的宽度跟随盒子的内容撑开
+ -->

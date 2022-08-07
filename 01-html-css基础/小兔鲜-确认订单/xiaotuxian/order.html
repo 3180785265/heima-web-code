@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单页面</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/order.css">
+</head>
+
+<body>
+
+
+
+    <!-- 主体内容：滑动查看的 -->
+    <div class="main">
+        <!-- 这个区域是用户信息区域 -->
+        <div class="user_msg pannle">
+            <div class="localtoin">
+                <i class="iconfont icon-location"></i>
+            </div>
+            <div class="user">
+                <div class="top">
+                    <h5>林立</h5>
+                    <p>121888888888</p>
+                </div>
+                <div class="bottom">
+                    北京市 海淀区 中关村软件园 信息科技大厦1号
+                    楼410#
+                </div>
+            </div>
+            <div class="more">
+                <i class="iconfont icon-more"></i>
+            </div>
+        </div>
+
+        <!-- 商品区域 -->
+        <div class="goods pannle">
+            <div class="pic">
+                <a href="#">
+                    <!-- 图片最好是通过图片的父级盒子控制
+                        在base.css img 标签重置为 width 为父级的100%
+                    -->
+                    <img src="./uploads/pic.png" alt="">
+                </a>
+            </div>
+            <div class="info">
+                <h5>
+                    康尔贝 非接触式红外体温仪
+                    领券立减30元 婴儿级材质 测温…
+                </h5>
+                <p >
+                    <span>粉色</span>
+                    <span>红外体温计</span>
+                </p>
+
+                <div class="price">
+                    <span class="red"> ¥ <i>299</i></span>
+                    <span> ¥<i>299</i></span>
+                </div>
+            </div>
+            <div class="count">
+                <i class="iconfont icon-x"></i>
+                <span>10</span>
+            </div>
+        </div>
+
+
+        <!-- 其他信息 -->
+        <section class="rest pannle">
+            <div>
+                <h5>配送方式</h5>
+                <p>疏风快递</p>
+            </div>
+            <div>
+                <h5>备注信息</h5>
+                <p>
+                    <input type="text" placeholder="请填写备注">
+                </p>
+            </div>
+            <div>
+                <h5>配送方式</h5>
+                <p>支付方式</p>
+            </div>
+        </section>
+
+    </div>
+    <!-- 主体内容：滑动查看的 -->
+
+
+
+    <!-- 底部支付：固定定位 -->
+    <div class="pay">
+        <div class="left">
+            <span>合计:</span>
+            <span class="red">¥</span>
+            <span class="red">266</span>
+        </div>
+        <div class="right">
+            <button>去支付</button>
+        </div>
+    </div>
+    <!-- 底部支付：固定定位 -->
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+
+    <button>发布</button>
+
+    <div></div>
+    <script>
+
+        let textarea = document.querySelector('textarea')
+        let div = document.querySelector('div')
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+
+            // let text = textarea.value.replace(/射进去/, '**')  这个不能全局匹配，只能匹配一次
+            // let text = textarea.value.replace(/射进去/g, '**') //加  g  代表能全局匹配，全部都替换掉
+            let text = textarea.value.replace(/射|she|怀孕/ig, '*') //加  g  代表能全局匹配，全部都替换掉
+            div.innerHTML = text
+        })
+
+
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- 
+    用修饰符过滤掉敏感词汇
+
+    1.字符串.replace( /正则表达式/,'替换的文本' )
+
+    2.修饰符:
+      1. i 是单词ignore 的缩写，表示正则匹配时字母不区分大小写
+      2. g 是单词global 的缩写，表示能匹配所有满足条件的表达式
+
+      replace(/射|she|怀孕/g, '*')
+      replace(/射|she|怀孕/ig, '*')
+
+ -->

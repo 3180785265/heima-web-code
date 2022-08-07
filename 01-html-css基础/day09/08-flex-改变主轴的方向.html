@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border:1px solid red;
+            /* 主轴默认是在水平方向，所以元素也在水平排列 */
+            display: flex;
+
+            /* 修改主轴的方向  为y 方向，主轴上的元素就会在y方向排列
+                修改主轴为y方向后， 侧轴方向就会自动变为x 方向
+            */
+            flex-direction: column;
+
+            /* 修改主轴上元素的对齐方式，因为主轴已经变为y 所以会在y 方向对齐 */
+            justify-content: space-between;
+
+            /* 如果要修改x方向元素的对齐方式，就要用侧轴修改，因为此时侧轴已经变为了x方向 */
+            align-items: center;
+
+        }
+
+        .box img{
+            width: 100px;
+            height: 100px;
+        }
+        .box p{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 如果想让子级竖着排，就要让主轴在 y方向，因为元素都是跟随主轴排列的 -->
+    <div class="box">
+        <img src="./images/1.gif" alt="">
+        <p>你好</p>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+
+    flex布局，
+    只要找一个父级添加display:flex 
+    子级都会受到控制
+
+    默认状态下，主轴是横着的，在x方向，侧轴是竖着的在y方向
+
+    元素都是沿着主轴排列，如果想垂直排列，就要把主轴改成垂直方向
+
+
+    如果主轴在垂直方向，侧轴会自动换成水平方向
+    想要修改主轴方向
+    要用flex-derectoin: column  , row
+
+
+    要先确定主轴方向，才能确定要控制水平方向元素的对齐方式，还是垂直方向元素的对齐方式
+ -->

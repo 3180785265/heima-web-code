@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* 将溢出的部分隐藏, 常用(解决外边距塌陷，和浮动造成的影响解决问题) */
+            /* overflow: hidden; */
+
+            /* 无论内容是否溢出，都会显示滚动条 */
+            /* overflow: scroll; */
+
+            /* 根据内容是否溢出，才去判断是否显示滚动条 */
+            overflow: auto;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        .box3 {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        我是div,这是溢出希纳是
+        我是div,这是溢出希纳是
+        我是div,这是溢出希纳是
+        我是div,这是溢出希纳是
+        我是div,这是溢出希纳是
+        我是div,这是溢出希纳是
+        我是div,这是溢出希纳是
+        我是div,这是溢出希纳是
+        我是div,这是溢出希纳是
+        我是div,这是溢出希纳是
+
+    </div>
+    <div class="box9">
+        <!-- 行内元素在文档流中的特点，如果碰到父元素宽度的边缘，会自动换行 -->
+        <span> 我是div,这是溢出希纳是</span>
+        <span> 我是div,这是溢出希纳是</span>
+        <span> 我是div,这是溢出希纳是</span>
+        <span> 我是div,这是溢出希纳是</span>
+        <span> 我是div,这是溢出希纳是</span>
+        
+    </div>
+    <div class="box3">
+        1
+        <!-- 行内元素在文档流中的特点，如果碰到父元素宽度的边缘，会自动换行 -->
+        <span> 我是div,这是溢出希纳是</span>
+        <span> 我是div,这是溢出希纳是</span>
+        <span> 我是div,这是溢出希纳是</span>
+        <span> 我是div,这是溢出希纳是</span>
+        <span> 我是div,这是溢出希纳是</span>
+        
+    </div>
+</body>
+
+</html>
+
+<!-- 
+
+    溢出部分的显示方式
+    用来控制，溢出部分的显示效果
+    
+    溢出部分：指的时盒子的 内容部分 所超出盒子范围的区域
+    场景：控制内容溢出部分的显示效果，如：显示、隐藏、滚动条
+ -->

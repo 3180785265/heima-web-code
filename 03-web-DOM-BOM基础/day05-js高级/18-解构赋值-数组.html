@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ['丈夫', '赵云', '关于', '典韦']
+
+
+        let uname1 = arr[0];
+        let uname2 = arr[1];
+        let uname3 = arr[2];
+
+
+
+        // 解构赋值: 解开数据解构，赋值给变量
+
+
+        // 1.同时将数组 单元值 '丈夫', '赵云', '关于', '典韦'  依次赋值给 a b c d
+        // 2.左边[] 中定义的是变量, 用于批量的声明变量
+
+        /*
+            1.一 一对应
+            let [a, b, c, d] = ['丈夫', '赵云', '关于', '典韦']
+            console.log(a, b, c, d)
+
+        */
+
+        /*
+            2.变量多，值少, 变量就会是undefined
+            let [a, b, c, d, e, f,g,k,l,x,r,t] = ['丈夫', '赵云', '关于', '典韦']
+            console.log(a, b, c, d, e, f,g,k,l,x,r,t)
+
+        */
+
+
+        /*
+            3.变量少值多
+            let [a1, b1] = arr;
+            console.log(a1, b1)
+
+        */
+
+
+        /*   
+         
+         4.按需取值，利用 ， 逗号按需取值,不必按顺序
+         let [, , a, b, c] = ['张飞', '赵云', '关羽', '典韦', '张辽']
+ 
+         console.log(a, b, c) // '关羽', '典韦', '张辽'
+        
+         */
+
+
+        /* 5. 剩余值
+
+        let [, a, b, ...c] = ['张飞', '赵云', '关羽', '典韦', '张辽']
+
+        console.log(a, b, c)// 赵云 , 关羽 ,  ['典韦', '张辽']
+        
+        */
+
+
+        // 复杂二维数组
+
+        let [, , a, b, , [, , , c, d]] = ['张飞', '赵云', '关羽', '典韦', '张辽', ['林冲', '鲁智深', '武松', '武大郎', '西门庆']]
+
+        console.log(a, b, c, d)
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+        解构赋值: 解开数据解构，赋值给变量
+            1.  数组解构: 左边 []  赋值运算符 = 左侧的 [] 用于批量声明变量，右侧数组的单元值将被赋值给左侧的变量
+                变量的顺序对应数组单元值的位置依次进行赋值操作
+                变量的数量大于单元值数量时，多余的变量将被赋值为 undefined
+                变量的数量小于单元值数量时，可以通过 ... 获取剩余单元值，但只能置于最末位
+            2.按需取值: 用 , 分隔开，就能按需把想要的值，赋值到变量当中    
+
+
+     
+
+ -->

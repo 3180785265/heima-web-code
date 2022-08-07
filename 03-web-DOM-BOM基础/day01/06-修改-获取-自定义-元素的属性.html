@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" data-index="0" data-name="andy"></div>
+
+
+    <img src="" alt="" alt="" id="1">
+
+
+    <script>
+        // 1. 获取元素，图片
+        let pic = document.querySelector('img')
+        // 2. 修改元素属性 src 
+        pic.src = ''
+        // 3. 也可以将属性添加到标签上
+        pic.title = '我是pink老师'
+        pic.id = 10
+
+
+        // 我们可以用 元素.setAttribute(属性名,属性值)   设置我们的自定义属性，但是设置自定义属性要加上 data-属性名，这是html5的一个规范
+
+        // 4.设置自定义的属性  myid 
+        let box = document.querySelector('.box')
+        box.setAttribute("data-id", 10)
+        console.log(box.dataset)
+
+        console.log(box.dataset.index)  //通过dataset获取某一个自定义属性
+        console.log(box.dataset.name)
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+   1. 可以通过DOM 修改HTML标签上的常见属性值 比如
+
+    <img src="" alt=""  alt="">
+
+    let pic = document.querySelector('img')
+        // 2. 修改元素属性 src 
+        pic.src=''
+        // 3. 也可以将属性添加到标签上
+        pic.title='我是pink老师'
+
+
+    Error Lens: 一个报错提示的插件
+
+
+    元素标签天生自带的属性，比如，class,id,title,可以直接点语法操作
+
+   2. 我们还可以给标签设置自定义的属性
+    元素.setAttribute("属性名",属性值)
+
+    data-自定义属性值:
+    传统的自定义属性没有专门的定义规则，开发者可以随意定制，所以在
+    html5中推出了专门的 data-自定义属性值在标签上一律以data开头
+
+    比如 data-id='10'
+
+    1.元素.dataset: 获取元素中自定义属性的集合
+    2.元素.dataset.属性名: 获取某一个自定的属性
+
+ -->

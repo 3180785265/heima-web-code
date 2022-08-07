@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        for (let i = 1; i <= 3; i++) {
+            document.write(`第${i}天<br>`)
+            for (let i = 1; i <= 5; i++) {
+                document.write(`记住了${i}个单词<br>`)
+            }
+            document.write(`<br>`)
+        }
+
+
+        // 外层行， 里层每个的几个星星(列)
+
+        for (let i = 1; i < 6; i++) {
+            for (let j = 1; j <= 5; j++) {
+                document.write('♥')
+            }
+            document.write('<br>')
+
+        }
+
+        // 外层打印几行
+        for (let i = 1; i <= 5; i++) {
+            // 内容打印几个星星，是第几行，就打印几个星星
+            for (let j = 1; j <= i; j++) {
+                document.write('♥')
+            }
+            document.write('<br>')
+
+        }
+
+        for (let i = 1; i <= 9; i++) {
+            for (let j = 1; j <= i; j++){
+                document.write(`${j} X ${i}=${i*j} &nbsp;`)
+            }
+            document.write('<br>')
+
+        }
+
+    </script>
+</body>
+
+</html>

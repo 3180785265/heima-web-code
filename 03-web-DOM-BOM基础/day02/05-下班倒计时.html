@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: brown;
+      /* background-size: 240px; */
+      /* float: left; */
+      overflow: hidden;
+    }
+
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    .countdown .tips {
+      margin-top: 80px;
+      font-size: 23px;
+    }
+
+    .countdown small {
+      font-size: 17px;
+    }
+
+    .countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    .countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <p class="next">今天是2021年8月28日</p>
+    <p class="title">下班倒计时</p>
+    <p class="clock">
+      <span id="hour">00</span>
+      <i>:</i>
+      <span id="minutes">25</span>
+      <i>:</i>
+      <span id="scond">20</span>
+    </p>
+    <p class="tips">
+      现在是18:30:00
+    </p>
+  </div>
+
+
+  <script>
+
+
+
+
+    // 计算剩余时间
+    function surplus(last) {
+
+      // 1.得到现在的时间戳
+
+      let now = +new Date()
+
+      // 2.得到指定的时间戳
+
+
+      // 3. 计算剩余的毫秒数 / 1000  === 剩余的秒数
+      let conut = (last - now) / 1000  //求出剩余的秒数,  用() 先减，后乘除
+
+
+      // 4. 通过时间戳计算出相差的毫秒值，在计算成 倒计时
+      // 公式
+
+      let d = parseInt(conut / 60 / 60 / 24) //计算天数
+      let h = parseInt(conut / 60 / 60 % 24) //计算消失
+      let m = parseInt(conut / 60 % 60) //计算分数
+      let s = parseInt(conut % 60) // 计算当前秒数
+
+      // 对时间做格式化, 小于10则补0
+      h = h < 10 ? `0${h}` : h
+      m = m < 10 ? `0${m}` : m
+      s = s < 10 ? `0${s}` : s
+
+
+      let tips = document.querySelector('.tips')
+
+      let hour = document.querySelector('#hour')
+      let minutes = document.querySelector('#minutes')
+      let scond = document.querySelector('#scond')
+
+
+      hour.innerHTML = `${h}`
+      minutes.innerHTML = `${m}`
+      scond.innerHTML = `${s}`
+
+      tips.innerHTML = `现在是 ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`
+
+    }
+
+
+
+
+    setInterval(() => {
+      let last = + new Date('2022-7-25 19:00:00')
+
+      surplus(last)
+    }, 1000);
+
+
+
+  </script>
+</body>
+
+</html>

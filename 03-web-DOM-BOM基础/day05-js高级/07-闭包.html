@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 闭包：一个作用域有权访问另一个作用域的局部变量
+        // 作用：延申变量的使用范围
+        // 所谓闭包，就是让子函数访问父函数的局部变量，父函数将子函数作为返回值return
+        function fn() {
+            let num = 12;
+
+            return function fn() {
+                console.log(num)
+            }
+
+        }
+
+        let re = fn();
+        re()
+        re()
+        re()
+
+
+
+        function mother() {
+            let num = 66;
+            // 闭包：
+            return function () {
+                console.log(num)
+                return num;
+            }
+        }
+
+        let o = mother()
+
+        let num = o()
+        console.log(num)
+
+
+        // 回调函数: 被一个函数，当作参数的函数, 
+        // 使这个回调函数，在内部可以被调用
+
+        function fn2(a) {
+            // console.log(a)
+            // console.log(a())
+
+            let num = 123;
+            a(num);
+        }
+
+        // 2. 传入一个回调函数，在内部调用，使用闭包
+        fn(function (n) { console.log(n); })
+
+    </script>
+</body>
+
+</html>
+<!-- 
+    1.闭包：就是让一个作用域能够访问 "另一个作用域" 中 的 "局部变量"
+     闭包：一个作用域有权访问另一个作用域的局部变量
+     作用：延申变量的使用范围
+     所谓闭包，就是让子函数访问父函数的局部变量，父函数将子函数作为返回值return
+ 
+    
+
+     2.回调函数也能访问函数内部的局部变量
+    -->

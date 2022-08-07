@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 自定义构造函数
+        // 建议: 所有构造函数的首字母大写
+
+
+        // 构造函数是专门创建对象的函数，
+        // 如果 一个函数用 new 关键字 调用，那么这个构造函数就是构造函数
+        // 使用 new 关键字 调用函数的行为，被称为实例化, 而构造函数的返回值就为创建的对象
+        function OneTowThree() {
+            console.log('......')
+        }
+
+        function Persoin(uname, age, sex) {
+            // 构造函数中的this: 指向的是当前被创建出来的实例对象
+
+
+            this.uname = uname;
+            this.age = age;
+            this.sex = sex;
+
+            this.taiji = function () {
+                console.log('打太极')
+            }
+
+
+            this.chifan = function () {
+                console.log('吃饭')
+            }
+        }
+
+
+        // new 的 方式 调用的函数，表示为调用一个构造器，构造函数的返回值，会创建出一个对象
+        let p1 = new Persoin('张三丰', 22, '男');
+        let p2 = new Persoin('阿飞', 21, '男')
+        let o1 = new OneTowThree();
+
+        console.log(p1)
+        console.log(p2)
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    自定义构造函数：
+     1.为构造函数定义形参，动态创建解构相同，但值不同的对象
+
+    构造函数中的this:  指向的是当前被创建出来的实例对象
+
+    方法其实也是属性，只不过值是函数
+
+
+
+
+    构造函数，能被new 无数次,
+    构造函数，每次new 出来，都是一个新的对象
+
+
+
+    以后会大量用到 自定义构造函数
+
+    如果对象，有相同属性和行为，可以将他们抽象到自定义构造函数当中
+
+ -->

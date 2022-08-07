@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li:last-child {}
+
+        ul li:first-child {}
+
+        ul li:nth-child(1) {
+            color: red;
+        }
+
+        ul li:nth-last-child(1) a {
+            color: gold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>33</li>
+        <li>33</li>
+        <li>33</li>
+        <li>33</li>
+        <li> <a href="#">1</a></li>
+    </ul>
+</body>
+
+</html>
+
+<!-- 
+     结构伪类：
+     作用：
+     根据元素在HTML中的结构关系查找元素
+     优势：减少对HTML中类的依赖，有利于保持代码整洁
+     场景：经常用用于查找父级选择器中的元素
+
+
+ -->

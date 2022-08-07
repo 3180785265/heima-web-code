@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 块：独占一行；宽度默认是父级的100% ; 添加宽高都生效 */
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+
+        }
+
+        p {
+            /* rgba的最后以为是控制颜色的透明度，取值0~1   小数取值都是 比如 .1 取值*/
+            background-color: rgba(0, 0, 0, .1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 块： 独占一行； 宽度默认是父级100%；添加框 -->
+    <div>
+        111
+        <p>子元素</p>
+    </div>
+    <div>222</div>
+</body>
+
+</html>
+
+<!-- 
+
+    <> 叫标签(标记)，还可以叫元素
+
+    元素的显示模式:
+      显示方式: 一个标签是独占一行？ 还是可以一行显示多个？
+      
+
+    块级元素：
+      显示特点：
+       1.独占一行(一行只能显示一个)
+       2.宽度 默认 是父元素的宽度100%，
+       3.高度默认由内容撑开
+       4.可以设置宽高
+       代表标签: div ,p ,h ,ul ,li ,dl ,dt ......
+ -->

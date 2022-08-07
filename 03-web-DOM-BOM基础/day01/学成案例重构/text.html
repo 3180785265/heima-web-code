@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .warpper {
+            margin: auto;
+            width: 1200px;
+        }
+
+        .box .hd-bt {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .box .hd-bt a {
+            font-size: 12px;
+            margin-right: 20px;
+            text-decoration: none;
+            color: cadetblue;
+        }
+
+        .box .hd-bd {
+            width: 100%;
+            background-color: pink;
+
+
+        }
+
+        .box .hd-bd {
+            width: 100%;
+            background-color: pink;
+            margin-top: 20px;
+
+
+        }
+
+        .box .hd-bd .items {}
+
+        .box .hd-bd .items .item {
+            width: 228px;
+            height: 270px;
+            margin-right: 15px;
+            margin-bottom: 20px;
+            display: flex;
+
+            /* 主轴方向修改为了y */
+            flex-direction: column;
+
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: #fff;
+
+            float: left;
+
+
+
+        }
+
+        .box .hd-bd .items .item:nth-child(5n) {
+            margin-right: 0;
+        }
+
+        .box .hd-bd .items .item img {
+            width: 100%;
+
+        }
+
+        .box .hd-bd .items .item h4 {
+            width: 70%;
+            font-weight: normal;
+            font-size: 14px;
+
+
+        }
+
+        .box .hd-bd .items .item p {
+            font-size: 12px;
+            padding-bottom: 25px;
+            margin-left: -50px;
+
+        }
+
+        .box .hd-bd .items .item p span {
+            color: red;
+
+        }
+
+        .items {
+            clear: both;
+        }
+
+        body {
+            background-color: #f3f5f7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box warpper">
+        <div class="hd-bt">
+            <h2>精品推荐</h2>
+            <a href="#">查看全局</a>
+        </div>
+        <div class="hd-bd">
+            <div class="items">
+
+                <div class="item">
+                    <img src="./images/course01.png" alt="">
+                    <h4>
+                        Think PHP 5.0 博客系统实战项目演练
+                    </h4>
+                    <p>
+                        <span>高级</span>.
+                        <span>1212</span>人在学习
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <script>
+            let data = [
+                {
+                    src: 'images/course01.png',
+                    title: 'Think PHP 5.0 博客系统实战项目演练',
+                    num: 1125
+                },
+                {
+                    src: 'images/course02.png',
+                    title: 'Android 网络动态图片加载实战',
+                    num: 357
+                },
+                {
+                    src: 'images/course03.png',
+                    title: 'Angular2 大前端商城实战项目演练',
+                    num: 22250
+                },
+                {
+                    src: 'images/course04.png',
+                    title: 'Android APP 实战项目演练',
+                    num: 389
+                },
+                {
+                    src: 'images/course05.png',
+                    title: 'UGUI 源码深度分析案例',
+                    num: 124
+                },
+                {
+                    src: 'images/course06.png',
+                    title: 'Kami2首页界面切换效果实战演练',
+                    num: 432
+                },
+                {
+                    src: 'images/course07.png',
+                    title: 'UNITY 从入门到精通实战案例',
+                    num: 888
+                },
+                {
+                    src: 'images/course08.png',
+                    title: '我会变，你呢？',
+                    num: 590
+                },
+                {
+                    src: 'images/course08.png',
+                    title: '我会变，你呢？',
+                    num: 590
+                }
+            ]
+
+            function getItems() {
+                // 1.获取父节点元素
+
+                let items = document.querySelector('.items')
+
+
+
+                // 2.往父节点中添加元素
+
+                for (let i = 0; i < data.length; i++) {
+
+                    // 创建一个元素标签
+                    let item = document.createElement('div')
+
+                    item.classList.add('item')
+
+                    // 添加元素标签的内容
+                    item.innerHTML =
+                        `
+                        <img src="${data[i].src}" alt="">
+                        <h4>
+                            ${data[i].title}
+                        </h4>
+                        <p>
+                            <span>高级</span>.
+                            <span>1212</span>人在学习
+                        </p>
+                        `
+
+                    items.appendChild(item)
+
+                }
+
+            }
+            
+            getItems()
+
+
+
+
+
+        </script>
+</body>
+
+</html>

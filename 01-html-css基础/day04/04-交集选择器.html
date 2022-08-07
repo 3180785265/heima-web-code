@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 必须是p标签，同时得是用了.box类 */
+        p.box {
+            color: red;
+        }
+
+        p#p1 {
+            color: green;
+        }
+
+        /* active 前面一定要加父级元素，因为以active命名的有很多个，
+            防止重名
+        */
+        .nav .item.active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 不同的标签可以调用一样的类名 -->
+
+    <!-- 想找到第一个p,代box类的，设置文字颜色是红色   -->
+    <p class="box">这是p标签</p>
+    <p id="p1">ppppppppp</p>
+    <div class="box">1212</div>
+
+
+    <ul class="nav">
+        <li class="item">1</li>
+        <li class="item active">2</li>
+    </ul>
+</body>
+
+</html>
+
+<!-- 
+    交集选择器
+    作用：选中页面中 同时满足 多个选择器的标签
+    选择器语法 选择器1选择器2
+    结果：
+     (即又原则)找到页面中即能被选择器1选中，又能被选择器2选中的标签，设置样式
+
+    注意点：
+    1.交集选择器中的选择器之间是紧挨着的，没有东西分隔
+    2.交集选择器中如果又标签选择器，标签选择器必须写在最前面
+
+
+ -->

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            uname: '雄安命',
+            age: 18,
+            sex: '男'
+        }
+        // 请输出对象的名字 小明
+        console.log(obj.name)
+        console.log(obj['uname'])
+
+        // 遍历对象
+        for (let key in obj) {
+            console.log(key)
+        }
+
+
+        // 数组  里面可以放任何的数据类型
+        //js的数组和java的数组不一样，java的数组，只能放一种固定的数据类型
+
+        let arr = [1, 'pink', true, undefined, null, []]
+
+        //数组里面一般都是用来放置对象, 可以放置多个对象
+        let stutends = [
+            {
+                uname: '雄安命',
+                age: 18,
+                sex: '男'
+            },
+            {
+                uname: '雄安命',
+                age: 18,
+                sex: '男'
+            },
+            {
+                uname: '雄安命',
+                age: 18,
+                sex: '男'
+            },
+        ]
+
+
+    </script>
+</body>
+
+</html>

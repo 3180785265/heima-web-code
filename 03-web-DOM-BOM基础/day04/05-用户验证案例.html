@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+            background-image: url(./error1.png);
+
+        }
+
+        /* input {
+            vertical-align: bottom;
+
+        } */
+
+        span {
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+
+            /* 让小图片，在大盒子中的 x和y的定位 */
+            background-position: left center;
+            /* 让图片不重复铺满 */
+            background-repeat: no-repeat;
+
+            /* 让 span 和 input 对齐, 而不是默认的基线对齐,设置这个比自己条margin好用*/
+            vertical-align: bottom;
+
+
+            padding-left: 20px;
+            line-height: 20px;
+            font-size: 12px;
+
+
+        }
+
+        .right {
+            color: green;
+            background-image: url(./right.png);
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text">
+    <span></span>
+    <script>
+
+        // 1.失去焦点后，判断
+        let input = document.querySelector('input')
+        let span = document.querySelector('span')
+
+        input.addEventListener('blur', function () {
+
+
+
+
+            // if (/^[a-zA-Z0-9-_]{6,16}$/.test(this.value)) {
+            //     span.className = 'right'
+            //     span.innerHTML = '输入正确'
+            // } else {
+            //     span.className = 'error'
+            //     span.innerText = '输入错误'
+            //     this.style.border = '1px solid red'
+
+            // }
+            if (/^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/.test(this.value)) {
+                span.className = 'right'
+                span.innerHTML = '输入正确'
+            } else {
+                span.className = 'error'
+                span.innerText = '输入错误'
+                this.style.border = '1px solid red'
+
+            }
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>

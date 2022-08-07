@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 所有的控制文字的属性都能继承； 不能控制文字的都不能继承 */
+        div{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        div
+         <span>
+            这是div里面的span
+        </span>
+    </div>
+</body>
+</html>
+
+<!-- 
+
+    控制文字属性的都可以继承
+    像京东就是给 body 写 font 的文字属性，目的是利用继承性节省大量的代码
+    如果自己有，就不继承，如果没有才继承父级
+
+    特性：子元素有默认继承父元素样式的特点（子承父业）
+    ➢ 可以继承的常见属性(文字控制属性都可以继承)
+    1. color
+    2. font-style、font-weight、font-size、font-family
+    3. text-indent、text-align
+    4. line-height
+    5. ……
+ -->

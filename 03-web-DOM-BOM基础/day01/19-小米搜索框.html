@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+
+            list-style: none;
+        }
+
+        .mi {
+            position: relative;
+            width: 223px;
+            margin: 100px auto;
+        }
+
+        .mi input {
+            width: 223px;
+            height: 48px;
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 48px;
+            border: 1px solid #e0e0e0;
+            outline: none;
+        }
+
+        .mi .search {
+            border: 1px solid #ff6700;
+
+            /* 可以加一个过渡效果，让新添加的样式，根据秒值进行变化 */
+            transition: all .5s;
+        }
+
+        .result-list {
+            position: absolute;
+            left: 0;
+            top: 48px;
+            width: 223px;
+            border: 1px solid #ff6700;
+            border-top: 0;
+            background: #fff;
+
+            display: none;
+            height: 100px;
+            overflow: auto;
+
+        }
+
+        .result-list a {
+            display: block;
+            padding: 6px 15px;
+            font-size: 12px;
+            color: #424242;
+            text-decoration: none;
+        }
+
+        .result-list a:hover {
+            background-color: #eee;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="mi">
+        <input type="search" placeholder="小米笔记本">
+        <ul class="result-list">
+            <li><a href="#">全部商品</a></li>
+            <li><a href="#">小米11</a></li>
+            <li><a href="#">小米10S</a></li>
+            <li><a href="#">小米笔记本</a></li>
+            <li><a href="#">小米手机</a></li>
+            <li><a href="#">黑鲨4</a></li>
+            <li><a href="#">空调</a></li>
+            <li><a href="#">空调</a></li>
+            <li><a href="#">空调</a></li>
+            <li><a href="#">空调</a></li>
+            <li><a href="#">空调</a></li>
+        </ul>
+    </div>
+    <script>
+
+        let search = document.querySelector('.mi input');
+        let resultList = document.querySelector('.result-list');
+
+        // 表单的光标获取焦点 
+        search.addEventListener('focus', function () {
+
+
+            resultList.style.display = 'inline-block'
+            // search.classList.add('search')
+            this.classList.add('search') //可以用 this调用，因为当前的this 指向的是 search
+        })
+
+        // 表单的光标失去焦点
+        // search.addEventListener('blur', function () {
+
+        //     resultList.style.display = 'none'
+        //     search.classList.remove('search')
+
+        // })
+
+        search.addEventListener('blur', () => {
+            resultList.style.display = 'none'
+            search.classList.remove('search')
+            // this.classList.remove('search')
+        })
+
+        let aList = document.querySelectorAll('.result-list  li')
+
+        for (let i = 0; i < aList.length; i++) {
+            console.log(aList[i])
+
+            aList[i].addEventListener('click', function () {
+                console.log(aList[i])
+                search.value = aList[i].innerHTML
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    焦点事件
+     focus: 获取焦点
+     blur: 失去焦点事件 
+
+ -->

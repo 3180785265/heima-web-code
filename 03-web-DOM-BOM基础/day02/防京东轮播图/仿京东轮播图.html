@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .main {
+            width: 500px;
+            height: 470px;
+            background-color: pink;
+            position: relative;
+
+            margin: auto;
+
+        }
+
+        .dots {
+            position: absolute;
+            top: 329px;
+
+
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .dots li {
+            /* background-color: #fff; */
+            background-color: rgba(238, 226, 226, .3);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            float: left;
+            list-style: none;
+            margin-right: 20px;
+
+
+
+        }
+
+        .dots li.active {
+            background-color: #fff;
+        }
+
+        .pre,
+        .next {
+            background-color: rgba(238, 226, 226, .5);
+            width: 30px;
+            height: 40px;
+            font-size: 27px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+
+            cursor: default;
+            z-index: 1;
+
+
+        }
+
+        .pre {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+        .next {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+
+        .images {
+            height: 470px;
+            /* 相对定位, 定位主要用于覆盖别的元素上面 */
+            position: relative;
+        }
+
+        .images img {
+            width: 500px;
+            height: 470px;
+        }
+
+        .images li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 将其他元素整个变成透明 */
+            opacity: 0;
+
+            /* 将 opacity 后期改变，变成过渡的慢慢增长效果*/
+            transition: all 1s;
+        }
+
+        .images li.active {
+            opacity: 1;
+        }
+
+        .zhezhao {
+            width: 100%;
+            height: 100px;
+            background-color: rgba(0, 0, 0, .4);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            line-height: 100px;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="main">
+
+        <div class="pre"> 前 </div>
+        <div class="next">后</div>
+
+        <!-- 轮播图 -->
+        <div class="images">
+            <ul>
+
+            </ul>
+        </div>
+
+
+        <!-- 轮播小圆点 -->
+        <div class="dots">
+            <ul>
+
+
+
+            </ul>
+        </div>
+
+        <!-- 遮罩 -->
+        <div class="zhezhao">
+            第一张图片
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        // 接口返回的数据
+        let arr = [
+            { src: "./images/8f4fb6246f06deab.jpg.webp", title: "设备" },
+            { src: "./images/q1.jpg", title: "蔬菜" },
+            { src: "./images/q2.jpg", title: "水果" },
+            { src: "./images/q3.jpg", title: "日用品" },
+        ]
+
+
+
+        // 将图片和小圆点初始化
+        let dotsUl = document.querySelector('.dots ul')
+        let images = document.querySelector('.images ul')
+
+        for (let i = 0; i < arr.length; i++) {
+            let li = document.createElement('li')  //小圆点 li 
+            let imgLi = document.createElement('li') //轮播图 li 
+
+
+            // 给轮播图绑定数据
+
+            imgLi.innerHTML =
+                `
+              <a href="#">
+                        <img src="${arr[i].src}" alt="">
+                    </a>
+            `
+
+            // 如果是第一个
+            if (i === 0) {
+                li.classList.add('active')
+                imgLi.classList.add('active')
+            }
+
+            dotsUl.appendChild(li)
+            images.appendChild(imgLi)
+
+
+        }
+
+
+
+
+
+
+
+
+
+        // 鼠标经过小圆点，给经过的小圆点添加active 样式， 并将图片换掉，给图片添加active样式
+
+        // 给每个小圆点绑定鼠标经过事件
+
+        let dotsLis = document.querySelectorAll('.dots ul li')
+        let imagesLis = document.querySelectorAll('.images ul li')
+        for (let i = 0; i < dotsLis.length; i++) {
+            dotsLis[i].addEventListener('mouseenter', function () {
+                // 删除样式
+                document.querySelector('.dots ul li.active').classList.remove('active')
+                // 给当前经过的小圆点添加样式
+                this.classList.add('active')
+
+
+                // 删除上个的图片的active
+                document.querySelector('.images ul li.active').classList.remove('active')
+
+                // 给当前鼠标经过的图片添加active
+                imagesLis[i].classList.add('active')
+
+                document.querySelector('.zhezhao').innerHTML = `${arr[i].title}`
+
+                // 每次经过第几个小圆点，就赋值给信号量
+                index = i
+
+            })
+        }
+
+
+
+        // 给 pre  和 next两个按钮绑定事件
+
+        let index = 0;  // 默认是第一张图片，第一个小圆点按钮
+
+
+        let pre = document.querySelector('.pre')
+        let next = document.querySelector('.next')
+
+        pre.addEventListener('click', function () {
+            index--;   //每点击一次，-1 代表上一个轮播图和小圆点
+
+            if (index < 0) {
+                index = dotsLis.length - 1
+            }
+
+            // 选中旧的active
+            document.querySelector('.dots ul li.active').classList.remove('active')
+            //给 元素添加active
+            dotsLis[index].classList.add('active')
+
+
+            document.querySelector('.images ul li.active').classList.remove('active')
+            imagesLis[index].classList.add('active')
+
+
+        })
+        next.addEventListener('click', function () {
+            index++
+            // 选中旧的active
+            index = index % dotsLis.length
+            // 选中旧的active
+            document.querySelector('.dots ul li.active').classList.remove('active')
+            //给 元素添加active
+            dotsLis[index].classList.add('active')
+
+
+            document.querySelector('.images ul li.active').classList.remove('active')
+            imagesLis[index].classList.add('active')
+
+        })
+
+
+        //使用定时器 自动播放 ，轮播图
+
+        let trie = setInterval(function () {
+            // 自动触发事件
+            next.click()
+        }, 800);
+
+
+        // 鼠标移入整个元素，删除定时器，取消自动播放
+        document.querySelector('.main').addEventListener('mouseenter', function () {
+            clearInterval(trie)
+        })
+        // 鼠标移出整个元素，删除定时器，重新赋值一个定时器
+        document.querySelector('.main').addEventListener('mouseleave', function () {
+            trie = setInterval(function () {
+                // 自动触发事件
+                next.click()
+            }, 1200);
+        })
+
+    </script>
+</body>
+
+</html>

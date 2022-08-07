@@ -1,0 +1,319 @@
+/* index.css是用来美化首页的 */
+body{
+    background-color: #ecedee;
+}
+
+/* 版心 */
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 40px;
+}
+.header .nav{
+    float: left;
+    margin-left: 70px;
+    height: 42px;
+}
+
+/* 使用后代选择器控制 li  */
+.header .nav li{
+    float: left;
+}
+.header .nav li a{
+    margin-right: 26px;
+    padding: 0 9px;
+    height: 40px;
+    font-size: 18px;
+    display: block;
+    line-height: 40px;
+}
+.header .nav li a:hover{
+    border-bottom: 2px solid #00a4ff;
+}
+
+.logo{
+    /* logo 的宽高根据背景图片的实际大小，定义盒子的真实宽高 */
+    width: 195px;
+	height: 42px;
+    float: left;
+}
+.serrch{
+    width: 412px;
+	height: 40px;
+	border: solid 1px #00a4ff;
+    float: left;
+    margin-left: 50px;
+}
+.serrch input{
+    width: 360px;
+    height: 38px;
+    padding-left: 20px;
+    border: 0;
+    outline: 0;
+}
+
+/* 如果想要控制placeholder的样式 */
+.serrch input::placeholder{
+    font-size: 14px;
+	color: #bfbfbf;
+}
+.serrch button{
+    border: none;
+    width: 50px;
+	height: 39px;
+    float: right;
+    background-image: url('../images/btn.png');
+}
+
+.user{
+    height: 40px;
+    line-height: 40px;
+    margin-left: 30px;
+    float: left;
+    
+}
+.user img{
+    /* 调节图片对齐方式: middle:  能将图片，对旁边的字调整垂直居中 */
+    vertical-align: middle;
+}
+.banner{
+    width: 100%;
+    background-color: #1c036c;
+    height: 420px;
+
+}
+
+.banner div.wrapper{
+    background-color: pink;
+    height: 420px;
+    background-image: url(../images/banner2.png);
+}
+.banner div.wrapper .left{
+    width: 190px;
+	height: 420px;
+	background-color: rgba(0, 0, 0, .3);
+    /* 元素透明度 */
+    float: left;
+    padding: 0 17px;
+    /* 控制字体的样式，都会继承给子级， */
+    line-height: 42px;
+    font-size: 14px;
+}
+.banner  .left span{
+    float: right;
+ }
+
+.banner div.wrapper .left  a:hover{
+   color: #00b4ff;
+}
+.banner div.wrapper .left  a{
+    /* a标签有子级的控制文字颜色样式，所以不能继承，要自己写 */
+   color: #ffffff;
+}
+
+
+.banner div.wrapper .right{
+   width: 228px;
+   /* height: 300px; */
+   background-color: #ffffff;
+   margin-top: 50px;
+   padding-bottom: 10px;
+   position: fixed;
+   top: 0;
+   right: 0;
+   z-index: 1;
+   /* 让元素隐藏看不见 */
+   display: none;
+}
+.banner div.wrapper .right .body{
+    padding: 16px;
+}
+.banner div.wrapper .right .body dd{
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 14px;
+    padding-bottom: 15px;
+    color: #a5a5a5;
+}
+.banner div.wrapper .right .body dt{
+    font-size: 18px;
+    color: #4e4e4e;
+}
+
+
+.banner div.wrapper .right h1{
+color: #ffffff;
+font-weight: 700;
+font-size: 18px;
+background-color: #00a4ff;
+height: 48px;
+line-height: 48px;
+text-align: center;
+font-size: 20px;
+}
+.banner div.wrapper .right button{
+    width: 200px;
+	height: 41px;
+    background-color: #ffffff;
+	border: solid 1px #00a4ff;
+    margin-left: 15px;
+}
+.navbody{
+    /* padding: 30px 0; */
+    margin-top: 10px;
+    background-color: #ffffff;
+   
+
+
+}
+.navbody .left{
+    float: left;
+    width: 810px;
+    
+}
+.navbody .right{
+    float: right;
+    color: #00a4ff;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-right: 10px;
+    
+    
+}
+
+.navbody ul li{
+    margin: 10px 0;
+    float: left;
+    height: 18px;
+    /* width: 56px; */
+    padding:0 25px;
+    border-right: 2px solid #bfbfbf;
+
+    
+}
+.navbody ul li a{
+    display: block;
+    height: 20px;
+    font-size: 16px;
+    line-height: 20px;
+
+}
+.navbody ul li a:hover{
+   color: #00a4ff;
+}
+/* 结构伪类消除最后一个 */
+.navbody ul li:last-child{
+   border: none;
+ }
+
+.box{
+    margin-top: 35px;
+}
+
+.box .title h1{
+    float: left;
+    width: 80px;
+	height: 19px;
+    font-size: 20px;
+    font-weight: normal;
+
+}
+.box .title{
+    height: 23px;
+    margin-bottom: 21px;
+}
+.box .title a{
+    float: right;
+    font-size: 12px;
+	color: #a5a5a5;
+}
+.content ul li{
+    position: relative;
+    width: 228px;
+	height: 270px;
+    background-color: #ffffff;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+}
+.content ul li:nth-child(5n){
+    margin: 0;
+}
+
+.content ul li h3{
+    font-size: 14px;
+    padding: 10px;
+    font-weight: 400;
+    color: #777777;
+}
+.content ul li p{
+    font-size: 12px;
+    padding: 0 10px;
+}
+.content ul li .hot{
+  position: absolute;
+  right: -7px;
+  top: 6px;
+
+}
+.content ul li p span:nth-child(1){
+    color: #ff7c2d;
+}
+.content ul li p span:nth-child(2){
+    color: #777777;
+}
+
+.footer{
+    background-color: #ffffff;
+    height: 420px;
+    padding-top: 20px;
+}
+.footer .left{
+    float: left;
+}
+.footer .left p{
+    font-size: 12px;
+    color: #666666;
+    padding:  20px 0;
+}
+.footer .left a{
+    display: inline-block;
+    width: 120px;
+	height: 36px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+    color: #00a4ff;
+	border: solid 1px #00a4ff;
+}
+.footer .right{
+    float: right;
+}
+.footer .right dl{
+    float: left;
+    padding-left: 170px;
+}
+.footer .right dt{
+    color: #333333;
+    font-size: 16px;
+    padding: 10px 0;
+}
+.footer .right dd{
+    color: #333333;
+    font-size: 12px;
+    line-height: 20px;
+    
+}
+
+
+
+
+
+
+
+

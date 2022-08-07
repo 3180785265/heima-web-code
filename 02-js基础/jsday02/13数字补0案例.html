@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let n = prompt()
+        let num = Number(n) < 10 ? '0' + String(n) : `${String(n)}`
+        alert(num)
+
+        //判断一个用户的用户名和密码是否相等
+
+
+        let dbuser = {
+            user: "xiaoming",
+            password: '12123'
+        }
+        let loginuser = {
+            user: "xiaoming",
+            password: '12123'
+        }
+
+        let flag = dbuser.user === loginuser.user && dbuser.password === loginuser.password ? true : false
+
+
+        let flag2 =dbuser.user!==loginuser.user||dbuser.password!==loginuser.password? false:true
+        dbuser.user!==loginuser.user||dbuser.password!==loginuser.password? alert('密码错误'):alert('密码正确')
+        flag ? alert('登录陈工'):alert('登录失败')
+
+        
+    </script>
+    </script>
+        
+
+</body>
+
+</html>

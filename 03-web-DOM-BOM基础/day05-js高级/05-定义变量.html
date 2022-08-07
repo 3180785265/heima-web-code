@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let 、 var const 
+
+        /*
+         1. var:  var关键字声明的变量，不具有块级作用域
+                  var声明的变量可以被重新在声明
+                  var申明的变量相当于给window加属性
+                  function声明函数，是给window加了一个方法
+        */
+
+        {
+            var m = 10;
+        }
+        console.log(m);
+
+
+        var b = 200;
+        var b = 300;
+        console.log(b)
+
+
+
+        //2.let： let关键字声明的变量，具有块级作用域
+        {
+            let n = 9;
+
+        }
+        //console.log(n)
+
+
+        // 3.let 无法被重复声明
+        // let h = 0;
+        // let h = 2;
+
+        // console.log(h)
+
+        // 3.在全局作用域下，var声明的变量是给window对象加了一个属性, 函数则是给window加了一个方法
+        //  var 声明的变量，属于window。let直接就是变量
+
+        var a1 = 2;
+        let a2 = 22;
+        function fn1() {
+
+        }
+        console.log(window)
+
+        // 4.var和let:   var,let 都可以只定义不赋值
+
+        var a3;
+        let a4;
+
+        console.log(a3, a4)  // 只定义不赋值，都是undefined
+        console.log(window)
+
+        // 5.const: const申明的变量不准改变，称之为常量(变量是可以变的，常量不行), 其他的和let每区别
+        //  const定义的常量， 必须初始化赋值，否则报错 
+        // 为了能和变量做区分，一定要将const声明的常量全改为 纯大写英文
+        // csont使用场景：一般固定不变的值，改为常量，比如: 圆周率，过期时间，名字
+        const NUM6 = 9;
+        const PI = 3.14;
+        console.log(a5)
+        NUM6 = 18;  // const 不允许改变，报错
+        console.log(NUM6)
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    1. var:  var关键字声明的变量，不具有块级作用域
+              var声明的变量可以被重新在声明
+              var申明的变量相当于给window加属性
+              function声明函数，是给window加了一个方法
+
+    2.  let： let关键字声明的变量，具有块级作用域
+
+
+    3.  在全局作用域下，var声明的变量是给window对象加了一个属性, 函数则是给window加了一个方法
+        var 声明的变量，属于window。let直接就是变量
+
+    4.var和let:   var,let 都可以只定义不赋值, 没有初始化的值都是undefined
+
+    5.const: 
+        1.const申明的变量不准改变，称之为常量(变量是可以变的，常量不行), 其他的和let没区别
+        2.const定义的常量， 必须初始化赋值，否则报错 
+        3.为了能和变量做区分，一定要将const声明的常量全改为 纯大写英文
+        4.csont使用场景：一般固定不变的值，改为常量，比如: 圆周率，过期时间，名字
+ -->

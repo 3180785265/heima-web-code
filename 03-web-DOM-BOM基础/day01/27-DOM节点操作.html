@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="father">
+        1
+        <div class="son">儿子</div>
+    </div>
+
+    <script>
+        // 返回最近一级的父节点 找不到返回null
+        // 子元素.parentNode
+        let son = document.querySelector('.son')
+
+        son.parentNode.style.display = 'none'
+        console.log(son.parentNode)
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    节点元素的操作
+    增
+    删
+    改
+    查
+
+
+    时间对象
+
+    重绘和回流
+
+
+    DOM节点：
+    DOM树里(DOM文件对象模型)面每一个内容都称之为节点
+   节点类型 
+    元素节点：所有的标签比如body ,div html是根节点
+    属性节点: 标签内所有的属性
+    文字节点：标签内所有的文本
+
+
+    节点关系：
+    1.父节点  元素.parentNode
+    2.子节点  元素.children
+    3.兄弟节点
+
+
+    1.返回最近一级的父节点 找不到返回null
+        子元素.parentNode
+ -->

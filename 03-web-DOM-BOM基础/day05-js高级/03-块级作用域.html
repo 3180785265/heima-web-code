@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 块级作用域，用{} 包起来的代码块，就是块级作用域
+        {
+            let n = 6;//只能在块级作用域被使用，等价于局部变量
+        }
+
+        if (true) {
+            let num = 123;
+        }
+
+
+        if (true) {
+            var num = 123;  // 如果用var声明就是全局变量，因为var声明的没有块级作用域的含义
+        }
+        console.log(num);
+
+
+        if (false) {
+            var num2 = 123;  // 如果用var声明就是全局变量，因为var声明的没有块级作用域的含义
+        }
+        console.log(num2);
+
+
+        for (let i = 0; i < 10; i++) {
+            let m = 6;
+        }
+
+        console.log(m)
+
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    在js中使用 { } 包裹的 代码称为代码块，代码块里的范围称为块级范围
+
+ -->

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 分支语句可以让我们有选择性的执行想要的代码
+        // if 语句可以有三种使用： 单分支，双分支，多分枝
+        //条件则是一个 布尔值，为true则执行分支类的代码
+        // if (条件) {
+        //     //执行满足脚尖的代码 
+        //     console.log('执行了')
+        // }
+
+        if (3 > 6) {
+            console.log('//')
+        }
+
+        // flase 0 undefind null ,NaN,'' 都是假的 
+        if (0) {
+            console.log()
+        }
+
+        let socr = prompt('请输入高考成绩')
+        socr = socr || 0; //如果为false , 则为0 
+
+        //条件为true
+        if (socr > 700) {
+            console.log('恭喜考入黑马程序员')
+        }
+
+    </script>
+</body>
+
+</html>

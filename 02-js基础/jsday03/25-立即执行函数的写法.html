@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //这是一个匿名函数表达式，需要我们调用才能执行
+        let fn = function () {
+
+        }
+        fn();//需要我们调用才能执行
+
+         // 立即执行函数： 立即执行，无需调用
+         //1. 第一个小括号是形参  第二个小括号放的是实参
+         //2. 其实加了第二个小括号，就相当于调用了里面的匿名函数
+         //3. 可以将变量包裹在立即执行函数中，可以避免变量的全局污染，让变量只能在里面被访问
+         (function(x,y){
+            console.log('立即执行的第1种写法')    
+            console.log(x+y)
+         })(1,2);
+         
+
+
+         //2.立即执行的第二种写法
+        //  (function(){}())
+        (function (){
+            console.log('立即执行的第2种写法')    
+        }());
+      
+         //必须，有两个立即执行函数，他们两个当中的变量都重名
+         //，但是它们都有自己的作用域，不会造成干扰
+         (function(){
+            let num=10;
+         })();
+
+         (function(){
+            let num=20;
+         })();
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    立即执行函数
+    特点：避免全局变量之间的污染, 并且它是立即执行的，无需调用
+    (function(){})
+    立即执行函数有个重点，必须要加分号 ;  结束，否则报错
+ -->

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <input type="text" value="请输入">
+    <button disabled>按钮</button>
+    <!-- 复选框 -->
+    <input type="checkbox" checked id="in1">
+    <input type="checkbox" checked>
+
+    <select>
+        <option>1</option>
+        <option>3</option>
+        <option>2</option>
+    </select>
+    <script>
+        // 1.获取元素
+        let input = document.querySelector('input')
+        // 2.取值或者设置值  得到input里面的值，可以用value
+        // console.log(input.val)
+        input.value = '小米手机'
+        input.type = 'password'
+
+        // 2.启用按钮
+        let btn = document.querySelector('button')
+        btn.disabled = false  //按钮启用, false不是不可用
+        btn.disabled = true   //按钮启用, true是不可用
+
+        // 3.勾选复选框
+        let in1 = document.querySelector('#in1')
+        in1.checked = false
+
+        // 选中默认的
+        let option = document.querySelector('select option::nth-child(1)')
+        option.selected= true  //给 option 新增一个属性和值
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    修改表单的 属性值
+    常见表单属性: value , disabled, checked , selected 
+
+    定时器-间歇函数 
+
+ -->

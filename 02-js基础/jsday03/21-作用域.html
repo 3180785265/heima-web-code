@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+    </script>
+
+    <!-- 全局作用域: 在这个script的变量称为全局作用域-->
+    <script>
+
+
+        //1.在全局作用域下的代码，可以被所有的地方调用
+        let num0=20;    
+
+
+        //全局变量，可以在函数作用域和块级作用域中被使用
+
+        function fn(){
+            console.log(num0)
+        }
+        fn()
+
+        if(true){
+            console.log(num0)
+        }
+
+        console.log(num0)
+
+
+
+
+
+        //2.在局部作用域下,变量是局部变量
+        //函数作用域下的局部变量，只能在函数下使用，函数外部无法使用
+        function fn1(){
+            let num1=10;
+            console.log(num1)
+            {
+                console.log(num1)
+            }
+        }
+        fn1()
+        console.log(num1) //在全局作用域下无法调用到局部变量
+
+
+
+
+
+
+
+        //3.块级作用域下，变量叫块级变量
+        //块级作用域下，只能在块级中被使用，无法在块级作用域外使用
+        if(true){
+            let num=10
+        }
+        console.log(num) //块级作用域外，无法使用块级作用域中的变量
+        //for 循环的 起始值 也是块级变量
+        for(let i=0;i<10;i++){
+            console.log(i)
+        }
+        console.log(i) //无法使用for循环中的块级变量
+
+   
+    </script>
+</body>
+
+</html>
+<!-- 
+    作用域：它可以限定一些变量的命名,在哪一些代码块中有效, 
+    作用域，主要是提高代码的局部性，不让外部访问，比如让局部变量和全局变量重名时，不受冲突
+
+
+
+    1.全局作用域：
+      范围：全局有效, 全局变量在 "全局作用域"，"局部作用域"，"函数作用域" 都被能使用
+      作用域所有代码执行的坏境(整个script标签内部或者一个独立的js文件)
+    2.局部作用域：
+      范围：作用域一个函数内的代码坏境，就是局部作用域，因为根函数有关系，也称为函数作用域
+    3.块级作用域
+    范围：{ } 中括号的代码块内有效
+    作用域由{} 包裹，if语句和for 语句里面的{}  等都是块级作用域  
+ -->

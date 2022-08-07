@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/tianshi.gif" alt="">
+
+    <script>
+        let img = document.querySelector('img')
+        document.addEventListener('mousemove', function (e) {
+            img.style.left=`${e.pageX-20}px`
+            img.style.right=`-${e.pageX-20}px`
+            img.style.top=`${e.pageY-20}px`
+            img.style.bottom=`-${e.pageY-20}px`
+        })
+    </script>
+</body>
+
+</html>
+
+<!--   
+    以下属性，作用是事件触发后，会获取在页面的哪个坐标触发的值
+   事件对象.clientX :  只能当前可视区域有效，也就是坐标只针对设备的可视区域，
+   事件对象.pageX： 整个页面的数据有效， 页面的body 很大，要滚动条向下拉的那种，也就是坐标针对整个网页的可视区域
+   事件对象.offsetX:  事件在元素内触发的坐标
+
+
+
+   需求：一张图片一直跟着鼠标移动
+分析：
+①：鼠标在页面中移动，用到  mousemove 事件
+②：不断把鼠标在页面中的坐标位置给图片left和top值即可
+ -->

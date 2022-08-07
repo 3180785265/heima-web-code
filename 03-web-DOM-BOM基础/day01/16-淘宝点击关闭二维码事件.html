@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            top: 20px;
+            left: 100px;
+            background-color: pink;
+
+        }
+        i{
+            position: absolute;
+            top: -20;
+            left: -16px;
+            font-size: 12px;
+            background-color: #7777;
+            text-align: center;
+            width: 17px;
+            height: 17px;
+
+        }
+
+        .active{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <i>X</i>
+    </div>
+
+    <script>
+        (function(){
+
+            let btn=document.querySelector('.box i')
+
+            // 监听 i 事件源上的 click 事件，一旦事件触发，就执行绑定的事件函数
+            btn.addEventListener('click',function(){
+
+                // 获取boxDOM对象，设置对应的样式属性
+                // let box =document.querySelector('.box');
+
+                // box.style.display='none'
+                // box.classList.toggle('active')
+
+                this.parentNode.style.display='none'
+
+            })
+
+        })()
+    </script>
+</body>
+</html>

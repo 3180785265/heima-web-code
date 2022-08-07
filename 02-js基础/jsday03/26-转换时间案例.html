@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. 用户输入
+        let seconds = parseInt(prompt("请输入总的秒数"))
+
+        //2. 计算时间 封装函数
+        function getTimes(seconds) {
+            let h = parseInt(seconds / 60 / 60 % 24)//时
+            let m = parseInt(seconds / 60 / 60)//分
+            let s = parseInt(seconds / 60)//秒
+
+            h = h < 10 ? '0' + h : h
+            m = m < 10 ? '0' + m : m
+            s = s < 10 ? '0' + s : s
+            return `计算之后的时间是x消失${h}时${m}分${s}秒`
+        }
+        //3. 打印输出
+        console.log(getTimes(seconds))
+
+    </script>
+</body>
+
+</html>
+<!-- 
+    不要有焦虑，不要有顾虑，放下心理负担的去学！
+    
+
+ -->

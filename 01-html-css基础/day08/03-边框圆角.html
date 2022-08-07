@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            /* 一个值：表示4个角是相同的 */
+            /* border-radius: 2px; */
+
+
+            /*  坐上  右上 右下 左下    从坐上，顺时针转一圈*/
+            border-radius: 10px 20px 24px 10px;
+
+            /* 三个值写法 */
+            /* border-radius: 20px 7px  20px; */
+
+            /* 对值得写法 */
+            border-radius: 10px 20px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+
+<!-- 
+    盒子的边框圆角:
+    场景：让盒子的四个角变得圆润，增加页面细节，提高用户体验
+
+    border-radius
+    取值: 数字+px 、 百分比%
+
+    赋值规则:从左上角开始赋值，然后顺时针赋值，没有赋值的看对角
+
+ -->

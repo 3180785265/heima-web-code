@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 数据类型的转换 */
+
+        let num = 10;//prompt('请输入一个数字')
+
+
+        //1.隐式转换不经常用
+
+        //2. 使用显示的转换
+
+        //1.强制转换为数字类型
+        let n1 = Number(num);
+        console.log(typeof n1, n1)
+
+        //2.强制转换为整数类型（和Number()区别是，能够格式化，完全变为整数）
+        let i1 = parseInt(1.222);
+        console.log(i1)
+
+        //3. 只能放数值类型的，否则会返回NaNx
+        console.log(Number('11212abc'))
+
+        //4.还可以将数值型，转为为字符串类型 String 
+
+        console.log(String(20.1))//显示转换为字符串
+        let age=20
+        console.log(age.toString())//也可以调用变量的tostring()
+
+    </script>
+</body>
+
+</html>

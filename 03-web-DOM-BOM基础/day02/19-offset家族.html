@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            border: 10px solid transparent;
+            padding: 10px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        let div=document.querySelector('div')
+
+        // 盒子 内容的 宽高(包括滚动后面的内容的宽高)，除去滚掉条的宽高
+        div.scrollWidth
+        div.scrollHeight
+
+        // 盒子的大小= 盒子本身的宽度和高度+padding+border 
+        console.log('盒子的大小，包含padding,border',div.offsetWidth)
+        console.log('盒子的大小，包含padding,border',div.offsetHeight)
+
+        console.log('距离已经定位父盒子的距离',div.offsetTop)
+    </script>
+</body>
+</html>
+
+<!-- 
+    获取盒子到顶部的距离
+
+    如果我们要滚动到页面中某一个盒子的位置，才去显示一个元素,scloTop就不合适了
+
+    元素.offsetHeight: 获取盒子的宽高,包含border,padding,
+
+    获取位置：
+     获取的是元素距离自己定位父级元素的做、上距离, 如果没有定位，以浏览器的body定位
+     这两个属性，是只读属性，只能读取元素距离，已经定位的父元素的距离
+     offsetLeft
+    offsetTop
+ 
+    -->

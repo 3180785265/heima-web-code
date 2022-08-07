@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            background-color: pink;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .son{
+            background-color: rgb(90, 25, 131);
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+        .sun{
+            position: absolute;
+            left: 100px;
+            top: 60px;
+           
+            background-color: rgb(15, 11, 12);
+            width: 200px;
+            height: 200px;
+        
+
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"> 
+            <div class="sun">
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+    重点
+    1.在工作中，一般的绝对定位，不会参照浏览器进行定位。
+    2.绝对定位都会参照，有定位的父级去改变位置
+
+
+    子级相对定位，父级绝对定位，让子级相对于父级去改变位置
+
+    绝对定位查找父级的方式：就近找已经定位的父级，如果逐层查找不到
+    这样的父级，就以浏览器窗口为参照物进行定位
+ -->

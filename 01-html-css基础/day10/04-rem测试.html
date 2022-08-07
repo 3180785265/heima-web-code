@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 当视口宽度为375px */
+        @media (width:375px) {
+
+            /* 设置html 根标签的字号大小为 32px */
+            html {
+                /* 字号都是设置为 不同的视口宽度的 1/10 */
+                font-size: 37.5px;
+            }
+
+        }
+
+        /* 让不同的设备，都是1：10 等比缩放的效果，能够根据不同的设备的不同视口宽度，缩放出不同的px */
+        @media (width:414px) {
+
+            /* 设置html 根标签的字号大小为 32px */
+            html {
+                font-size: 41.4px;
+            }
+
+        }
+        @media (width:390px) {
+
+            /* 设置html 根标签的字号大小为 32px */
+            html {
+                font-size: 39px;
+            }
+
+        }
+
+
+
+    
+        .box {
+            /* 高68 宽29
+                设计稿为375px   HTML 根字号就是设计稿的 1/10  font-size=37.5  
+               计算出宽高的rem： 68/37.5    29/37.5 
+            */
+            width: 1.813rem;
+            height: 0.773rem;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>
+
+<!-- 
+    
+
+    这个年代，ul的移动端设计图，宽度大部分都是基于375px的
+
+ -->

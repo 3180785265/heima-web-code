@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .d1 {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+
+            /* 父元素加overflow:hidden  防止塌陷 */
+            overflow: hidden
+        }
+
+        .d2 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(142, 30, 48);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">
+        <div class="d2"></div>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+
+    外边距折叠现象-塌陷现象
+    场景：互相嵌套的块级元素，子元素的margin-top 会作用在父元素上
+    结果：导致父元素一起往下移动
+    解决方法：
+    1.给父元素设置border-top 或者padding-top 分隔父子元素的margin-top
+
+    子元素的margin-top 作用到了父元素上
+    解决
+    1.父级加border
+    2.父元素加overflow:hidden
+ -->

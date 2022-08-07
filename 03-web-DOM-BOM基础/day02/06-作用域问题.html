@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let  不允许重复声明 
+
+        // let num = 10;
+        // let num = 20;
+
+
+
+        let num = 10;
+
+        {
+            let num = 20;
+            console.log(num)
+        }
+
+
+
+        (function () {
+            let num2 = 10;
+
+        })()
+        let num2 = 20;
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    let 不允许重复声明变量
+    var 能允许重复声明变量
+
+    var 不受块级作用域的限制，能被块级作用域外访问
+    let 在块级作用域中，不能被外部访问
+    
+    var 存在变量提升的问题，可以先使用，后声明 ，比如 a=10;  var a;
+
+ -->

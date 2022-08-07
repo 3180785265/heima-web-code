@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        局部变量: 在局部作用域声明的变量，只能在 当前 函数内部使用
+        在函数执行完毕之后会关闭作用域, 同时会销毁作用域内定义的变量
+        
+    
+        
+        */
+
+
+        function fn() {
+            let n = 2;
+        }
+
+        fn();
+        console.log(n)
+
+
+        function fun() {
+            console.log(n);
+        }
+
+        fun()
+
+
+        // 形参也相当于局部变量，只能在函数内被使用
+        function fun2(a, b) {
+            console.log(a, b);
+        }
+
+        console.log(1, 2);
+
+        console.log(a, v)
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    总结：
+      1.函数内部声明的变量，在函数外部无法被访问
+      2.函数的参数也是函数内部的局部变量
+      3.不同函数内部声明的变量无法相互访问
+      4.函数执行完毕后，作用域关闭，函数内部的变量实际也被清空了
+
+
+ -->

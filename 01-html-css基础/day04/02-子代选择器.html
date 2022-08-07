@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 空格隔开的是后代，儿子，孙子，重孙子，都会被选中 */
+        /* div a{
+            color: red;
+        } */
+
+        /* 只想选中儿子a */
+        /* div的儿子a文字颜色是红色 */
+        div>a{
+            color: red;
+        }
+
+        div>.ppp>a{
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">这是div里面的a</a>
+        <p class="ppp">
+            <a href="#">这是div里面的 p 里面的a</a>
+        </p>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+
+    子代选择器
+    选择器1 > 选择器2{ 属性名:属性值; }
+    特点：之选中选择器1中的儿子选择器2, 不会像后代选择器一样，把重重孙子都选中
+    注意点：
+    1.子代只包括：儿子
+    2.子代选择器中，选择器与选择器之前通过>隔开
+    3.可以使用 id(#)选择器 类名(.)选择器 标签选择器
+ -->

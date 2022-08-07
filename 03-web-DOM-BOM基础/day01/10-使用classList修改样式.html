@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            font-size: 12px;
+            color: pink;
+        }
+
+        .two {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one">1</div>
+    <script>
+        let box = document.querySelector('div')
+
+        // 1.add是个方式 添加 追加一个类
+        box.classList.add('two')
+
+        // 2.remove() 删除类 移除类
+        // box.classList.remove('one')
+
+        // 3.切换类 
+        box.classList.toggle('one')
+
+        // 4.判断元素是否包含了某个类
+        let bool = box.classList.contains('one')
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    可以使用classList 属性,它可以在已有的类上，再次追加，删除，更换类
+    3.为了解决className容易覆盖以前的类名，我们可以通过classList方式追加和删除类名
+    元素.className.add('类名'): 追加一个类
+    元素.className.remove('类名'): 删除一个类
+    元素.className.toggle('类名'): 切换一个类, 如果有这个类，就删掉，如果没有，就加上去
+    元素.classList.contains(类名): 判断元素是否包含了哪个类
+
+    className和classList的区别：
+    className会覆盖掉以前的，classList是在原有基础上追加和删除，不影响以前类名
+
+ -->

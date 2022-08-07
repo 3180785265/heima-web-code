@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let num=10
+
+        // 1.函数表达式 
+        let fn=function(){
+
+        }
+
+        btn.onclick=function(){
+
+        }
+
+        // 以上都是函数䣌高级用法，把函数当值来看
+
+
+        // 2.会调函数
+        setInterval(function(){}, 10000);
+
+
+        // 单独声明一个函数
+        function fn(){
+            console.log('我是回调函数')
+        }
+
+        // 将函数 fn 作为回调函数传进去，此时fn就是回调函数
+        setInterval(fn, 1000);
+
+        // 这个绑定事件中的函数，也可以传入回调函数
+        // document.addEventListener('click',function(){})
+
+        function clickFn();
+        document.addEventListener('click',clickFn)
+
+
+        // 回调函数：回头去调用的函数
+    </script>
+</body>
+</html>
+
+<!-- 
+    高阶函数:把函数当值来对待，都叫高阶函数
+
+    1.把函数当成值，有两种形式
+        1. 函数表达式 将函数赋值给变量
+        2. 函数回调，将函数A作为参数传给函数B 
+
+    总结：
+    1.函数表达式: 是将函数赋值给变量  let fn=function(){}
+    2.函数回调: 是将函数A作为参数传递给函数B  function fn (){}     setInterval(fn, 1000);
+
+
+ -->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>解除定时器</button>
+    <span>3秒变红色</span>
+    <script>
+        // 延迟函数，时间到后只执行一次
+        let timeout = setTimeout(function () {
+            document.querySelector('span').style.color = 'red'
+        }, 3000)
+
+
+        setInterval(() => {
+
+        }, interval);
+
+
+        // L0 写法
+        document.querySelector('button')
+            .onclick = function () {
+                // 删除延迟函数
+                clearTimeout(timeout)
+            }
+    </script>
+</body>
+
+</html>
+<!-- 
+    setInterval: 是间歇函数, 可以执行多次
+    setTimeout:  延迟函数，时间到后只执行一次
+
+ -->

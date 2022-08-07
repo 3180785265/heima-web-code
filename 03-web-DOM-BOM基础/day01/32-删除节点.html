@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>删除元素</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        let ul = document.querySelector('ul')
+
+        document.querySelector('button').addEventListener('click', () => {
+
+            // 删除某一个节点下的子元素
+            ul.removeChild(ul.children[0])
+        })
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    删除的语法: 通过父元素，删除子元素
+    父元素.removeChild(子元素)
+    如果不存在父子关系，则删除不成功
+    删除节点和隐藏节点是有区别的
+    display:none   是隐藏元素，并且脱离文档流，不占用位置
+    visblity: hidden  是隐藏元素，但不会脱离标准流。
+
+ -->

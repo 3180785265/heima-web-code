@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 200px;
+            background-color: pink;
+            overflow:scroll
+        }
+        p{
+            /* 脱离文档流，并隐藏 */
+            display: none;
+            position: fixed;
+            top: 200px;
+            left: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <div>
+        我有很多内容哦
+        我有很多内容哦
+        我有很多内容哦
+        我有很多内容哦
+        我有很多内容哦
+        我有很多内容哦
+        我有很多内容哦
+        我有很多内容哦
+    </div>
+    <script>
+        let div=document.querySelector('div')
+        
+        // 1.
+        // 元素的宽高，不包含滚动条的宽高, 包含滚动条后面的内容
+        console.log(div.scrollWidth) //不带px单位
+        console.log(div.scrollHeight) // 不带px单位
+        // 元素 或者 html  页面 ，滚动条滚动后被减去的距离
+        console.log(div.scrollTop) // 
+        console.log(div.scrollLeft) // 
+
+        // 2.
+        // 盒子的元素 的 大小 包含border padding 的大小
+        console.log(div.offsetHeight)
+        console.log(div.offsetWidth)
+        // 元素距离以定为父元素的距离，如果没有，则根据body定位
+        console.log(div.offsetTop)
+        console.log(div.offsetLeft)
+
+        // 3. 获取元素的可见部分宽高(不包含边框，滚动条)
+        console.log(div.clientWidth)
+        console.log(div.clientHeight)
+        // 简单理解就是得到边框的宽度
+        console.log(div.clientLeft)
+        console.log(div.clientTop)
+
+
+        
+
+
+        div.addEventListener('scroll',function(e){
+            console.log(this.scrollTop)
+            if(this.scrollTop>=70){
+                document.querySelector('p').style.display='block'
+            }else{
+                document.querySelector('p').style.display='none'
+
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!--
+
+    offset家族
+      offsetHeight, offsetWidth:   获取元素自身大小: 包括自身设置的宽高、padding 、border
+      offsetTop , offsetLeft:      获取 已经定位的父元素之间的距离，如果没有以定为的父元素，则根据body计算距离
+
+
+    clinet家族
+     clientHeight,clientWidth:  获取元素可见区域的大小, 也就是说浏览器，变小了，可视区域也会变小，并且大小不包过滚动条下拉后的内容大小
+     clientLeft,clientTop:      获取元素左，上边框距离  只读属性
+    
+    scroll家族
+     scrollWidth,scrollHeight:  获取元素的总内容大小, 不包括导航条，但包括导航条拉过去的距离
+     scrollTop,scrollLeft:  获取元素想做向上滚动看不见的距离  并且它是  可读写属性 
+
+    
+
+
+-->

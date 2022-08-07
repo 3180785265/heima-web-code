@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 求最大值的函数，形参不固定
+        function fn() {
+
+            let max = arguments[0];
+            for (let i = 1; i < arguments.length; i++) {
+
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+
+            console.log(`最大值是${max}`)
+        }
+
+        fn(33, 45, 21, 1233, 3)
+    </script>
+</body>
+
+</html>

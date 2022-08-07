@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            /*块级元素的 宽度 默认跟随父级100%*/
+
+            height: 100px;
+
+            /* 水平排列：默认主轴在水平，弹性盒子都是沿着主轴排列 */
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #333;
+        }
+
+        .box>div {
+            /* width: 40px; */
+            /* height: 40px; */
+            background-color: pink;
+
+        }
+
+        .box div:nth-child(1) {
+            width: 40px;
+            background-color: pink;
+
+        }
+
+        .box div:nth-child(2) {
+            flex: 1;
+            height: 40px;
+
+            background-color: black;
+
+        }
+
+        .box div:nth-child(3) {
+            flex: 1;
+            height: 40px;
+
+            background-color: pink;
+        }
+
+        .box div:nth-child(4) {
+            flex: 1;
+            height: 40px;
+
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+
+    flex 能完成浮动带来的问题,
+    问题1.父级没有设置高度，子级浮动脱标，父级高度塌陷。
+
+
+
+    flex 弹性布局
+    flex是浏览器提倡的布局模型
+    flex是专门用来做布局的模型
+
+    flex 对于低版本的浏览器也是不兼容的，所以有的时候浮动有时也更实用
+    水平：主轴, 默认主轴，是在水平方向
+    垂直：交叉轴/侧轴  ，默认侧轴，是在垂直方向
+
+    主轴，和侧轴，是可以改变轴所在的方向
+
+    水平排列：默认主轴在水平，弹性盒子都是沿着主轴排列
+
+    弹性布局，在父盒子设置 display 显示模式，
+    flex伸缩比，占用父级剩余尺寸的分数，
+    好处是，能够根据父级盒子剩余的宽度尺寸，自动计算弹性盒子的宽度尺寸
+
+    比如剩余尺寸分为3份
+    弹性盒子1，设置flex:2 就是占用剩余尺寸的2份 , 弹性盒子2 设置flex:1占用剩余尺寸的1份
+
+    flex伸缩比，会占用盒子剩余尺寸的宽度，所以设置了justify-content: space-between; 的时候不会拉开盒子之间的边距，
+    所以只能设置 margin 来拉开边距
+
+
+ -->

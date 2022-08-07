@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #c0c0c0;
+      width: 500px;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    th {
+      background-color: #09c;
+      font: bold 16px "微软雅黑";
+      color: #fff;
+      height: 24px;
+    }
+
+    td {
+      border: 1px solid #d0d0d0;
+      color: #404060;
+      padding: 10px;
+    }
+
+    .allCheck {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th class="allCheck">
+        <input type="checkbox" name="" id="checkAll"> <span class="all">全选</span>
+      </th>
+      <th>商品</th>
+      <th>商家</th>
+      <th>价格</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米手机</td>
+      <td>小米</td>
+      <td>￥1999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米净水器</td>
+      <td>小米</td>
+      <td>￥4999</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox" name="check" class="ck">
+      </td>
+      <td>小米电视</td>
+      <td>小米</td>
+      <td>￥5999</td>
+    </tr>
+  </table>
+  <script>
+    // 1.获取元素 全选 和ck小复选框
+    let all = document.querySelector('.allCheck input')
+
+    // 1. 监听事件 给全选按钮绑定监听click 事件的触发
+    all.addEventListener('click', () => {
+
+      // 2.获取所有的 tr下的复选框
+      let cks = document.querySelectorAll('.ck')
+      console.log(all.checked)
+      for (let i = 0; i < cks.length; i++) {
+        cks[i].checked = all.checked
+      }
+
+      let span = document.querySelector('.allCheck span')
+
+      if (all.checked) {
+
+        span.innerHTML = '取消'
+
+      } else {
+        span.innerHTML = '全选'
+
+      }
+
+
+
+    })
+
+
+
+    // 3. 反选
+    let cks = document.querySelectorAll('.ck')
+    for (let i = 0; i < cks.length; i++) {
+      console.log(cks[i])
+      cks[i].addEventListener('click', function () {
+
+
+
+
+        for (let i = 0; i < cks.length; i++) {
+
+          // 如果有false, 直接退出循环
+          if (!cks[i].checked) {
+            all.checked=false
+
+            // 在一个函数里面，碰到return，后面都不在执行，直接退出
+            return;
+          }
+
+        }
+
+        // 如果全部为true, 及那个全选按钮设置为true
+        all.checked=true
+
+
+
+      })
+    }
+  </script>
+</body>
+
+</html>

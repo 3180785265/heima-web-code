@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = prompt('请输入商品数量')
+        let address = prompt('请输入商地址')
+        let price =parseFloat(11.8)
+        let total=Number(num)*parseFloat(price);//显示的类型转换，
+        
+
+        document.write(
+
+            `
+        <table>
+            <caption>
+                <h2>订单确认</h2>
+            </caption>
+            <tr>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品数量</th>
+                <th>总价</th>
+                <th>收货地址</th>
+            </tr>
+            <tr>
+                <td>小米手机青春PLUS</td>
+                <td>${price}元</td>
+                <td>${num}</td>
+                <td>${total}元</td>
+                <td>${address}</td>
+            </tr>
+        </table>
+        `
+        )
+
+    </script>
+</body>
+
+</html>

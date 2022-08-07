@@ -1,0 +1,220 @@
+.xtc_body{
+    padding: 30px 0 85px;
+    background-color: #f6f6f6;
+}
+
+.xtc_body .wrapper{
+    display: flex;
+}
+
+.xtc_body .aside{
+    width: 227px;
+	min-height: 500px;
+    margin-right: 10px;
+    background-color: pink;
+
+}
+.xtc_body .main{
+    flex: 1;
+    min-height: 500px;
+}
+
+.overview{
+    width: 100%;
+    height: 132px;
+	background-color: #ffff;
+    margin-bottom: 12px;
+    display: flex;
+    padding: 20px 0;
+}
+/*用弹性伸缩比 分出剩余宽度 */
+.overview div{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 16px;
+}
+.overview div  img{
+    width: 25px;
+  
+}
+.overview div a:last-child img{
+    width: 18px;
+  
+}
+.overview div  p{
+    margin-top: 10px;
+}
+.overview div  span{
+    font-size: 25px;
+    color: #e05e30;
+}
+
+.overview div:first-child{
+    border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+/* 公共样式 */
+.pannel{
+    padding: 28px 20px;
+	background-color: #ffff;
+    margin-bottom: 20px;
+}
+.pannle_title{
+    display: flex;
+    justify-content: space-between;
+    line-height: 45px;
+    border-bottom: 1px solid #f6f6f6;
+
+    
+}
+
+.pannle_title h4{
+    font-size: 14px;
+    color: #333;
+    font-weight: normal;
+
+    
+}
+
+.pannle_title a{
+  margin-top: 8px;
+  font-size: 16px;
+  color: #999;
+
+    
+}
+
+
+
+
+/* 订单 */
+.orders li{
+    height: 137px;
+    margin-top: -1px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+}
+.orders li:last-child{
+    height: 137px;
+    margin-bottom: 0;
+}
+.orders li .goods{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.orders li .status{
+    width: 120px;
+    line-height: 137px;
+    text-align: center;
+}
+.orders li .pay{
+    width: 200px;
+    border-left: 1px solid rgba(0, 0, 0, .1);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.orders li .action{
+    width: 180px;
+    display: flex;
+    /* 要改变元素在y轴排列，就要将主轴改为在y轴 */
+    flex-direction: column;
+    /* 主轴在y轴，所以垂直方向的元素对齐方式是jusfify */
+    justify-content: center;
+    /* y方向现在编程了侧轴,  */
+    align-items: center;
+    border-left: 1px solid rgba(0, 0, 0, .1);
+}
+.orders li .action a:first-child{
+    width: 100px;
+	height: 30px;
+    outline: none;
+    background-color: #5eb69c;
+	border-radius: 2px;
+    text-align: center;
+    line-height: 30px;
+    color: #ffff;
+    margin-bottom: 10px;
+
+}
+
+
+
+.orders li .status span{
+    font-size: 14px;
+    color: #e05e30;
+
+}
+
+
+.orders li .pay p:first-child{
+    color: #9a2e1f;
+
+}
+
+
+
+.orders li .goods img{
+    width: 107px;
+    height: 107px;
+    margin:0 20px;
+}
+
+
+.orders li .goods .info .title{
+
+    width: 213px;
+	height: 16px;
+    font-size: 12px;
+    font-weight: normal;
+   
+
+    /* 文本修剪 */
+    text-overflow: ellipsis;
+    /* 文本不进行换行 */
+    white-space: nowrap;
+     /* 盒子溢出部分隐藏 */
+     overflow: hidden;
+
+}
+.orders li .goods .info .specification{
+	font-size: 14px;
+	color: #999999;
+    margin-top: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 动态数据，水平排列的文字，内容靠开度撑开
+   垂直排列的，高度被内容撑开
+
+    两种都不要写固定宽高
+
+    min-heihgt: 500px
+      没有内容也会是500, 内容超过500的话会自动撑开
+
+    有的时候，能块级元素布局的，就不要用flex，省略css 
+      */

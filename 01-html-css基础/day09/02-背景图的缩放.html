@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 80px;
+            background-image: url(./images/1.jpg);
+            background-repeat: no-repeat;
+            border: 1px solid #333;
+            /* 如果图的宽或高与盒子的尺寸相同了，另一个方向停止缩放 */
+            background-size: contain;
+
+            /* 保证宽或高和盒子尺寸完全相同(让图片充满盒子)， 但可能会让图片显示不全 */
+            background-size: cover;
+
+
+            /* 工作中，图片的比例和盒子的比例是相同的
+            
+            比如盒子的比例是 300 X  300  ,那么比例是1:1  图片的宽高是100  x 100 也是  1：1
+            那么在使用 contain和cover时，盒子就会等比例缩放，他们的效果都是相同的，
+            如果不是等比例  contain 则会让图片的宽或高与盒子的尺寸相同了，另一个方向停止缩放，会导致盒子有留白
+
+            cover 则是会让图片的宽高和盒子完全相同，充满盒子但会显示不全
+
+            */
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

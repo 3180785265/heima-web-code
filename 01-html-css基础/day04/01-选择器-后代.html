@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 父选择器 后代选择器 */
+        div p {
+            color: red;
+        }
+        div  .aaa{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>这是一个p标签</p>
+    <div>
+        <p>这是div的儿子p</p>
+        <a href="#" class="aaa">这是一个超链接</a>
+    </div>
+</body>
+
+</html>
+
+
+
+<!-- 
+    后代选择器
+    选择器1 选择器2 {属性值:属性名;}
+    后代: 儿子，孙子，重孙子....
+    空格隔开的是后代，儿子，孙子，重孙子，都会被选中
+
+    注意：可以选中 id ，类名，标签名，这几个都可以使用在里面被选中
+
+ -->

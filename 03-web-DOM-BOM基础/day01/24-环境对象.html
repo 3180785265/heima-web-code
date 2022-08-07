@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+
+    <script>
+
+        //  this是环境对象 他就是个对象
+        function fn() {
+            // 指向window, 说明函数处于window环境下
+            console.log(this)
+
+        }
+
+        window.fn();
+        fn()  //在自己的wondiw下就可以省略 wondiw. 
+
+
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            console.log(typeof this)  // 指向的是button
+        })
+
+        // 谁调用this就指向谁
+        // 因为btn调用了这个函数
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+    环境对象: 说的就是 this 指向，就是只要这个函数被谁调用了，这个函数中使用的this 就会指向调用者
+    能够分析判断函数运行在不同环境中this所指代的对象
+    环境对象指的是函数内部特殊的变量this, 它代表着当前函数运行时所处的环境
+
+
+
+    this 写在函数当中，表示着当前函数，所处于在什么环境下
+
+    粗略规则: 谁调用this就指向谁 
+ -->

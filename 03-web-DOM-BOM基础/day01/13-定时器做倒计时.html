@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #333;
+            overflow: scroll;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        微软犬瘟热认为
+        微软犬瘟热认为
+        微软犬瘟热认为
+        微软犬瘟热认为
+        微软犬瘟热认为
+        微软犬瘟热认为
+        微软犬瘟热认为
+        微软犬瘟热认为
+        微软犬瘟热认为
+    </div>
+    <span></span>
+    <button disabled>我同意</button>
+    <script>
+
+        // 每秒刷新秒值
+        (function () {
+
+            let num = 10;
+            function timeEe() {
+                return --num
+            }
+
+
+            //  每间隔一段时间就会自己调用，除非调用了clearInterval函数清除
+            let IntervalTime = setInterval(() => {
+                let s = timeEe()
+                let span = document.querySelector('span')
+                span.innerHTML = `${s}秒`
+
+
+                if (parseInt(span.innerHTML) <= 0) {
+                    span.innerHTML = ``
+                    clearInterval(IntervalTime)
+                }
+
+            }, 1000);
+
+
+
+
+
+
+        })()
+
+        function setDisabled() {
+            let btn = document.querySelector('button')
+            btn.disabled = false
+        }
+
+        setInterval(() => {
+            setDisabled()
+        }, 3000);
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    定时器函数可以开启和关闭定时器
+            作用：每隔一段时间调用这个函数
+            间隔时间单位是毫秒
+            注意:传入回调函数，不能写小括号，否则会调用
+    let timerld = setinterval ( 回调函数，间隔时间 )
+    清除定时器 clearInterval ( 定时器变量名 )
+
+ -->

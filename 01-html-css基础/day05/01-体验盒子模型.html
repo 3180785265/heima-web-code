@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /* 边框线=纸盒子 */
+            border: 1px solid #000;
+
+            /* 内边距=填充泡沫 : 出现在内容和盒子边缘之间 */
+            padding: 20px;
+
+            /* 外边距: 两个盒子之间的距离 ，两个盒子之间，在盒子的外部*/
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        内容电脑
+    </div>
+    <div>
+        内容电脑
+    </div>
+</body>
+
+</html>
+
+<!-- 
+
+    盒子模型：
+     目标：能够认识盒子模型的组成，能够掌握盒子模型边框，内边距，外边距的设置方法
+    
+
+     盒子模型的概念：
+     1.页面中的每一个标签，都可以看作是一个 “盒子” ，通过盒子的视角更方便的进行布局
+     2.浏览器在渲染(显示)网页时，会将网页中的元素看做时一个个的矩形区域，我们也形象的称之为盒子
+
+     2.盒子模型的概念：css中规定盒子分别由: 内容区域(content)，内边距区域(padding)、边框区域(border)、外边距区域(margin)、构成
+     3.记忆：可以联想现实中的包装盒子
+
+
+     1.内容的宽度和高度
+     作用: 利用width和height属性默认设置时盒子内容区域的大小
+     属性：width、height
+     常见取值:数字+px
+     设置盒子的内容区域(content)用width和height来设置
+     
+
+ -->

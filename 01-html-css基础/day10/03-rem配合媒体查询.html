@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 当视口宽度为375px */
+        @media (width:375px) {
+
+            /* 设置html 根标签的字号大小为 32px */
+            html {
+                /* 字号都是设置为 不同的视口宽度的 1/10 */
+                font-size: 37.5px;
+            }
+
+        }
+
+        /* 让不同的设备，都是1：10 等比缩放的效果，能够根据不同的设备的不同视口宽度，缩放出不同的px */
+        @media (width:414px) {
+
+            /* 设置html 根标签的字号大小为 32px */
+            html {
+                font-size: 41.4px;
+            }
+
+        }
+        @media (width:390px) {
+
+            /* 设置html 根标签的字号大小为 32px */
+            html {
+                font-size: 39px;
+            }
+
+        }
+
+
+
+    
+        .box {
+            width: 1rem;
+            height: 1rem;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>
+
+<!-- 
+    如果想在不同的移动设备，设置不同的html字号，来适配不同的设备的rem (意思就是根据移动设备的视口宽度的不同，设置出不同的html标签字号)
+    html根标签的字号设置： 字号都是设置为 不同的视口宽度的 1/10
+    解决办法：用媒体查询
+    媒体查询的作用：能够检测视口的宽度，编写差异化的css样式
+    目前rem的布局方案，都是将网页的视口宽度分为10份，html标签的字号一般都是等于视口宽度的 10份之1  (1/10),  
+
+    这个年代，ul的移动端设计图，宽度大部分都是基于375px的
+
+ -->

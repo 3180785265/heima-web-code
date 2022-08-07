@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>我是一个盒子2</div>
+    <div class="three">我是一个盒子3</div>
+    <div id="d1">我是一个盒子3</div>
+
+    <ul class="nav">
+        <li>第一个li</li>
+        <li>第二个li</li>
+    </ul>
+    <script>
+        // js方式获取元素
+
+        //1.获取一个DOM对象    
+        let div = document.querySelector('div') //css选择器获取,通过元素选择器
+        let three = document.querySelector('.three') //css选择器获取,通过类选择器
+        let d1 = document.querySelector('#d1') //css选择器获取,通过类选择器
+        let li = document.querySelector('ul li:last-child') // 多个层级的选择器获取
+        console.log(div)
+        console.log(three)
+        console.log(d1)
+        console.log(li)
+
+        // 获取多个DOM对象，返回DOM对象数组
+        let lis = document.querySelectorAll('ul li')
+        console.log(lis)
+        //获取的DOM数组是一个伪数组, 也就是说没有数组所拥有的pop unshift splice 等方法
+        //通过遍历的方式，获取里面的每一个DOM对象(元素)
+        for (let i = 0; i < lis.length; i++) {
+            console.log(lis[i])
+        }
+
+
+
+        let lis2 = document.querySelectorAll('.nav')
+
+        for (let i = 0; i < lis2.length; i++) {
+            console.log(lis2[i])
+        }
+    </script>
+</body>
+
+</html>
+<!-- 
+    css是通过 选择器来选中标签,
+    而js是通过document来选中标签，参数一定要用字符串包裹 因为document是最大的
+
+    1.css选择器 通过调用document.querySelector和document.querySelectorAll 函数获取参数为 标签选择器，后代选择器，类选择器，id选择器等
+      
+      1.document.querySelector( css选择器 ): 只能匹配获取一个元素, 参数为选择器
+      它css选择器获取, 它只能匹配到第一个元素，一个HTMLElment对象
+      
+      2.document.querySelectorAll( css选择器 ): 能通过选择器，选择匹配多个元素, 它的返回值为NodeList对象集合
+        这个函数 获取的DOM数组是一个伪数组, 也就是说没有数组所拥有的pop unshift splice 等方法
+
+
+
+      小驼峰: userName
+      大驼峰: ParkingSpot
+ -->

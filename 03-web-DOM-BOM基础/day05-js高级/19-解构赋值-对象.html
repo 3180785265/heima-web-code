@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 把属性名当作变量名即可
+
+        let obj = {
+            uname: "张三丰",
+            age: 22,
+            sex: '男',
+            score: 99,
+            index: 6,
+        }
+
+
+        let uname = '小明'
+        //  1.对象解构的使用:
+        //1. 把对象解构赋值给变量
+        //2.赋值: 变量名，和对象中属性名一致就能赋值
+        //3.改变量名: 用冒号改名字
+        //4. 如果对象中找不到与变量名一致的属性时变量值为 undefined
+
+        let { uname: userName, age, sex, abc } = obj;
+
+        console.log(userName, age, sex, abc)
+
+
+
+
+        // 复杂形式
+
+        let obj2 = {
+            uname: "张三丰",
+            age: 22,
+            sex: '男',
+            score: 99,
+            index: 6,
+
+            dog: {
+                uname: '小狗子',
+                age: 1
+            },
+            cat: {
+                uname: "猫咪",
+                age: 2
+            }
+        }
+
+        let { dog: { uname: dogName }, cat: { uname: catName } } = obj2;
+
+        console.log(dogName, catName)
+
+
+
+        //2.参数解构的使用
+        // 参数的解构赋值: 
+
+        // 表示接收到参数的时候，就将数据解构
+        function person({ uname, age, sex }) {
+
+
+            /*  let uname = obj.uname;
+             let age = obj.age;
+             let sex = obj.uname; */
+
+            console.log(`我叫${obj.uname},今年${obj.age},性别${obj.sex}`)
+        }
+
+
+        person({ uname: '阿飞', age: 22, sex: '男' })
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    解构什么，就把变量名放什么里面
+
+    解构数组，把变量名放到 [] 中括号里面
+    解构对象，把变量名放到大括号{}里面
+
+    1.变量名和属性名一样去使用，就能赋值，
+    2.如果有重复的变量名冲突，用冒号改名就可以了
+
+
+    总结：
+        赋值运算符 = 左侧的 {} 用于批量声明变量，右侧对象的属性值将被赋值给左侧的变量
+        对象属性的值将被赋值给与属性名相同的变量
+        对象中找不到与变量名一致的属性时变量值为 undefined
+        允许初始化变量的默认值，属性不存在或单元值为 undefined 时默认值才会生效
+        注：支持多维解构赋值，比较复杂后续有应用需求时再进一步分析
+
+ -->

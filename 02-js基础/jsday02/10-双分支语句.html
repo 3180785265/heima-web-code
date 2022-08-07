@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.用户输入功率
+        let age=prompt('请输入公里')
+        let money=10000
+        //执行分支语句
+        if(age>=1){
+            alert('你实发工资'+money+2000)
+        }else{
+            alert('你实发工资'+money)
+        }
+
+        //2. 计算闰年
+        let year=prompt('请输入年份')
+
+        // 会先计算 &&  ，因为优先级高于 || 
+        if(year%4===0 && year%100!==0 ||year%400===0){
+            alert('闰年')
+        }else{
+            alert('平年')
+        }
+        
+    </script>
+</body>
+</html>

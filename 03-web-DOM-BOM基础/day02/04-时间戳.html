@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 时间戳是独一无二的  
+
+        // 计算倒计时：核心思想
+
+        // 将来时间    有一个时间戳  200000
+
+        // 现在的时间  有一个时间戳  100000
+
+        // 两个时间日期无法做计算，可以转换为时间戳，求出剩余的毫秒数
+
+        // 在将毫秒数转换为时分秒
+
+        // 1.
+        let date = new Date()
+        console.log(date.getTime())   // getTime()就是获取1970年到现在的毫秒时间戳，独一无二
+
+        // 2. 可以简写  +newDate(), 这个可以写参数，获取指定时间的时间戳
+        console.log(+ new Date('2021-8-30 12:00:00')) // 指定时间的时间戳
+
+        // 3. 也可以用这个，但是只能得到当前的时间戳
+        console.log(Date.now())
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    什么是时间戳：
+     是指1970年01月01日00分00秒起至现在的毫秒数，它是一种特殊的计量时间的方式
+
+     时间戳是总的毫秒数，是独一无二的，核心思想：
+
+
+     将来时间 的 时间戳  
+
+     时间戳是指1970年1月1日开始到现在当前时间的毫秒数，它是一种特殊的计量时间的方式
+
+
+     为什么会有时间戳的存在
+
+    8 16:00
+   9  12:00
+
+   我们没有办法在程序里直接用两个时分秒的时间相减得出相差多少, 所以就要用到时间戳
+
+    如果把两个时间都变为独一无二的毫秒数，就能相减了，然后在将求出的毫秒数转换为时分秒
+ 
+
+    4. 通过时间戳计算出相差的毫秒值，在计算成 倒计时
+        // 公式
+    let d = parseInt(conut / 60 / 60 / 24) //计算天数
+    let h = parseInt(conut / 60 / 60 % 24) //计算消失
+    let m = parseInt(conut / 60 % 60) //计算分数
+    let s = parseInt(conut % 60) // 计算当前秒数
+
+-->

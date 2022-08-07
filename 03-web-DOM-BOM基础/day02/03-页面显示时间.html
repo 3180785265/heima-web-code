@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+
+        // 先调用，避免1秒的空白时间
+        getDate();
+
+        function getDate() {
+
+            let arr = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日',]
+
+            // 1.实例化时间对象
+            let date = new Date()
+            let year = date.getFullYear() //年
+            let Month = date.getMonth() + 1// 月
+            let d = date.getDate() //日
+
+            let hours = date.getHours() // 时 
+            let minutes = date.getMinutes() //分
+            let seconds = date.getSeconds()  //秒
+            let day = date.getDay() //星期 
+
+            let div = document.querySelector('div')
+
+            // 能把HTML的字符串解析成标签
+            div.innerHTML =
+                `
+                ${year}-${Month}-${d}  ${hours}:${minutes}:${seconds}   ${arr[day]}
+            `
+            console.log('1')
+        }
+
+        setInterval(getDate, 1000)
+
+
+
+    </script>
+</body>
+
+</html>

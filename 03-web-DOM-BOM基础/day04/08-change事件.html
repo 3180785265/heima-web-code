@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        //change：当表单里面的值发生变化的时候触发，和blur不一样
+        document.querySelector('input').addEventListener('change', function () {
+            console.log('11')
+        })
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    change: 改变的意思, input 的值 发生变化，并且离开 焦点后触发，和blur 的区别是
+          blur不管值改不改变，一旦失去焦点就会触发
+
+    blur: 离开表单时触发
+    input: 只要input被输入，就会一直触发
+ -->

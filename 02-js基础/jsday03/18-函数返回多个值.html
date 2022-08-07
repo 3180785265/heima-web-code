@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(x,y){
+            x=x||0
+            y=y||0
+            let num1=x+y
+            let num2=x-y
+            return [num1,num2]
+        }
+
+        function fn2(x,y){
+            x=x||0
+            y=y||0
+            let num1=x+y
+            let num2=x-y
+            console.log(num1,num2)
+            return {num1,num2}
+        }
+        let res1=fn(1,2)
+       let res2 =fn2(3,4)
+       document.write(res1)
+       document.write('<br>')
+       document.write(res2.num1,res2.num2)
+
+    </script>
+
+</body>
+</html>
+
+<!-- 
+    return 只能返回一个值，如果要返回多个值，可以存储到数组和对象，就可以返回多个值
+
+ -->

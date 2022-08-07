@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn() {
+            // let num=10;
+            num = 10
+        }
+
+        fn()
+        console.log(num)
+
+        if (true) {
+            num2 = 20
+        }
+        console.log(num2)
+
+        function fn3(x, y) {
+
+            console.log(x, y)
+        }
+        
+        fn3(11, 20)
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+  1.  变量作用域中的坑
+    如果在函数内部，或者在块级作用域中，变量没有声明，但是直接赋值，会被当成全局变量
+  2.  函数内部的作用域的形参，可以看作是局部变量
+ -->

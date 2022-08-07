@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        console.log(/abc/.test('abc')) //要求一定要包含 "abc" 这个字符串
+        console.log(/abc/.test('ab')) //要求一定要包含 "abc" 这个字符串
+
+        // 1.[ ]  匹配字符集合 
+        // 后面的字符串只要包含abc中任意一个  “字符”，就返回true
+        console.log(/[abc]/.test('andy')) //true
+        console.log(/[abc]/.test('app')) //true
+        console.log(/[abc]/.test('bll')) //true
+        console.log(/[abc]/.test('lll')) //false
+
+        console.log("--------------------")
+        // 2. ^[]$ 表示要精确匹配
+        console.log(/^[abc]$/.test('abc')) //false  , 加了^ 和 $ 表示精确匹配 , 也就是说只能有一个字符去匹配,  也就是说和 equse() 一个意思 
+        console.log(/^[abc]$/.test('a')) //true
+        console.log(/^[abc]$/.test('b')) //true
+        console.log(/^[abc]$/.test('c'))//true
+
+        console.log("--------------------")
+
+        // 3. [] 里面加上一个 - 连字符 ， 使用 连字符 - 表示一个范围
+        // 表示从 a到z 的 26个英文字母选其中一个就为true
+        console.log(/^[a-z]$/.test('d')) //true
+        console.log(/^[a-z]$/.test('db'))  //false
+        console.log(/[a-z]/.test('db'))//false
+
+        console.log("--------------------")
+
+        // 4. 表示大写，小写的26个英文字母选其中一个
+        console.log(/^[a-zA-Z]$/.test('d'))//true
+        console.log(/^[a-zA-Z]$/.test('D'))//true
+        console.log(/^[a-zA-Z]$/.test('DD')) //fasle
+
+        // 5.表示可以出现26个的大写和小写字母，和0~9的数字
+        console.log(/^[a-zA-Z0-9]$/.test('0')) //true
+        console.log(/^[a-zA-Z0-9]$/.test('1')) //true
+        console.log(/^[a-zA-Z0-9]$/.test('99')) //fasle
+        console.log(/^[a-zA-Z0-9-_]$/.test('_')) //fasle
+        console.log(/^[a-zA-Z0-9-_]$/.test('-')) //fasle
+
+
+        console.log(/^[1-9][0-9]{4}$/.test('11000'))
+        console.log(/^[1-9][6-9]{4}$/.test('11000'))
+
+    </script>
+</body>
+
+</html>
+<!-- 
+
+    元字符
+    
+
+     匹配字符集合
+      后面的字符只要包含abc中任意一个字符，都返回true
+
+ -->

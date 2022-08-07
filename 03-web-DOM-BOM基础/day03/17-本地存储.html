@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        localStorage.setItem('uname', 'pink老师')
+
+        localStorage.setItem('uname', '刘老师')
+        localStorage.setItem('age', 18)
+        console.log(localStorage.getItem('uname'))
+
+        localStorage.removeItem('uname')
+
+
+
+        // 除了 可以存简单数据类型，还可以存储复杂数据类型
+        // JSON的属性和值都必须是双引号包含
+        // let obj = {
+        //     'uanme': "刘德华",
+        //     'age': 17,
+        //     'address': '黑马程序员'
+        // }
+        let obj = {
+            uanme: "刘德华",
+            age: 17,
+            address: '黑马程序员'
+        }
+
+        // setItem ,getItem,removeItem,  key一定都要使用字符串
+
+        //1. 将对象转换为JSON格式的字符串存储到本地存储 localStorage
+        window.localStorage.setItem('obj', JSON.stringify(obj))
+
+        //2. 通过key获取数据，但获取的是字符串，我们在程序中使用的是对象，而不是字符串，所以还需要转成对象使用
+        console.log(localStorage.getItem('obj'))
+
+        // 3.将本地存储 的JSON 格式的字符串 取出并 用JSON.parse() 转换为对象
+
+        console.log(JSON.parse(localStorage.getItem('obj')))
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+
+    随着互联网的快速发展，基于网页的应用越来越离谱，同时也变得越来越复杂，
+    为了满足各种各样得需求，会经常性在本地存储大量得数据，html5提供了相关得解决方案
+    1.数据存储在用户浏览器中
+    2.设置、读取方便、甚至页面刷新不丢失数据
+    3.容量较大，sessoinstorage和localstorage月5M左右
+
+    localStorage:  window下得对象
+     1.声明周期永久有效, 除非手动删除，否则关闭页面也不会删除，永久存在
+     2.可以多窗口(页面)共享(同一浏览器可以共享)
+     3.以键值对得形式存储使用 
+
+
+     1.存储数据
+     key 是一个字符串, 一定，必须要加引号，但是value可以不加引号，比如引用数据类型
+      增  localStorage.setItem('键', '值')
+
+        可以在不同页面，共享localstrage得数据
+      查 localStorage.getItem('键')
+
+
+      删 localStorage.removeItem('uname'),   可以在浏览器手动删除
+ 
+      改 localStorage不允许修改数据，没有提供修改的API，
+         要修改只能用 localStorage.setItem('键', '值')重新将数据覆盖掉
+    
+
+    2.存储复杂数据类型：
+     1.本地只能存储字符串，无法存储复杂数据类型(可以存进去，但显示[object object] 看不到里面的属性)，
+      所以需要将复杂数据类型转换成JSON格式的字符串，在存储到本地
+
+     2.本地存储 只能存储字符串，
+      重点：本地存储，存储简单数据类型可以直接存储，但是存储复杂数据类型，要转换为JSON格式的字符串，在取出的时候是字符串不能直接使用，所以要将它转换为对象才可以在程序中使用
+
+    3.将对象转换为JSON格式和将JSON格式字符串转换为 对象的API 
+     1.JSON.stringify(复杂数据类型)：将复杂数据转换成JSON字符串， 
+
+     2.JSON.parse(JSON字符串)：将json字符串转换成对象 ，取出 的时候使用
+
+     // 除了 可以存简单数据类型，还可以存储复杂数据类型
+        // JSON的属性和值都必须是双引号包含
+        let obj = {
+            'uanme': "刘德华",
+            'age': 17,
+            'address': '黑马程序员'
+        }
+   
+    -->

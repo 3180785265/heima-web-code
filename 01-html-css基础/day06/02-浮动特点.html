@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.one{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            float: left;
+        }
+        div.two{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(169, 13, 39);
+            margin: 0 auto;
+        }
+        div.three{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(192, 177, 179);
+        }
+    </style>
+</head>
+<body>
+    <div class="one">one</div>
+    <div class="two">two</div>
+    <div class="three">three</div>
+</body>
+</html>
+
+
+<!-- 
+
+    标准流：
+    标准流中，块级元素的排序规则是，从上往下，独占一行，垂直布局，
+    标准流中行内元素或行内块元素的排序规则是，从左往右，水平布局，空间不够自动折行
+
+
+
+    浮动的特点：
+     脱离标准流，不在占用标准流的位置(不在占用自己原来的位置，会被其他元素占用)
+     浮动的元素，会贴在前一个浮动元素的后面，浮动的标签，都会向顶对齐
+     1.浮动的标签具备行内块的特点，可以设置宽高
+     2.浮动元素，会覆盖住标准流中的元素(也就是浮动元素会覆盖掉没有浮动的元素)
+     3.浮动元素会脱离标准流，会脱离自己的占位
+     4.浮动的元素，盒子无法水平居中
+
+ -->

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top{
+            width: 1000px;
+            margin: auto;
+            /* height: 300px; */
+            background-color: pink;
+        }
+        .bottom{
+            margin: auto;
+            height: 300px;
+            background-color: rgb(23, 189, 37);
+        }
+        .left{
+            width: 200px;
+            height: 300px;
+            background-color: green;
+            float: left;
+        }
+        .right{
+            width: 790px;
+            height: 300px;
+            background-color: red;
+            float: left;
+        }
+        .clearbox::after{
+            content: '';
+            /* 因为伪元素默认添加的标签是行内的，所以要改成块级元素 */
+            display: block;
+            /* 设置清除左右浮动的元素 */
+            clear: both;
+            /* 为了兼容性，加的代码 */
+            height: 0;
+            /* 隐藏 */
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="top clearbox">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>
+
+<!-- 
+    清除浮动: 是一种解决办法，解决的是是浮动元素，对其他标准流布局造成的影响，规定出的一种办法
+    子元素浮动了，此时子元素不能撑开父元素(父元素没有设置高度)
+    原因：子元素浮动后脱标，不占位置
+    清除浮动的目的时什么
+    需要父元素有高度，从而不影响其他网页元素的布局
+
+    解决方法:
+    1.直接给父元素设置高度
+    2.给父元素内最后面添加一个样式为clear: both的块级元素
+    3.单伪元素清除法
+    4.清除浮动的方法还有，overflow:hidden
+ -->

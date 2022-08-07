@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 简单数据类型存储的是值， 赋值就是把值赋值一份给另一个变量名
+        let num1 = 10;
+        let num2 = num1
+
+        // 对象  引用数据类型 存储的是地址
+        // 对象在赋值的时候，不是将对象复制，而是将对象的引用地址，复制一份给obj2
+        let obj2 = {
+            age: '18'
+        }
+
+        // obj2 赋值给obj1,是将栈中的对象地址赋值一份给obj1, 所以他们指向的是同一个对象  
+        let obj1 =obj2
+        obj.age=20
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let ldh = {
+            name: "刘德华",
+            age: 18,
+            sex: '男',
+            // 方法名：functoin(){}
+            sayHi: function () {
+                console.log('hi~~~')
+            },
+            mtv: function (s) {
+                console.log(`刘德华在唱歌~~~${s}`)
+
+            }
+        }
+        console.log(ldh['name'])
+
+        //调用方法 对象.方法名()
+        ldh.mtv('无间道')
+
+
+        let cxk = {
+            // 1.属性用 键值对中间冒号隔开， 每个属性都用逗号分隔
+            name: "xiaoliu",
+            age: 18,
+
+            //2.方法其实也是属性，只不过值是函数
+            music: function (s) {
+                document.write(s + '唱跳，瑞怕')
+            }
+
+        }
+
+        cxk.music('练习时长两年半的偶像练习生蔡徐坤')
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+    1.对象是由属性和方法组成的，那么属性和方法都要写在对象里面
+    2.方法其实也是属性，只不过值是函数
+
+
+    对象中，可以用匿名函数表达式，定义方法
+    对象调用方法用 对象.方法名
+    对象
+
+    方法在对象中的定义: 方法名: 匿名函数表达式    方法名和匿名函数之间用冒号：隔开， 函数与函数之间用逗号隔开
+    属性名: function (s) {
+        
+    }
+
+
+
+
+
+ -->

@@ -1,0 +1,242 @@
+/* 放置多个网页中相同的重复样式，如头部，底部 */
+
+/* 定义版心 */
+.wrapper{
+    width: 1240px;
+    margin: 0 auto;
+}
+
+/* 定义头部样式 */
+.shortcut{
+	height: 52px;
+    background-color: #333333;
+}
+.shortcut .wrapper{
+    height: 52px;
+    line-height: 52px;
+    display: flex;
+    justify-content: end;
+}
+
+
+.shortcut li a{
+    color:#dcdcdc;
+    font-size: 14px;
+    padding-right: 20px;
+    border-right: 1px solid #dcdcdc;
+
+}
+.shortcut li:last-child a{
+    border: none;
+}
+.shortcut li:hover a{
+    color: red;
+}
+.shortcut li {
+    float: left;
+    height: 52px;
+    padding-left: 20px;
+}
+
+/* 找shortcut中的最后一个li ,给他一个伪类 */
+.shortcut li:last-child::before{
+    display: inline-block;
+    content: '';
+    background-image: url(../images/sprites.png);
+    background-position: -159px -68px;
+    width: 20px;
+    height: 22px;
+    /* 行内，行内块，浏览器都当作文字去处理，大的字跟小的字都默认基线对齐
+        vertical-align：能专治垂直方向对不齐
+    */
+    vertical-align: middle;
+}
+
+/* 头部 */
+.header{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 70px;
+    background-color: #ffffff;
+}
+.header .logo{
+    width: 207px;
+    height: 70px;
+    float: left;
+    /* background-color: pink; */
+    /* background-image: url(../images/logo.png);
+    background-size: contain; */
+}
+
+.header .logo h1 a{
+    display: block;
+    width: 207px;
+    height: 70px;
+    background-image: url(../images/logo.png);
+    background-size: contain;
+    font-size: 0;
+}
+
+.header .nav{
+    float: left;
+    height: 70px;
+    margin-left: 40px;
+    font-size: 16px;
+}
+.header .nav li{
+    float: left;
+    height: 70px;
+    line-height: 70px;
+    margin-right: 40px;
+}
+.header .nav li:hover a{
+   color: #27ba9b;
+   padding-bottom: 10px;
+   border-bottom: 3px solid #27ba9b;
+
+}
+
+.header .search{
+    position: relative;
+    margin-right: 20px;
+
+    float: right;
+    margin-top: 20px;
+    width: 172px;
+	height: 30px;
+    border-bottom: 1px solid rgb(0, 0, 0,0.2);
+}
+
+.header .search input{
+    display: inline-block;
+    padding-left: 24px;
+    width: 170px;
+    height: 28px;
+    outline: none;
+    border: none;
+}
+.header .search::before{
+    position: absolute;
+    top: 4px;
+    left: 0;
+
+    display: inline-block;
+    content: '';
+    width: 23px;
+	height: 30px;
+    background-image: url(../images/sprites.png);
+    background-position: -80px -70px;
+}
+.header .cart{
+    position: relative;
+    margin-top: 20px;
+    float: right;
+    width: 23px;
+	height: 30px;
+    background-image: url(../images/sprites.png);
+    background-position: -122px -64px;
+}
+.header .cart i{
+    position: absolute;
+    top: 0;
+    left: 15px;
+    content: '';
+    display: inline-block;
+    width: 15px;
+	height: 15px;
+    line-height: 15px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: red;
+    
+}
+
+.footer{
+    height: 340px;
+    background-color: #333333;
+
+
+}
+
+.footer .wrapper{
+    height: 170px;
+    padding:53px 40px;
+    border-bottom: 1px solid rgba(237, 232, 232, 0.2);
+    display: flex;
+    justify-content: space-between;
+
+}
+.footer .wrapper > div{
+    height: 63px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.footer .wrapper div  i{
+    display: inline-block;
+    height: 63px;
+    width: 70px;
+}
+.footer .wrapper div:nth-child(1) i{
+   
+    background-image: url(../images/sprites.png);
+    background-position: -60px  0px;
+}
+.footer .wrapper div:nth-child(2) i{
+   
+    background-image: url(../images/sprites.png);
+    background-position: -60px  0px;
+}
+
+.footer .wrapper div:nth-child(3) i{
+    background-image: url(../images/sprites.png);
+    background-position: -60px  0px;
+   
+}
+
+
+.footer .help{
+    margin-top: 35px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+.footer .help ul{
+    height: 24px;
+}
+
+.footer .help li {
+   float: left;
+   height: 24px;
+
+}
+.footer .help li a{
+    padding:0 15px;
+    border-right: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 14px;
+}
+.footer .help li a:hover{
+    color: #27ba9b;
+ 
+}
+.footer .help li:last-child a{
+    border: none;
+   
+}
+.footer .help p{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+
+
+
+

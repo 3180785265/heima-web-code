@@ -1,0 +1,200 @@
+.banner{
+    height: 500px;
+    background-color: #f5f5f5f5;
+
+}
+.banner .wrapper{
+    position: relative;
+
+}
+.banner  li{
+    height: 50px;
+    line-height: 50px;
+
+}
+.banner  li a{
+    padding:  0  30px;
+    position: relative;
+    display: block;
+    height: 50px;
+    color: #f5f5f5f5;
+    
+}
+
+
+.banner  li a::after{
+    position: absolute;
+    top: 11px;
+    right: 21px;
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    content: '';
+    background-image: url(../images/sprites.png);
+    background-position: -24px -66px ;
+
+}
+
+
+
+
+
+.banner  li:hover{
+    background-color: #27ba9b;
+}
+
+
+.banner .aside{
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    height: 500px;
+    width: 251px;
+    background-color: rgba(0, 0, 0, .6);
+}
+.first,.next{
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/sprites.png);
+    background-position:0 -88px ;
+}
+
+
+
+.goods .hd{
+    height: 114px;
+    line-height: 114px;
+}
+
+.goods .hd h2,
+.shengxian .hd h2
+{
+    float: left;
+    font-size: 29px;
+    font-weight: normal;
+    height: 30px;
+}
+.goods .hd h2 span{
+    font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #999999;
+    margin-left: 20px; 
+    
+}
+.goods .hd a{
+    float: right;
+    color: #999999;
+}
+.goods .hd a::after{
+   content: '';
+   display: inline-block;
+   width: 20px;
+   height: 10px;
+   background-image: url(../images/sprites.png);
+   background-position: -34px -104px;
+   background-color: #999999;
+   vertical-align: middle;
+}
+
+
+.goods .bd li{
+    position: relative;
+    float: left;
+    width: 304px;
+    height: 405px;
+    background-color: #f0f9f4;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+.goods .bd li b{
+    position: absolute;
+    top: 11px;
+    left: 12px;
+    display: inline-block;
+    width: 28px;
+	height: 51px;
+    border:3px solid #27ba9b;
+    border-radius: 5px;  
+    color: #27ba9b;
+    text-align: center;
+
+    font-size: 15px;
+}
+
+.goods .bd li:nth-child(4n){
+ 
+    margin-right: 0px;
+}
+.goods .bd li img{
+    width: 304px;
+}
+.goods .bd li .title{
+    text-align: center;
+    line-height: 50px;
+    font-weight: normal;
+}
+.goods .bd li .price{
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: #9a2e1f;
+    font-weight: bold;
+}
+
+.shengxian{
+    /* line-height: 50px; */
+    padding: 20px 0;
+}
+
+.shengxian .hd> a{
+    float: right;
+}
+
+.shengxian .nav{
+    float: right;
+    margin-right: 100px;
+}
+.shengxian .hd ul li{
+    float: left;
+    margin-right: 20px;
+}
+.shengxian .hd ul li a{
+    display: inline-block;  
+    height: 30px;
+    padding: 1px 3px;
+    line-height: 30px;
+    text-align: center;
+    
+}
+.shengxian .hd ul li:hover a{
+    background-color: #27ba9b;
+    color: #f0f9f4;
+}
+
+.bd .left{
+    width: 242px;
+	height: 617px;
+    float: left;
+
+}
+.bd .left img{
+    width: 242px;
+	height: 617px;
+
+}
+.bd .right{
+    float: left;
+}
+.bd .right li{
+    float: left;
+    width: 242px;
+	height: 304px;
+    background-color: #27ba9b;
+    padding: 20px;
+}
+
+.bd .right img{
+    width: 184px;
+}

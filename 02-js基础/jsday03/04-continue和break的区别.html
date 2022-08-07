@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // 小于6，不包含6，只循环6次
+        for (let i = 1; i < 6; i++) {
+            // 如果执行到了 i=2 , 就会退出本次循环，
+            if (i === 2) {
+
+                continue //继续 退出本次循环，继续下一次循环
+            }
+            document.write(i)
+        }
+
+
+        // 循环5次
+        for (let i = 1; i <= 5; i++) {
+            //执行到了 i===2 , 就直接退出整个循环，不在继续执行下一次循环
+            if(i===2){
+                break;
+            }
+            document.write(i)
+        }
+
+    </script>
+</body>
+
+</html>
+<!-- 
+
+    continue: 结束本次循环，继续下次循环  比如：一个for循环的要执行10次，如果在第八次执行了continue,就会结束本次的循环，继续下一轮循环的执行
+    break: 直接跳出所在的循环，不在执行
+
+ -->

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 如果一个变量没有赋值，则这个变量默认为undefined
+        //undefined 和任何数据类型相加，结果都是NaN, 除了字符串是拼接
+        document.write(undefined+true) //undefined
+        document.write(undefined+10) //undefined
+        document.write(undefined+null) //undefined
+        document.write(undefined+'你好') //undefined你好
+        function getSum(x,y){
+            document.write(x)
+            x=x||0
+            y=y||0
+            document.write(x,y)// 0 , 0
+        }
+
+        // 不传参数也可以调用
+        getSum();
+    </script>
+</body>
+</html>
+
+<!--    
+    复习：
+    undefined null 0 '' false  NaN 都为false 
+
+
+    前端函数和java函数的区别
+    1. 可以无需传参数，就可以调用函数并执行
+    2.前端声明函数要用 function
+
+
+ -->

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            uname: '',
+            age: 18
+        }
+        console.log(obj.age)
+
+        // 1.修改 对象.属性 = 新值
+        obj.age = 81
+
+        // 2.新增属性  js 可以非常方便的动态新增属性或者新增方法
+        obj.sex = '男'
+        // 会去对象里面找是否由sex这个属性，如果有则更新值修改,如果没有则新增这个属性
+
+        console.log(obj)
+
+        // 3. 新增方法
+        obj.sing = function (s = '') {
+            console.log(s + 'hi')
+        }
+        console.log(obj)
+        obj.sing()
+
+        //4.删除 
+        delete obj.uname
+        console.log(obj)
+
+        obj.price = 999999 // 有属性就修改，否则会新增，函数也一样
+    </script>
+</body>
+
+</html>
+
+<!-- 
+            //0.访问属性: 有两种方式，1.对象.属性名  2.对象.['属性名'] 第二种方式经常用于 for(key in 对象) 遍历对象中所有的属性和值
+            //1.修改属性: 对象.属性 = 新值
+            //2.新增属性: 对象.属性名='?'  js 可以非常方便的动态新增属性或者新增方法,   会去对象里面找是否由sex这个属性，如果由则更新值修改,如果没有则新增这个属性
+            //3.新增方法: 对象.fn=function(){}
+            //4.删除属性:  delete 对象.属性
+
+
+ -->

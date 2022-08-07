@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 页面加载事件
+        window.addEventListener('load', function () {
+            console.log(document.querySelector('div'))
+        })
+
+    </script>
+
+    <div class="box"></div>
+
+</body>
+
+</html>
+<!--     
+   加载事件: 加载外部资源，(如图片，css,javascript 等)，全部加载完毕才触发的事件
+
+
+    如果js代码写在 html元素的前面，会因为加载的顺序(从上往下)，造成js获取元素时得不到的问题
+    可以用页面加载事件，等所有的dom数，页面资源加载完
+
+    1.window.addEventListener('load',functoin (){}): 整个页面资源加载完才会执行
+
+    2.document.addEventListener('DOMContentLoaded',functoin(){})： 无需等待样式表和图片等加载完，执行 
+ -->

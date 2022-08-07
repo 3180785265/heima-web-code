@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(window.location.href) //得到当前网页完整的url地址，可读可写
+
+        // 给的地址是字符串，可以利用js的跳转页面
+        location.href = 'http://www.baidu.com'
+    </script>
+</body>
+
+</html>
+<!-- 
+    locatoin的数据类型是对象，它拆分并保存了url地址的各个组成部分
+    常用的属性和方法
+    href: 获取完整的url地址，对其赋值时用于地址的跳转
+    search: 获取地址中携带的参数，符号？后面部分
+    hash: 获取地址中的哈希值，符号#后面部分
+    reload方法用于刷新当前页面，传入参数true时标识强制刷新
+
+ -->

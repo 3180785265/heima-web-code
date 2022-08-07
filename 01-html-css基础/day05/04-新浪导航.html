@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 510px;
+            height: 40px;
+            border-top: 3px solid yellow;
+            border-bottom: 1px solid rgb(30, 28, 28, .1);
+        }
+
+        /* 选中 .box 里面的a  */
+        .box a {
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            /* width: 80px; */
+            height: 40px;
+            font-size: 12px;
+            color: #333;
+            padding: 0 20px;
+        }
+
+        .box a:hover {
+            background-color: #edeef0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="#">导航11111111</a>
+        <a href="#">导航</a>
+        <a href="#">导航</a>
+        <a href="#">导航</a>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+
+    padding属性可以当作复合属性使用, 表示单独设置某个方向的内边距
+    最多可以设置四个值
+    四值：    上   右   下   左
+    padding: 10px 20px 40px 80px
+    
+    三值: 上  左右  下
+    padding: 10px 10px 40px  40px 
+    
+    两值: 上下  左右
+    padding: 10px 10px 
+
+    一值     上下左右
+    padding: 10px
+
+
+    多值写法，永远都是开始顺时针转一圈，如果数不够，
+
+
+    重点: 内容超过了元素宽度
+    1.如果 元素的width(宽度) , 容不下内容的话，会将内容换行显示
+    2.不写宽度，让宽度自适应撑开内容
+    
+
+
+
+    盒子模型的实际大小，计算公式
+    盒子款第= 左边框+内容宽度+右宽度
+
+给盒子设置border或者padding时，盒子会被撑大，如果不想盒子被撑大？
+解决方法 1：手动内减
+2.自动内减
+ 给盒子设置属性 box-szing: border-box
+ 特点：浏览器会自动计算多余大小，自动在内容中减去
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->

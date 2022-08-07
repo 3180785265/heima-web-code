@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.任何一个作用域在执行之前都要先预解析，解析到当前作用域最前面
+        // 但是，只定义,不调用
+        // 2.会把代码中具有名字的函数提前解析，解析到当前作用域的最前面(也就是解析到内存当中)，
+
+        /*     
+            
+            function fn(){
+                console.log(1)
+            }
+
+            function fn2(){
+                console.log(2)
+            }
+
+            
+            var fn3 = function () {
+
+            }
+
+        
+        */
+        fn1();
+        fn2();
+        fn3();
+
+        function fn1() {
+            console.log(1)
+        }
+
+
+
+        function fn2() {
+            console.log(2)
+        }
+
+        // 3.这个不是具名函数，是一个函数表达式，不会被解析， 只会被解析变量
+        var fn3 = function () { }
+
+    </script>
+</body>
+
+</html>
+<!-- 
+    预解析
+    函数提升：函数会提前解析 (只定义)，不调用, 只有具名函数会被预解析,  函数表达式不存在变量提升 let fn = function(){}
+      1.会把代码中具有名字的函数提前解析，解析到当前作用域的最前面，但是，只定义，不调用 
+      2.
+      3.解析定义的函数，不解析调用的  
+      4.变量解析：只定义，不赋值
+      5.函数的解析：只定义，不调用
+      6.变量和函数同名，函数优先
+      7.函数表达式，不会被提升，只会提升变量
+
+ -->

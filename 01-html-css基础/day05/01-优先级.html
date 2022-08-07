@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 继承 */
+        body {
+            color: red;
+        }
+
+        /* 标签 */
+        div {
+            color: yellow;
+        }
+
+        /* 类 */
+
+        .box {
+            color: blue;
+        }
+
+        /* id */
+        #d1 {
+            color: green !important;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="d1" style="color:darkblue">这是一个div</div>
+</body>
+
+</html>
+
+<!-- 
+
+    如果一个标签用了多个选择器，样式冲突了，就要优先级，去判断哪个生效
+    优先级公式：
+    继承<通配符选择器<标签选择器<类选择器<id选择器<style行内样式<!importmant
+
+
+    优先级，就是一个标签，如果它有多个选择器的样式，它的解决问题
+    !important: 优先级最高，会把其他作用于标签的选择器样式全部干掉
+
+ -->

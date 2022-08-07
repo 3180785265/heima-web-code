@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. * 量词 n>0:  必须出现大于或者等于0次
+        console.log(/a*/.test(''))//true
+        console.log(/a*/.test('a'))//true
+        console.log(/a*/.test('aa'))//true
+        console.log(/a*/.test('aaaaaaa'))//true
+        console.log(/a*/.test('b'))//true
+
+        console.log('--------------------')
+        //2. + 量词 n>=1:  至少要出现一次， 允许出现多次
+
+        console.log(/a+/.test('')) // false
+        console.log(/a+/.test('aa'))//true 
+        console.log(/a+/.test('aaaaa')) //true 
+        console.log(/a+/.test('b'))//false
+
+        console.log('--------------------')
+
+        //3. ? 量词  ： 只能出现 0 || 1 次
+        console.log(/^a?$/.test(''))
+
+        console.log('--------------------')
+
+
+        //4. {n} 次 : 只能出现限定的n次， 这个次数要刚好，既不能多也不能少。 可以用于验证码，或者手机号
+        console.log(/^a{3}$/.test('aaa'))//true  必须以a开头和结尾，并且必须是3位数
+        console.log(/^a{3}$/.test('aa'))//false 
+        console.log(/^a{3}$/.test('aaaaaa'))//false
+
+
+        console.log('--------------------')
+
+
+        // 5. {n,m}: 是次数>=n   <=m 的意思
+
+        console.log(/^哈$/.test(''))  //false 
+        console.log(/^哈{2,4}$/.test('哈'))  //false 
+        console.log(/^哈{2,4}$/.test('哈哈'))//true 
+        console.log(/^哈{2,4}$/.test('哈哈哈')) //true 
+        console.log(/^哈{2,4}$/.test('哈哈哈哈'))//true
+        console.log(/^哈{2,4}$/.test('哈哈哈哈哈'))//false
+        console.log(/哈{2,4}/.test('哈哈哈哈哈'))//false
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+
+    量词：规定一个字符可以出现多少次
+
+ -->

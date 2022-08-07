@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(/哈/.test('哈哈')) // true
+        console.log(/哈/.test('二哈')) //true
+
+        // ^ 开头
+        console.log(/^哈/.test('二哈')) //false
+        console.log(/^哈/.test('哈欠')) //true
+        // $ 结尾 
+        console.log(/^哈$/.test('我开心的哈哈大小')) // false
+        console.log(/^哈$/.test('哈哈')) // false
+
+        // 如果 ^ 和 & 一起使用，表示精确匹配，要求只有一个哈字，才能匹配， 和java的 equse() 一个意思
+        console.log(/^哈$/.test('哈')) // true
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    正则表达式边界符: 表示必须以什么开头，和必须以什么为结尾
+    //1. ^ 开头, 表示字符串必须以什么字符开头
+    //2. $ 结尾, 表示字符串必须以什么结尾
+    //3. 如果 ^ 和 & 一起使用，和java的 equse()一个意思。 表示精确匹配，要求只有一个哈字，才能匹配， 
+    
+    
+ -->

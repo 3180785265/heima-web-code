@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*1. 如果实参小于了形参, 形参会接收不到参数从而默认值为undefined
+             而undefined 和 其他类型做计算 ，会出现NaN ，除了字符串
+        */
+        function fn1(x, y) {
+            //  1+ undefined=NaN 
+            console.log(x + y) //  结果NaN 
+        }
+
+        fn1(1)
+
+        // 2.如果实参大于了形参
+        function fn2(x, y) {
+            console.log(x + y) // 结果等于3 
+        }
+        fn2(1, 2, 3)
+
+
+
+        // 3.arguments 函数内部有效，是一个伪数组，它也可以被for 遍历循环
+        // 伪数组 比真数组  少了 一些 方法 比如 pop()  push() 等方法
+        // 但是伪数组是有 length 属性的
+        function fn3() {
+
+            console.log(arguments)
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(i)// 1, 2, 3
+            }
+        }
+        fn3(1, 2, 3)
+    </script>
+</body>
+
+</html>

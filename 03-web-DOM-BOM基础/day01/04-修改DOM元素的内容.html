@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>粉红色的回忆</div>
+    <script>
+        let div = document.querySelector('div')
+        div.innerText = '粉红色的过去'
+        div.innerHTML = '<strong>有点意思</strong>'
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    Document.write(): 只能将文本内容追加到</body>前面的位置
+    文本中包含的标签会被解析
+    元素.innerText: 将文本内容添加/更新到标签中
+    元素.innerHTML: 将文本内容添加/更新到标签位置，并且文本中包含的HTML代码 标签会被解析
+
+-->

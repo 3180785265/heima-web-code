@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 以前防止函数没有传入实参，计算时出现NaN的方法
+        function fn1(x,y){
+            x=x||0 ;
+            y=y||0
+            console.log(x+y)
+        }
+
+
+
+        /* 1.函数的参数也可以看作是局部变量,如果没有传入实参，
+        则默认值则赋值为0
+           2.这种可以防止undefined 在和数值做计算时，出现NaN的Bug
+        */
+        function fn(x=0,y=0){
+            console.log(x+y)
+        }
+        fn();
+    </script>
+</body>
+</html>

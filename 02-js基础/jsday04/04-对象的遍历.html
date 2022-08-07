@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name: '小明',
+            age: 18,
+            sex: '男'
+        }
+
+        for (let key in obj) {
+            console.log(key) // key  是属性名
+            console.log(obj[key])
+        }
+
+
+        for (key in obj) {
+            console.log(key) //对象的每个key
+            console.log(obj[key]) // 用 key 获取对象中的每个值
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    对象也能够遍历
+    1.对象没有像数组那样有 length 属性长度，所以我们无法知道对象的长度, 所以只能用 for ( key in 对象)  遍历对象的每个key,在根据key 获取值 
+    2.对象里面是无序的键值对，并且无序没有规律，不像数组那样里面有规律的索引下标，
+    3.所以对象的属性是无序的键值对，没有索引，也没有length , 我们无法用for 循环通过索引去遍历它
+
+
+    4. 可以用for in 语句专门来遍历对象的key,  在用  对象[key] 的方式 获取属性值， 它遍历的每一个key都是字符串类型
+ -->

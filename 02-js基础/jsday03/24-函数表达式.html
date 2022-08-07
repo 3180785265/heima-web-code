@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击我</button>
+    <script>
+        //这是一个具名函数
+        function fn1(){
+
+        }
+
+        // 函数表达式写法
+        // 这是另外一种定义函数的方式
+        let fn=function(x,y){
+            console.log(111)
+        }
+        fn(1,2);
+        
+        // 匿名函数的用法
+        let btn=document.querySelector('button')
+        btn.onclick=function(){
+            alert('月薪过万')
+        }
+        btn.addEventListener('click',function(){
+            alert('月薪过万')
+
+        })
+    </script>
+</body>
+</html>
+
+<!-- 
+    1.具名函数: functoin 函数名    ,有名字的函数
+    2.匿名函数: 将匿名函数赋值给一个变量，并且通过变量名称进行调用，我们将这个称为函数表达式
+
+
+
+ -->

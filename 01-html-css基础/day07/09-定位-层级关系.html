@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+
+        .one {
+            background-color: aquamarine;
+            left: 20px;
+            position: absolute;
+        }
+
+
+        .two {
+            position: absolute;
+            left: 80px;
+            background-color: palevioletred;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="two"></div>
+    <div class="one"></div>
+</body>
+
+</html>
+
+<!-- 
+
+    默认的情况下，定位的盒子，后来者居上
+    z-index:整数，取值越大，显示顺序靠上
+    注意: z-index 必须配合 positoin定位才会生效
+    可以通过 z-index控制覆盖的优先级
+ -->

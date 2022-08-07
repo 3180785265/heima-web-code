@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //逻辑运算与  一假则假
+        console.log(true && true) // 真
+        console.log(false && true);//假
+        console.log(true && false);
+
+        //逻辑或 一真则真
+
+        console.log(false || true) // 真
+
+        console.log(true || flase) //真
+
+        console.log(false || false) //假
+
+
+        // ！  逻辑非 ， 将布尔值取反,它是 一元运算符 ,并且优先级大于 + -
+        console.log(!false)
+        console.log(!true)
+
+
+        // 有五个值是相当于false来看的
+        // flase  , 数字0  , ' ' , undefind , null   都是假的， 其余都是真的
+
+
+        // && 的短路条件， 左边为false就短路，直接将值返回，否则就会返回右边的值
+        // || 的短路条件，左边如果为true就短路，直接返回，如果左边为false, 就会返回右边的值
+
+        // 短路，通过左边能直接得到整个式子的结果，因此没有必要在判断右边
+        //如果前面为真的，就会直接返回右边的值
+        console.log(false && 20)
+        console.log(5 < 3 && 20)
+        console.log(1 && 20) //  返回20 
+
+        console.log(4 || 20) //4 
+        console.log(undefined || 20)  //返回20 
+        console.log(null || undefined) // 返回 undefind 
+
+        //一个变量如果没有给值, 会是undefind
+        function fun(x, y) {
+            x = x || 0  // 如果为真，肯定返回x, 如果假，返回0 
+            y = x || 0
+            x+y ;//如果 undeind + undefind 就会等于NaN
+            console.lgo(x, y)
+        }
+
+
+        //逻辑运算符 先 && 后 || 
+
+    </script>
+</body>
+
+</html>

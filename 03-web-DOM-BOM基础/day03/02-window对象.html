@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        window.document.querySelector('box')
+        window.setInterval(function () {
+
+        }, 1)
+
+        function fun() {
+
+        }
+
+        window.fun()
+
+
+        // 因为操作本身是在浏览器操作，所以window. 也就可以省略
+        //比如
+        window.setInterval()
+        setInterval(function () { }, 1000)
+
+        //比如给 整个网页绑定 scroll 事件
+        window.addEventListener('scroll', function () { })
+            // 直接省略window 简写
+            .addEventListener('scroll', function () { })
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    1.windwow 是浏览器最大的对象 ,  并且调用时可以省略 window
+    2.document是网页最大的对象
+
+ -->

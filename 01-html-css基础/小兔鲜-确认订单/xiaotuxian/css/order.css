@@ -1,0 +1,212 @@
+
+body{
+    background-color: #f7f7f8;
+}
+.main{
+    /* 80px 为了内容不被底部区域盖住 */
+    padding: 12px 11px 80px;
+}
+
+.red{
+    color: red;
+}
+
+/* 提取公共样式 */
+.pannle{
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.pay{
+    /*  固定定位，相对于浏览器窗口为参考位置的定位，
+        将位置相对于浏览器窗口定位到浏览器的底部
+    */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    height: 80px;
+    /* 脱标，要重新设置 */
+    width: 100%;
+    border-top: 1px solid #ededed;
+
+    padding: 0 10px;
+    display: flex;
+    /* 水平轴对齐方式 */
+    justify-content: space-between;
+    /* 侧轴对齐方式 */
+    align-items: center;
+
+}
+
+.pay span:nth-child(2){
+    color: #cf4444;
+    font-size: 18px;
+}
+
+.pay span:nth-child(1){
+    font-size: 11px;
+}
+.pay .right button{
+    width: 91px;
+	height: 35px;
+    background-color: #54b196;
+    border-radius: 3px;
+    color: #ffffff;
+    line-height: 35px;
+    text-align: center;
+    font-size: 12px;
+    outline: none;
+    border: 0;
+}
+
+.user_msg {
+    padding: 15px 0 15px 11px;
+    display: flex;
+    align-items: center;
+}
+.user_msg .localtoin{
+    width: 30px;
+	height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #6fc2aa;
+    border-radius: 50%;
+    
+}
+.user_msg .localtoin  .icon-location{
+    font-size: 15px;
+    color: #ffffff;
+}
+.user_msg .user{
+    /* 占所弹性容器所剩余的宽度 */
+    flex: 1;
+    height: 53px;
+    padding-left: 10px;
+
+}
+.user_msg .user .top{
+  
+  display: flex;
+  align-items: flex-end;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.user_msg .user .top h5{
+    padding-right: 20px;
+    font-weight: normal;
+
+}
+.user_msg .user .bottom {
+    font-size: 12px;
+    width: 260px;
+}
+
+
+
+.user_msg .more{
+    width: 44px;
+	height: 44px;
+    line-height: 44px;
+    text-align: center;
+}
+.user_msg .more .icon-more{
+  color:#808080;
+}
+.goods{
+    display: flex;
+    padding: 20px 0px 10px 10px;
+}
+.goods .pic{
+    width: 85px;
+    height: 85px;
+}
+.goods .info{
+   flex: 1;
+   padding: 0 15px;
+}
+.goods .count{
+    margin-top: 10px;
+    padding-right: 10px;
+    /* width: 55px; */
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+.goods .count span{
+    font-size: 14px;
+}
+.goods .info h5{
+    font-size: 13px;
+    font-weight: normal;
+}
+.goods .info p{
+    padding: 5px 0;
+    font-size: 12px;
+    color: #808080;
+}
+.goods .info .price{
+ font-size: 12px;
+ color: #808080;
+
+}
+.goods .info .price {
+ font-size: 12px;
+}
+.goods .info .price span:first-child i{
+ font-size: 15px;
+}
+
+.rest{
+    padding: 15px 10px;
+
+}
+.rest h5{
+    font-size: 14px;
+    font-weight: normal;
+
+}
+.rest div{
+    display: flex;
+    margin-bottom: 13px;
+
+}
+.rest div p{
+    font-size: 13px;
+
+
+}
+.rest div:last-child{
+    margin-bottom: 0;
+}
+.rest div:nth-child(2n+1){
+    justify-content: space-between;
+}
+.rest div:nth-child(2) h5 {
+    margin-right: 20px;
+}
+.rest div:nth-child(2) p {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 3px;
+}
+.rest div:nth-child(2) p input{
+    font-size: 12px;
+    color: red;
+    padding-left: 6px;
+    
+}
+.rest div:nth-child(2) p input::placeholder{
+    font-size: 12px;
+    color: #808080;
+
+}
+
+
+
+
+

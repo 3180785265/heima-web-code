@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 5000px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // documentElement代表 HTML 标签对象
+        console.log(document.documentElement)
+
+        // 先做页面滚动事件, 只要页面/元素有滚动条，并且滚动，就会触发
+        window.addEventListener('scroll', function () {
+
+            // 得到页面滚动的距离
+            console.log(document.documentElement.scrollTop)
+             document.documentElement.scrollTop = 2000 
+             document.documentElement.scrollLeft = 2000 
+        })
+    </script>
+</body>
+
+</html>

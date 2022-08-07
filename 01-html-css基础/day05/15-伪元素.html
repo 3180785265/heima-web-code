@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: pink;
+            width: 400px;
+            height: 400px;
+        }
+
+        div::before {
+            content: '老师';
+        }
+
+        div::after {
+            content: '老师';
+        }
+
+
+        p {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(106, 102, 109);
+            position: relative;
+            color: red;
+        }
+
+        p::after {
+            content: '';
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.1);
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>啊u</div>
+    <p>1</p>
+</body>
+
+</html>
+
+<!-- 伪元素 ，通过css创建标签，装饰性的不重要的小图
+
+
+    ::before: 在父元素内容的最前添加一个伪元素
+    ::after :  在父元素内容的最后添加一个伪元素
+    在样式内 使用 content 属性
+
+-->

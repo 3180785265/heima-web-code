@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.全局变量，全局变量可以在任何地方被使用
+        let m = 2;
+
+        function fn() {
+            console.log(m)
+        }
+
+        console.log(m)
+
+
+
+        var n = 2;
+        var n = 10;
+
+        //2.定义变量的时候一定要加申明语句 
+        n = 2;
+        console.log(n)
+
+
+        // 全局变量哪里都可以使用，所以尽量少用全局变量
+
+        let n = 2;
+        let n = 3; // let 不能重复声明
+
+        // 尽量可能少的声明全局变量，防止全局变量被污染，
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    全局变量可以在任何地方被使用，也就是说函数内，块级，全局下，都能使用
+
+ -->

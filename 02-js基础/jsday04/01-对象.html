@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明对象
+        let person={
+            uname:'andy',
+            age:18,
+            sex:'男'
+        }
+        // 访问属性 得到值， 对象.属性名 
+        console.log(person.uname)
+
+        let person2={
+            uname:'刘德华',
+            age:13,
+            sex:'男'
+        }
+        console.log(person.uname)
+
+    </script>
+</body>
+</html>
+
+<!-- 
+
+    1.对象，是为了能保存多个数据, 比如一个对象的年龄，性别，手机号，这些属性都属于同一个对象
+    2.对象：是javascript里的一种数据类型，可以理解为是一种无序的数据集合
+    3.对象和数组相比: 两种都可以存储数据，但对象是无序的，数组是有序的
+    4.对象可以用来描述一类事物
+
+
+    对象声明语法
+    let 对象名= { }             {}表示为一个对象字面量
+    和数组对比，对象字面量是用{} 数组字面量是用[]
+
+    声明一个对象，并在对象内 属性和方法用逗号隔开
+
+    let 对象名={
+        属性名：属性值,
+        方法名: 函数
+    }
+
+    // 对象中的属性，表示对象的一些特征，对象中的方法，表示对象拥有的行为
+    属性名也可以加引号，但是一般也可以不加  '属性名':'属性值'
+    属性和值用 : 隔开   多个属性之间用, 逗号隔开
+
+    5.访问对象有两种方式
+    1.对象.属性名
+    2.对象['属性名'] ,  要加冒号，也就是字符串形式访问
+ -->

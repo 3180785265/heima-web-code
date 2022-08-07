@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            background-image: url('./images/1.jpg');
+            background-repeat: no-repeat;
+            /* background-repeat: repeat-y; */
+            /* background-position: center ; */
+            background-position: -50px -100px;
+            background-position: 0px 0px;
+            background-position: center;
+            background-position: center bottom;
+        }
+
+        /* 整数：向右向下移动；负数：想左向上移动 */
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>
+
+<!-- 
+
+    背景位置:
+      属性名: backgounrd-postoin(bgp): 图片在元素中的位置定位， 指定背景图片，在元素中的哪个坐标位置出现
+      属性值: backgounrd-postoin 水平方向位置 垂直方向位置
+    取值：
+     英文值: 水平方向位置：left center right  垂直方向位置:top bottom center
+     数值: 数字+px
+     
+     注意点： 方位名字取值和坐标取值可以混合使用，第一个取值表示水平，第二个取值表示垂直
+
+    图片默认是被平铺的，
+    如果盒子大，背景图小，会被平铺复制多张图片填满盒子
+    背景图，无论如何定位，都只显示在盒子的里边
+    
+
+
+ -->

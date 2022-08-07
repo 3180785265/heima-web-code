@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.标签 -->
+    <button>点击</button>
+
+    <script>
+        // 2. 获取 button 的DOM对象
+        let btn = document.querySelector('button')
+        console.log(typeof btn)
+        console.dir( btn)
+        console.log(document)
+        // 改变DOM对象的属性值
+        btn.innerHTML='唐伯虎'
+    </script>
+</body>
+
+</html>
+<!-- 
+    javaScript分两部分
+    ECMAScript  WebApi(DOM,BOM)
+
+    dom 文档对象模型
+    bom 浏览器对象模型
+
+
+    dom是什么？ dom是HTML/XML文档对象模型
+    document Object Model 文档对象模型，是用来专门和HTML 或XML交互的API
+    白话文：DOM是浏览器提供的一套专门操作网页内容的功能
+     文档对象模型
+     操作网页内容，可以开发网页内容特效和实现用户交互
+
+
+     DOM树
+     将HTML文档以树状结构表现出来，我们称之为DOM树
+
+
+    1.DOM对象的获取: html 里 比如 a 可以看作标签，而在js 我们可以获取这个a标签的DOM对象
+    2.DOM对象的属性: 所有的标签属性都可以在对象上面找到
+    3.Document是html文档模型的 根DOM对象， 是最大的,网页的所有内容都在document中
+
+ -->

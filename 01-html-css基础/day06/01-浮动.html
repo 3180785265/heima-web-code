@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+
+        div.one {
+            float: left;
+        }
+
+        div.two {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one">1
+
+    </div>
+    <div class="two">2</div>
+</body>
+
+</html>
+
+<!-- 
+        标准流：又称文档流，是浏览器在渲染显示网页内容时默认采用的一套排版规则，规定了应该以何种方式排列元素
+        常见标准流排版规则：
+        1. 块级元素：从上往下，垂直布局，独占一行
+        2. 行内元素 或 行内块元素：从左往右，水平布局，空间不够自动折行
+
+
+    浮动：
+     1.浮动的元素会脱离标准流，在标准流中不占位置，相当于从地面飘到了空中
+     2.浮动元素比标准流高半个级别，浮动的元素会将标准流下的元素覆盖(浮动，定位都会覆盖标准流下元素，定位可以用z-index设置优先级)
+     3.浮动找浮动，下一个浮动的元素怒会跟它的上一个浮动元素后面左右浮动
+     4.浮动元素由特殊的显示效果，一行可以显示多个，并且脱离文档流后可以设置 宽高
+     5.浮动元素 碰到边缘也会像行内元素一样自动换行
+
+    一般有时候为了方便块级元素，要在一个行内水平排列，就可以设置浮动
+      比如 ul 下的 li 是块级，要让他在水平排列
+ -->

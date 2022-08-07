@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner{
+            width: 1226px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .mask{
+            /* 绝对定位的盒子，具备行内块特点，加宽高生效，如果没有宽度也没有内容，盒子默认就是0 */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            /* 如果子级和父级宽度都相同  */
+            width: 100%;
+
+            height: 150px;
+            background-color: rgba(0, 0, 0, .5);
+        }
+        p{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="banner">
+        <img src="./images/bg.jpg" alt="">
+        <!-- 半透明的遮罩层 -->
+        <div class="mask">1</div>
+    </div>
+    <p>1</p>
+    <div>1</div>
+</body>
+</html>
+
+<!-- 
+
+    元素的层级关系
+    
+ -->

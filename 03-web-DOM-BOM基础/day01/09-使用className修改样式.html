@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            background-color: pink;
+            width: 300px;
+            height: 300px;
+
+        }
+
+        .one {
+            font-size: 20px;
+            font-weight: bold;
+
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="active">12</div>
+    <script>
+        // 1.获取元素
+        let box = document.querySelector('div')
+
+        // 直接用 style 修改样式，样式一多就会很麻烦
+        /*   box.style.marginLeft='20px'
+          box.style.paddingRight='20px'
+          box.style.width='200px'
+          box.style.height='200px' */
+
+
+        // 给这个div的DOM 设置class 
+        box.className = 'one active'
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    如果修改的样式比较多，直接通过style属性修改比较繁琐，我们可以通过css类名的形式
+
+    语法
+
+    元素.className='active'
+
+    因为class是一个关键字，所以要用 className去替换
+
+    通过DOM修改样式的方式
+    1. DOM.style  
+    2. DOM.className: 可以使用多个类名作用到标签上，直接使用className赋值，会覆盖以前的类名
+
+    3.为了解决className容易覆盖以前的类名，我们可以通过classList方式追加和删除类名
+    元素.className.add('类名'): 追加一个类
+    元素.className.remove('类名'): 删除一个类
+    元素.className.toggle('类名'): 切换一个类
+
+ -->

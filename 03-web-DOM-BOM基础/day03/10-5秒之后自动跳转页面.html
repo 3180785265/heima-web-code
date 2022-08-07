@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">支付成功 5 秒后自动跳转页面</a>
+    <script>
+        // 每秒刷新一次 a 标签的内容
+        let num = 5; //倒计时秒数
+        let trgir = setInterval(() => {
+            num--; // 每调用一次减一秒
+
+            document.querySelector('a').innerHTML = `支付成功 ${num} 秒后自动跳转页面`
+
+            if (num <= 0) {
+                clearInterval(trgir)
+                location.href = 'http://www.baidu.com'
+            }
+
+        }, 1000);
+    </script>
+</body>
+
+</html>

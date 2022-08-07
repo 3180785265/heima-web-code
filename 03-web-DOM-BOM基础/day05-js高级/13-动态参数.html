@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // 不固定的
+        console.log(1, 2, 3, 4, 4)
+
+        // 1.动态参数
+        function fun() {
+            // 在函数内部有一个特殊的对象,arguments
+            // arguments用于接收所有的实际参数，
+            // 不管用户传多少实参，都会传给arguments,将实参传给arguments数组
+            // arguments是一个伪数组，有length属性，但没有数组的API
+
+            console.log(arguments)
+
+
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i])
+            }
+        }
+
+
+        fun(1, undefined, 3)
+    </script>
+</body>
+
+</html>
+<!-- 
+
+
+
+    arguments:
+        1.参数固定写形参
+        2.参数不固定形参就不写，用arguments接收
+     参数不固定的情况下使用，然后形参可以不写
+        3.如果某个形参，不想传，用undefined传
+
+        rest
+ -->

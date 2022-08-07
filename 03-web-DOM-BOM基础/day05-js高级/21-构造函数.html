@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //构造函数是专门用于创建对象的函数，如果一个函数使用 new 关键字调用，那么这个函数就是构造函数。
+        // 构造函数：其实也是函数，只不过构造函数一般用于和new搭配使用，创建对象
+
+
+        function fn() {
+
+        }
+
+
+        new fn();
+
+
+        // 内置构造函数: Object  ，创建对象,和添加属性用的
+
+        let obj = new Object()
+        obj.uname = '阿飞'
+        obj.age = 11
+
+        obj.fei = function () {
+            console.log('fei')
+        }
+        obj.chi = function () {
+            console.log('吃')
+        }
+        console.log(obj)
+
+        let obj2 = new Object({ uname: '阿飞', age: 11 })
+
+        console.log(obj2)
+
+
+        // 如果不传任何参数，可以省略小括号不写
+        let obj3 = new Object
+
+        console.log(obj3)
+
+
+
+        // 还有以下类，可以创建对象
+        // new Date()  , new RegExp    new Array 
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+ 
+    构造函数是专门用于创建对象的函数，如果一个函数使用 new 关键字调用，那么这个函数就是构造函数。
+    总结：
+
+    1. 使用 new 关键字调用函数的行为被称为实例化
+    2. 实例化构造函数时没有参数时可以省略 ()
+    3. 构造函数的返回值即为新创建的对象
+    4. 构造函数内部的 return 返回的值无效！
+
+
+    创建对象的方式
+        1. 直接用字面量创建
+        2. 用 new 关键字 调用构造函数创建对象
+ -->

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn (){
+
+            // 谁调用了这个函数，这个函数里面 引用的this就指向谁
+            console.log(this)
+        }
+        setInterval(fn,1000);
+
+
+        btn.addEventListener('click', function () {
+            // this指向btn
+            console.log(this)
+
+            // setInterval 指向的都是window
+            window.setInterval(function () {
+                // this 指向window
+            }, 1000)
+        })
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+
+                // 谁调用了这个函数，这个函数里面 引用的this就指向谁
+function fn(){
+    this   // 函数里面的this指向 的是调用这个函数的调用者, 谁调用这个函数，this就指向谁
+}
+
+setInterval不一样，它不管写在哪里，都是被window调用，所以this是window
+
+
+ -->

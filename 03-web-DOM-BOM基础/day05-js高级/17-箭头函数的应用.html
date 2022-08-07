@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /* 
+            高级函数
+             函数表达式
+             回调函数
+             都可以用箭头函数替换
+        */
+
+
+        // 箭头函数的使用
+
+
+        setInterval(function () {
+
+        }, 1000);
+
+
+        // 用箭头函数去代替
+        setInterval(() => {
+            console.log('1212')
+        }, 1000);
+
+        // 更好的遍历数组的，一个方法
+        [1, 2, 4, 5].forEach((item) => {
+            console.log(item)
+        })
+
+
+        // 2.箭头函数  里面，没有arguments
+        // 3.箭头函数，可以用 剩余参数 ...args
+
+        // 箭头函数中不存在this，箭头函数中的this指向的是，上级作用域的this
+        // 箭头函数中的this 指向箭头函数所在作用域的this
+        // 如果涉及到this使用的时候，尽量不要使用箭头函数
+        window.setInterval(function () {
+
+        }, 1000)
+
+
+
+        // 4. 环境对象：指的是函数内部的特殊变量this，它代表着当前函数运行时所处的环境
+        //函数中的this，是谁调用了函数，this就指向谁，比如事件源
+        // 函数的this，指向的是函数调用者
+        function fn1() {
+            console.log(this)
+        }
+
+        window.fn1()
+
+
+
+        let obj = {
+            name: "张三丰",
+            taiji: function () {
+                console.log(this) //指向的是obj
+            }
+        }
+
+        obj.taiji()
+
+        /*      指向的是事件源
+                btn.onclick = function () { console.log(this) }
+         */
+
+
+
+        let fn = () => {
+            console.log(this)
+        }
+
+
+        fn()
+        let obj2 = {
+            name: "张三丰",
+            fei: function () {
+                console.log(this) //指向的是obj
+
+
+                window.setInterval(() => {
+                    console.log(this) // 指向的是上级作用域的this
+                }, 1000)
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    0. function () {  } 中的this 指向的是调用者。
+
+    1.箭头函数，是对高阶函数(函数表达式，回调函数) 的一种简写
+    我们认为箭头函数，是没有this的，如果使用了this，则使用的是上级作用域中的this对象
+
+
+    2.箭头函数中不存在this，箭头函数中的this指向的是，上级作用域的this
+        箭头函数中的this 指向箭头函数所在作用域的this
+        如果涉及到this使用的时候，尽量不要使用箭头函数, 比如DOM事件绑定操作。
+
+
+
+ -->

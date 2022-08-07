@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        //1. 函数表达式:  就是将一个functoin(){}  赋值给一个变量，函数表达式不存在函数提升！
+        let fn1 = function () {
+
+        }
+
+
+        //2. 箭头函数: 就是将 函数表达式缩funcatoin(){}  缩写成()=>{}, 所以他是函数表达式的一种简写，所以它不存在函数提升
+        let fn2 = (a, b) => {
+            return a + b;
+        }
+
+        let result = fn2(1, 2)
+
+        console.log(result)
+
+        /* 
+        3.箭头函数简写：
+          1. 如果参数只有一个，箭头函数可以省略小括号不写
+          2.如果函数体只有一样代码，那么可以省略大括号
+          3.如果箭头函数大括号被省略的话， 会自动的返回结果，不需要写return 关键字 
+        */
+
+
+        // 3.1 如果参数只有一个，箭头函数可以省略小括号不写
+        // 如果不是一个参数就得加小括号
+        let fn3 = a => {
+            return a * a
+        }
+
+        fn3()
+
+        // 3.2 如果函数体只有一样代码，那么可以省略大括号
+        // 如果把大括号省略的话，会自动返回结果，不需要写return
+
+        let fn4 = a => a * a;
+
+        // 调用
+        fn4()
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+    箭头函数:
+     总结:
+    1.箭头函数属于 表达式函数，因此不存在函数提升
+    2.箭头函数只有一个参数时可以省略圆括号
+    3.箭头函数体只有一行代码时可以省略花括号{}， 并自动作为返回值返回
+    4.箭头函数this指向上级作用域的this，
+
+
+
+ -->

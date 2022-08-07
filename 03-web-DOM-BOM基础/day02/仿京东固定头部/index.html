@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content {
+            overflow: hidden;
+            width: 1000px;
+            height: 3000px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .backtop {
+            display: none;
+            width: 50px;
+            left: 50%;
+            margin: 0 0 0 505px;
+            position: fixed;
+            bottom: 60px;
+            z-index: 100;
+        }
+
+        .backtop a {
+            height: 50px;
+            width: 50px;
+            background: url(./images/bg2.png) 0 -600px no-repeat;
+            opacity: 0.35;
+            overflow: hidden;
+            display: block;
+            text-indent: -999em;
+            cursor: pointer;
+        }
+
+        .header {
+            position: fixed;
+            top: -70px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: purple;
+            text-align: center;
+            color: #fff;
+            line-height: 80px;
+            font-size: 30px;
+            transition: all .3s;
+
+        }
+
+        .sk {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            margin-top: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">我是顶部导航栏</div>
+    <div class="content">
+        <div class="sk">秒杀模块</div>
+    </div>
+    <div class="backtop">
+        <img src="./images/close2.png" alt="">
+        <a href="javascript:;"></a>
+    </div>
+
+    <script>
+
+
+
+            // 1.绑定滚动事件
+        window.addEventListener('scroll', function () {
+            // 2. 获取 .content  秒杀模块 元素距离 body 的距离(如果没有定位的父元素，会根据body计算距离)
+            let jl = document.querySelector('.sk').offsetTop // 获取元素距离 body的距离
+            let top = document.documentElement.scrollTop; // 获取滚动后，被减去的距离
+
+            // 3.如果 滚顶条被减去的距离，大于等于了秒杀模块到body的距离，说明用户已经混动到秒杀模块
+            console.log(jl,top)
+            if (top >= jl) {
+            // 4.显示头部的导航搜索栏，配合transition 过渡属性
+                document.querySelector('.header').style.top=0+'px'
+            }else{
+            // 5.如果滚动没到距离，就隐藏 
+                document.querySelector('.header').style.top='-80px'
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    1.把.header  头部定位，并且 定位 top写成 -80px 就会被隐藏掉 ,  然后配合过渡  transition 使用
+    2. 当滚动条下滑时，触发滚动事件，让.header的potaoni定位属性top 变成 +80px  , 配合过渡transition，完成慢慢下滑的过渡效果
+三大家族：
+
+    1.crollWidth和scrollHeight是得到元素不包含滚动条的宽高
+    scrollHeight
+    scrollWidth 
+
+    2.元素/html网页 的内容，被滚动条减去的距离 
+    scrollTop
+    scrollLeft
+
+    3.得到元素包含border , padding  的宽高
+    offsetWidth
+    offsetHeight
+
+    4. 得到元素，距离以定为父元素的距离，如果父元素没有定位，则根据body计算距离
+    offsetTop
+    offsetLeft
+ -->

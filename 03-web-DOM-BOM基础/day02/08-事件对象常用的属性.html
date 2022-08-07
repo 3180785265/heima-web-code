@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        // mousemove 鼠标移动事件
+        document.querySelector('button').addEventListener('mousemove', function (e) {
+            // console.log(e)
+
+            // pageX和pageY 根文档坐标有关系
+            console.log(e.clientX, e.clientY)
+            console.log(e.pageX, e.pageY)
+            console.log(e.offsetX, e.offsetY)  //根元素的坐标有关系
+
+        })
+    </script>
+</body>
+
+</html>

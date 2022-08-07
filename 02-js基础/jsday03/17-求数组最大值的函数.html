@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //求数组最大值得函数
+        function getArrMaxVal(arr) {
+            //声明一个max变量
+            let max = arr[0]
+            //开始遍历数组并比较
+            for (let i = 1; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i]
+                }
+            }
+
+            // 返回这个数组得最大值
+            return max
+
+        }
+
+        let max = getArrMaxVal([1, 2, 3, 4, 5, 10]);
+        document.write(`数组的最大值是:${max}`)
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+
+    求数组中最大值的算法
+    1.先数组中的第一个值取出赋值给 max变量 
+    2.开始遍历数组中的每个遍历，但是是从所以arr[1] 开始遍历，
+    3.每次遍历循环，都要取出arr[i] 和max 做比较，如果max 小于了arr[i]  就把大于max的值，赋值给max
+ -->

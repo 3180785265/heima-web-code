@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 面向过程：过程
+        // 面向对象：对象
+
+
+        // 类:  用来描述某一个总类
+        // 对象: 对象则是类中的具体的某个实例
+
+
+
+        // 1.字面量创建对象
+        let obj = {
+
+            uname: "张三丰",
+            age: 22,
+            sex: '男',
+            score: 99,
+            taiji: function () {
+                console.log('打太极')
+            }
+        }
+
+        // 属性访问的两种方式:
+        console.log(obj.uname)
+        console.log(obj['uname'])
+
+        // 方法访问
+
+        obj.taiji()//执行方法
+        console.log(obj.taiji)// 不加括号，会当作属性一样访问
+
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    对象:   用{}字面量就表示了一个对象
+    对象是方法和属性的集合体
+    对象中的 属性和方法，都是由 冒号分隔的键值对组成的，
+    每一个键值对用 逗号 隔开，组成一个对象
+
+    方法其实也是属性，只不过值是函数
+
+ -->

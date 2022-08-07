@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+
+
+        //内存中
+        // 2. 因为代码在执行之前，进行了预解析，把申明的变量解析到作用域的最前面，但是这个解析的过程，只将变量定义，不会给变量赋值
+
+        /*
+         // 已经被解析到内存当中去了
+         var a;
+         var b;  
+ 
+ 
+         */
+
+        // 预解析：代码执行之前先要预解析
+
+
+        console.log(n) // 1.为什么是undefined?  
+
+        var n = 1;
+        var m = 2;
+        if (true) {
+            n++;
+        }
+
+        // 任何一个作用域执行代码之前都要先预解析
+        // 但是，只定义，不赋值
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    1.变量提升，也可以叫预解析
+      1.变量：会把代码中申明的变量，提前预解析到作用域最前面，但是，只定义，不赋值
+      
+      2. var 声明的变量，可以先声明，在被使用，因为var声明的变量存在变量提升，会在js代码执行之前，先被预解析(但是只定义，不赋值) 
+        1.比如一下面段代码
+        console.log(num)     // 打印undefined,  因为js代码执行之前，会将变量的声明提升到最前面，只声明变量，不赋值
+        var num=10;
+
+        2.js 代码 执行之前
+
+        var num;            // 1. js代码执行之前，就会先预解析，将变量解析到作用域的最前面，
+        console.log(num)    // 2. 所以指定到这里，因为变量已经被定义了，但是不会赋值， 所以会打印undefined
+        var num=10;         // 3.最后才重新赋值 
+
+
+
+-->

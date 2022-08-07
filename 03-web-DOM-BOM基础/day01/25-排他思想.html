@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .pink{
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="pink">第1个</button><button>第2个</button><button>第3个</button><button>第4个</button><button>第5个</button>
+    <script>
+        let btns = document.querySelectorAll('button')
+
+        // 给所有的按钮绑定点击事件
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                // // 点击后，删除其他所有按钮的样式
+                // for (let j = 0; j < btns.length; j++) { 
+                //     btns[j].classList.remove('pink')  // 删除按钮的样式
+                // }
+
+                document.querySelector('.pink').classList.remove('pink')
+
+                // 给当前的按钮，绑定样式
+                //当前的回调函数的this是 button对象，所以直接使用this
+                this.classList.add('pink')               
+
+            })
+
+        }
+    </script>
+</body>
+
+</html>

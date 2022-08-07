@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 异步任务都是通过回调函数实现的，比如事件的回调函数
+        // 所以这是一个异步的任务，会被加到异步任务队列中执行,
+        document.querySelector('mousemove', function () {
+
+            /* 不会报错，因为下面的同步代码 let index=0; 先执行了, 
+                才会执行这段回调函数中的异步代码,这也就是为什么  let index=0; 可以声明在异步代码后面的原因
+             */
+            index = 100
+        })
+
+        let index = 0;  //同步代码，会先执行
+
+    </script>
+</body>
+
+</html>

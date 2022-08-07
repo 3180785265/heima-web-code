@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="www.baidu.com">点我</a>
+    <script>
+        let a = document.querySelector('a')
+        a.addEventListener('click', function (e) {
+            e.preventDefault()
+
+        })
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    阻止默认行为：比如 a 链接点击不跳转，表单域点击不提交
+    
+    事件对象.preventDefault()
+
+
+
+
+    L0事件和L2事件的区别
+    L0会将事件覆盖，L2不会
+ -->

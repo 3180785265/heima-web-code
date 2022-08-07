@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let date = new Date()
+        console.log(date.getFullYear()) //年
+        console.log(date.getMonth() + 1) // 月
+        console.log(date.getDate()) //日
+
+        // 时分秒 取值为0~59
+        console.log(date.getHours()) // 时 
+        console.log(date.getMinutes()) //分
+        console.log(date.getSeconds())  //秒
+
+
+        // 获取星期 , 取值为 0~6
+        console.log(date.getDay() + 1)
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+
+    时间对象我们不能直接使用，要将他们转换为开发中常用的格式
+
+    getFullYear() //获取四位数的年份
+    getMonth()  // 获取月份  取值为0~11
+ -->

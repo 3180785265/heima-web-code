@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('1')// 1.没有回调函数，是同步任务，放到同步任务的执行栈中
+        setTimeout(() => { //2. 有回调函数，是异步任务，放到异步任务的任务队列中
+            console.log('2')
+        }, 0)
+        console.log('3')  //3.没有回调函数，是同步任务，放到同步任务的执行栈中
+
+
+        //输出结果是 1  3   2
+
+        // 1.js 它是单线程的，但是它分为了，同步任务和异步任务。
+        // 2.js 会先执行 "执行栈中" 的同步任务
+        // 3.一旦执行栈中所有的同步任务执行完毕，系统就会按顺序的执行 异步任务队列中的异步任务
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+            原因，js是单线程，也就是说，同一个时间只能左一件事。这是因为
+            js里面有同步任务和异步任务
+            同步任务是放在执行栈里面实现的，
+            异步任务都是通过回调函数里实现的
+            异步任务有三种类型
+            普通事件，如 click resize
+            资源事件，如load error 
+            定时器，包括setInterval,  setTimeout等
+
+
+            代码在执行中,
+            同步任务都会放在 同步任务的执行栈(先进后出)中
+            异步任务都会放在一个任务队列中
+
+            1.js 会先执行 "执行栈中" 的同步任务
+            3.一旦执行栈中所有的同步任务执行完毕，系统就会按顺序依次读取异步任务的队列到 执行栈中，执行这些任务
+
+    
+ -->

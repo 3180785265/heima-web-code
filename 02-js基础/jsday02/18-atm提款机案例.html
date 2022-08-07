@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 大丈夫，出身寒微，不是耻辱，能屈能伸，方为丈夫 -->
+    <script>
+
+        let num=0
+        while(true){
+            let type = prompt("请输入类型");
+            
+            if(type==='4'){
+                break ; //break退出整个循环，
+            }
+
+            switch(type){
+                case '1':
+                   let money=Number(prompt('请存钱'))
+                    num+=money
+                    break
+                case '3':
+                    alert(`余额:${num}`)
+                    break
+                case '2':
+                    let n=Number( prompt('取钱'))
+                    money-=n;
+                    break
+                
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

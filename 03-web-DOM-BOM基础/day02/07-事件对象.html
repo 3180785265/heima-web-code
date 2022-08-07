@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        let btn=document.querySelector('button')
+        btn.addEventListener('click',function(evt){
+            console.log(evt)
+        })
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+    事件对象: 
+    1.也是个对象，这个对象里由事件触发时的相关信息, 比如点了谁，坐标在哪里的信息
+    2.事件对象在哪里? 在绑定 事件的回调函数的第一个参数，就是事件对象
+    例如：鼠标点击事件中，事件对象就存了鼠标点在哪个位置等信息
+    如何获取
+    在事件绑定的回调函数的第一个参数就是事件对象
+    一般命名为 evnet ,ev, e 
+    元素.addEventLister('click',functoin(e){})
+    type:'click': 表示当前的事件类型
+    clientX/clientY: 得到光标相对于浏览器的位置
+    
+
+    事件流
+    事件委托
+
+ -->

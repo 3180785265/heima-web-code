@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun(){
+            return 20;
+        }
+        let num=fun();
+        document.write(num)
+
+
+        //函数封装一段代码的求和，根据传入的不同的参数，计算出不同的结果返回给调用者
+        function fun2(x,y){
+            x=x||0;
+            y=y||0;
+
+            return x+y;
+        }
+        document.write('<br>')
+        let result=fun2(1,3)
+        document.write(result)
+    </script>
+</body>
+</html>
+
+<!-- 
+    函数：是一段可复用执行的一段代码块
+    函数的参数：调用时可以不传参，不过函数的参数默认值时undefined
+    函数的返回值: 把函数代码块中的任务执行完，用return 返回给调用者一个特定的结果,
+     与java不同的是，前端的函数返回值不需要定义返回的数据类型，而java需要
+
+
+     重点：
+      1.函数体内使用return关键字能够将执行结果函数的调用者
+      2.函数内部只能出现1次return，并且return后面代码不会在执行，所以return后面的数据不要换行写
+      3.return 会立即结束掉当前函数
+      4.函数可以没有return，这种情况函数默认返回值为undefined
+ -->

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 相对定位 */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: pink;
+            width: 400px;
+            height: 400px;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
+
+<!-- 
+
+    定位的元素，无法使用margin: 0 auto  设置居中
+    如果想水平垂直居中，
+    1.设置left 50% , buttom 50% 
+    2.设置2d移动为   transform: translate(-50%,-50%);
+
+
+
+ -->

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function A() {
+
+        }
+
+        function B() { }
+
+
+        let obj = new B()
+
+        // 1.判断 obj 是否 为 A 这个构造函数new出来的实例
+        console.log(obj instanceof A)
+        console.log(obj instanceof B)
+        // instanceof:  用于判断一个对象是否是另一个构造函数的实例对象
+        // 对象 instanceof 构造函数
+
+
+        // 2.obj.constructor: 指向构造函数本身
+        console.log(obj.constructor)
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    instanceof : 用于判断一个对象是否是另一个构造函数的实例对象
+    obj.constructor： 直接把对象的 构造函数返回，所以它指向的是构造函数本身
+ 
+
+    1.每次 new ，会开辟一个新的内存空间，
+    2.然后会有个this会指向这个对象
+    3.执行构造函数里面的代码
+    4.返回创建的这个this对象
+   
+
+-->

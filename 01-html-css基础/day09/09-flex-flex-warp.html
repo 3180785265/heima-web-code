@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 600px;
+            border: 1px solid #333;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .box>div {
+            /* width: 80px; */
+            width: 24%;
+            height: 80px;
+            background-color: pink;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+        1.弹性布局的特点的，子级盒子可以自动伸缩尺寸,
+        比如一个弹性盒子中有一行水平排列的元素，如果它容不下所有子元素的实际宽度，默认是不会换行的，会将盒子压缩成弹性容器所能容纳的宽度
+
+
+        2.使用了flex-warp 换行之后，每行元素排满后，都会有换行显示，如果想调整行的对齐方式，可以使用algn-content
+
+ -->

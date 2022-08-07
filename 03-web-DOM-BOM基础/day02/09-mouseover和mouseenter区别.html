@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            margin: 100px auto;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+
+        .son {
+
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        let fa = document.querySelector('.father')
+        let son = document.querySelector('.son')
+        fa.addEventListener('mouseover', function () {
+            console.log(111)
+        })
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+
+    mouseenter 
+    mouseover 
+    这两个事件，跟这个事件绑定的元素，只要鼠标移入该元素，就会触发，但只触发一次事件,  两种的区别是mouseenter不会冒泡，mouseover会冒泡
+
+ -->

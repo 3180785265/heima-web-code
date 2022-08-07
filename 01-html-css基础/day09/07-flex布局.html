@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            /*块级元素的 宽度 默认跟随父级100%*/
+
+            height: 100px;
+
+            /* 水平排列：默认主轴在水平，弹性盒子都是沿着主轴排列 */
+            display: flex;
+
+            /* justify-content: center; */
+            
+            /* justify-content: space-between; */
+
+            /* 所有地方的间距都相等 */
+            justify-content: space-evenly;
+
+            /* 间距加在子级的两侧，但子级之间的距离是父级两头距离的两倍 */
+            justify-content: space-around;
+            border:1px solid #333;
+        }
+
+        .box >div{
+            width: 40px;
+            height: 40px;
+            background-color: pink;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+    </div>
+</body>
+</html>
+
+<!-- 
+
+    flex 能完成浮动带来的问题,
+    问题1.父级没有设置高度，子级浮动脱标，父级高度塌陷。
+
+
+
+    flex 弹性布局
+    flex是浏览器提倡的布局模型
+    flex是专门用来做布局的模型
+
+    flex 对于低版本的浏览器也是不兼容的，所以有的时候浮动有时也更实用
+    水平：主轴, 默认主轴，是在水平方向
+    垂直：交叉轴/侧轴  ，默认侧轴，是在垂直方向
+
+    主轴，和侧轴，是可以改变轴所在的方向
+
+    水平排列：默认主轴在水平，弹性盒子都是沿着主轴排列
+
+    弹性布局，在父盒子设置 display 显示模式，
+
+ -->

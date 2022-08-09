@@ -10,6 +10,8 @@
 
 <body>
     <script>
+        console.dir(new Promise(function () { }))
+
         function foo() {
             return new Promise(function (resolve, reject) {
                 setTimeout(() => {
@@ -44,7 +46,7 @@
 
 </html>
 <!-- 
-  Promise 中提供了 三大API  then(), catch() ,finally()
+  Promise 中提供了 三大API  then(), catch() ,finally(),这些API要创建出实例才可以被调用
 
    1. p.then():     如果promise 的异步任务执行成功，会被调用，  参数得到的是异步任务的正确结果
    2. p.catch():    如果promise 的异步任务执行失败，异步任务执行失败，就会调用catch() , 这个是用来简化 .then() 中的失败的回调函数的。

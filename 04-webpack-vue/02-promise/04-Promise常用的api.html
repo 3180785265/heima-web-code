@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(() => {
+
+                    if (true) {
+                        resolve('成功');
+                    } else {
+                        reject('失败')
+                    }
+
+                }, 1000)
+            })
+        }
+
+        foo()
+            // .then(result => { }, error => { })
+
+            // 1.如果promise 的异步任务执行成功，会被调用，  参数得到的是异步任务的正确结果
+            .then(result => {
+                console.log(result)
+            })
+            // 2. 如果promise 的异步任务执行失败，异步任务执行失败，就会调用catch() , 这个是用来简化 .then() 中的失败的回调函数的。
+            .catch(error => {
+                console.log(error)
+            })
+            // 3.不管执行成功还是失败都会执行finally
+            .finally(function () {
+                console.log('finally')
+            })
+    </script>
+</body>
+
+</html>
+<!-- 
+  Promise 中提供了 三大API  then(), catch() ,finally()
+
+   1. p.then():     如果promise 的异步任务执行成功，会被调用，  参数得到的是异步任务的正确结果
+   2. p.catch():    如果promise 的异步任务执行失败，异步任务执行失败，就会调用catch() , 这个是用来简化 .then() 中的失败的回调函数的。
+   3. p.finally():  不管执行成功还是失败都会执行finally 
+
+ -->

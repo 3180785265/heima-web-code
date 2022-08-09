@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+         1. 由于导入的index.js中使用了es6模块化，会出现javaScript不兼容浏览器问题，会不支持es6的模块化，
+            所以我们要把index.js 转换成浏览器兼容的代码，
+            才能够使用 
+
+         2.webpack能帮助我们处理这些兼容性问题
+           1.在项目中安装webpack和webpack clic 的依赖包，会把下的的包导入到node_models中
+           2.在项目根目录中，创建名未webpack.config.js的webpack配置文件
+           3.在webpack的配置文件中，配置如下 
+             model.exports={
+                 model:"" //用来指定构建模式,
+                 d:开发模式进行构建：转化的代码不会进行压缩与混淆，但会解决比如js的兼容性问题 (时间短)
+                 p：发布上线模式：进行构建会对转换的代码压缩与混淆(时间长)
+             
+                 只有项目上线了才用p模式
+            }  
+        3. 
+           1.在package.json中，配置一个脚本命令 "dev":"webpack"
+           2.在使用 npm run dev 命令对项目进行打包,一执行，就会执行dev 这个脚本，所对应的webpack命令
+           3.命令执行后会创建一个dist目录，里面main.js就是打包后的js代码，已经处理过了兼容性
+           4.将main.js处理兼容性的代码引入 
+
+           5.development: 开发模式进行构建：转化的代码不会进行压缩与混淆，但会解决比如js的兼容性问题(时间短)
+             production：发布上线模式：进行构建会对转换的代码压缩与混淆(时间长)
+            
+
+           6.webpack打包的入口和出口  
+        -->
+    <!--     <script src="./index.js"></script>  -->
+    <script src=".dist/main.js"></script>
+
+    <ul>
+        <li>这是li</li>
+        <li>这是li</li>
+        <li>这是li</li>
+        <li>这是li</li>
+        <li>这是li</li>
+        <li>这是li</li>
+        <li>这是li</li>
+        <li>这是li</li>
+        <li>这是li</li>
+        <li>这是li</li>
+        <li>这是li</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /* 
+            promise 是一个构造器，
+            我们可以不new，直接打印这个构造器对象, 在js中，函数也是一个对象
+
+        */
+
+        console.log(Promise)
+
+
+
+        // 1.Promise.all() 并发处理多个异步任务，所有任务都执行完成才能得到结果
+
+        function fn() {
+
+            return new Promise(function (resove, reject) {
+                setTimeout(() => {
+
+                    if (true) {
+                        resove('成功')
+                    } else {
+                        resove('失败')
+                    }
+
+                }, 1000);
+            })
+
+
+        }
+
+        let p1 = fn();
+        let p2 = fn();
+        let p3 = fn();
+
+        /* 
+        1. Promise.all() 并发处理多个异步任务，所有任务都执行完成才能得到结果, 参数是一个数组，里面放异步任务。 
+            .then() 的参数是得到是所有异步任务执行成功后得到的结果，是一个数组
+        */
+        Promise.all([p1, p2, p3]).then(function (resove) {
+            // .then() 的参数是得到是所有异步任务执行成功后得到的结果，是一个数组,数组的顺序和传入的任务是一一对应的
+            console.log(resove)
+        })
+
+        //2.并发处理多个异步任务，只要有一个任务完成就能得到结果
+        Promise.race([p1, p2, p3]).then(function (resove) {
+            console.log(resove)
+        })
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+    Promise的构造函数对象方法
+    1.Promise.all() 并发处理多个异步任务，所有任务都执行完成才能得到结果, 参数是一个数组，里面放异步任务。 
+      .then() 的参数是得到是所有异步任务执行成功后得到的结果，是一个数组
+    2.Promise.race() 并发处理多个异步任务，只要有一个任务完成就能得到结果
+
+
+ -->

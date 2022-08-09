@@ -87,6 +87,10 @@
             fei: function () {
                 console.log(this) //指向的是obj
 
+                document.querySelector('div').addEventListener('click', () => {
+                    console.log(this)//使用的是上级作用域中的this
+                })
+
 
                 window.setInterval(() => {
                     console.log(this) // 指向的是上级作用域的this

@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
+
     </style>
 </head>
+
 <body>
-    <script></script>
+    <input type="text">
+    <span></span>
+    <script>
+
+
+
+
+
+
+        document.querySelector('input').addEventListener('change', () => {
+            console.log(this)
+
+        })
+    </script>
 </body>
+
 </html>
 
 
@@ -20,9 +36,16 @@
     除了单机事件可以被监听，还有很多的事件，可以被程序监听
     鼠标事件: 鼠标触发
     click,mouseenter  ,mouseleave
+     mouseover(鼠标经过元素) 和 mouseout(鼠标移出元素):    会有冒泡效果
+     mouseenter(鼠标经过元素) 和 mouseleave(鼠标移出元素):  没有冒泡效果(推荐)
+     mousemove: 鼠标在绑定元素的上一直动，就会一直触发
+
 
     焦点事件: 表单获得光标
      focus获取焦点 blur 失去焦点
+
+
+
 
     键盘事件: 键盘触发
     keydown 键盘按下触发
@@ -31,6 +54,8 @@
 
 
     文本事件：表单输入触发
-    input 用户输入事件
+    input 用户输入事件,只要值变化，立马触发
+    change 表单组件的值发生变化并离开焦点后触发
+
 
  -->

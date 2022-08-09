@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box{
+        .box {
             width: 300px;
             height: 300px;
-            border:1px solid red;
+            border: 1px solid red;
             /* 主轴默认是在水平方向，所以元素也在水平排列 */
             display: flex;
 
@@ -26,15 +27,30 @@
 
         }
 
-        .box img{
+        .box img {
             width: 100px;
             height: 100px;
         }
-        .box p{
+
+        .box p {
             width: 100px;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 400px;
+            height: 400px;
+        }
+
+        .box .item {
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
+
 <body>
 
     <!-- 如果想让子级竖着排，就要让主轴在 y方向，因为元素都是跟随主轴排列的 -->
@@ -43,6 +59,7 @@
         <p>你好</p>
     </div>
 </body>
+
 </html>
 
 

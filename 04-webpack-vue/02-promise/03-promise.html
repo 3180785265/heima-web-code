@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.创建一个Promise 对象，通过promise来实现异步任务
+        let p = new Promise(function (resolve, reject) {
+            // 2.这里用setTimeout实现异步任务,当异步任务执行，会调用resolve或者reject
+            setTimeout(() => {
+                let flag = true
+
+                if (flag) {
+                    // 正常情况
+                    resolve('123')
+                } else {
+                    // 异常情况
+                    reject('出错了')
+                }
+            }, 1000);
+        })
+        // 2.调用then() 方法
+        p.then(function (result) {
+            console.log(result)// 123  下一次then()的参数，接收的是promise对象，上一次执行处理的结果
+
+            // 3. 如果返回的是普通值，为了下一个then()能被链式调用，promise的回调函数会默认自动创建一个promise的实例对象并return返回 
+            return '你好'
+
+        }, function (error) {
+            console.log(error)
+            return '错误'
+
+        })
+            //3. 这个then() 之所以能链式调用，是因为上一个then() 的回调函数默认会创建一个promise的实例并返回
+            .then(result => {
+                //4. 下一个then()的参数接收的是上一个参数 的回调中 返回的处理结果
+                console.log(result)
+                //5. 用promise实现异步任务，并在当前then返回 这个promise的实例，让下一个then() 可以被链式调用
+                return new Promise(function (resolve, reject) {
+
+                    // 定义一个异步任务
+                    setTimeout(() => {
+                        resolve('成狗321') // 执行成功后调用，参数是返回的结果
+                    }, 1000);
+
+                })
+            })
+            // 6.上一个promise对象，调用下一个then()
+            .then(result => {
+                console.log(result)//接收的是上一个then的返回return的结果
+            })
+
+        // 用then() 的方式定义回调函数,将代码重构，这样就不会在出现多层嵌套，而是通过多个.then()实现异步任务的顺序执行
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+            1.异步编程的认识:
+        1.异步效果的代码：定时任务，ajax，事件函数
+        2.多个异步任务顺序执行: 如果说有多个异步任务，他们的执行顺序是不确定的，要想实现这些异步任务的执行顺序，就需要进行异步任务中回调函数的嵌套
+
+        多次异步调用的依赖分析:
+        多次异步调用顺序不确定，异步调用结果如果存在依赖需要嵌套
+
+        2.异步任务的回调嵌套缺点:
+        通过多个回调函数的互相嵌套，保证多个异步任务的执行顺序，就需要把异步任务的回调函数嵌套,
+        就是上一个异步任务的回调函数需要依赖下一个异步任务的回调函数，就需要把他们嵌套在一起，但是这样如果嵌套的层次多了，就容易形成回调地狱，可读性变差，代码冗余，耦合性变强
+
+
+
+
+        3.promise 是异步编程的一种解决方案，可以实现异步。还可以解决回调地狱的问题
+
+        使用promise的好处:
+        1.可以避免多层异步调用嵌套问题(回调地狱)
+        2.promise 对象提供了简洁的api，使得控制异步操作更加的容易
+
+        3.resolve 和 reject 两个参数用于处理成功和失败的两种情况，并通过p.then()获取处理结果
+
+        // 传入一个构造函数，构造参数是resolve 和 reject
+        var p=new Promise(function (resolve,reject) {
+
+        // 1.成功时调用
+        resolve();
+
+        // 2.失败时调用
+        reject();
+        }) 
+
+        4.异常的情况可以没有异常的回调，但必须要有正常情况的回调函数
+        5.then 参数中的函数返回值: 
+          1.上一个then()的回调函数返回的是promise的实例对象。
+          2.如果返回的是只是一个普通值，这种情况则会默认自动帮助我们创建一个promise的实例对象，从而保证让我们的一个then() 可以链式操作，并且下一个then的参数可以接收到上一个then  处理返回return的结果
+          
+-->

@@ -9,12 +9,29 @@
 </head>
 
 <body>
+    <script>
+        const p = new Promise
 
+        // p.then()
+    </script>
 </body>
 
 </html>
 <!-- 
     promise的基本概念:22211112122112
-    promise是一个构造函数
-    我们可以创建promise的实例 cosnt p= new Promise()
- -->
+    1.promise是一个构造函数
+      我们可以创建promise的实例 cosnt p= new Promise()
+      new 出来的promise的实例对象，代表一个异步操作
+
+    2.Promise.prototype 上包含了一个.then()方法
+      每次new Promise() 构造函数得到的实例对象，  都可以通过原型链的方式访问到.then()方法，例如p.then()
+    
+    3.promise能完成一个异步的操作，异步就代表会耗时，这个异步操作可能会执行成功，也可能执行失败
+      而 .then() 方法用来预先指定 成功和失败的回调函数
+      1. p.then(成功的回调函数 , 失败的回调函数)
+         p.then(result=>{} , error=>{})   // 回调函数和函数表达式都是高阶函数，可以使用箭头函数简化
+         调用.then() 方法时，成功的回调函数是必选的，失败的回调函数是可选的
+
+
+ 
+-->

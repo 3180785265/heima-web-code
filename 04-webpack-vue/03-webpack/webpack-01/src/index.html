@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style/index.css">
 </head>
 
 <body>
@@ -44,6 +45,24 @@
                 "build": "webpack-dev-server"
               },
             启动后，会有一个服务器地址，访问就行，我们一旦修改了代码，webpack就会帮助我们自动编译
+
+
+
+            8.webpack中的加载器：
+              在实际开发中，webpack默认只能打包处理.js后缀结尾的模块，其他非.js后缀结尾的模块，webpack处理不了
+              需要调用loader加载器才可以正常打包，否则会报错,比如
+              less-loader 可以打包处理.less相关的文件
+              sass-loader可以处理打包.scss相关的文件
+              url-loader可以处理css中与url路径相关的文件
+
+              1.打包处理css文件:如果webpack没有对应的处理css的loader，那么在打包构建项目时会因为没有对应的loader加载器报错
+                1.运行npm i style-loader css-loader -D 命令安装css文件的loader
+                2.在webpack.config.js的module->rules数组中，添加loader规则如下
+                module:{
+                  rules:[
+                    {}
+                  ]
+                }
         -->
         <!-- <script src="./index.js"></script>  -->
     <!-- <script src="../di</script>st/bundle.js"></script> -->

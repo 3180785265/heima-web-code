@@ -1,4 +1,10 @@
 body{
-    background-color: rgb(31, 201, 136);
+    background-color: rgb(122, 86, 207);
+    background-image: url(./car.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+li {
+    color: rgb(15, 201, 31);
 }

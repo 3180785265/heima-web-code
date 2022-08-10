@@ -2,35 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style/index.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <!-- 
-         1. 由于导入的index.js中使用了es6模块化，会出现javaScript不兼容浏览器问题，会不支持es6的模块化，
-            所以我们要把index.js 转换成浏览器兼容的代码，
-            才能够使用 
+  <!-- 
+         1. 使用webpack的好处与优点
+            由于导入的index.js中使用了es6模块化，会出现javaScript不兼容浏览器问题，会不支持es6的模块化，
+            所以我们要把index.js 转换成浏览器兼容的代码，才能够使用 ，webpack能自动进行优化，配合一些加载器，对less,sacss 进行打包，对js 的 es6 进行打包兼容
 
-         2.webpack能帮助我们处理这些兼容性问题
-           1.在项目中安装webpack和webpack clic 的依赖包，会把下的的包导入到node_models中
-           2.在项目根目录中，创建名未webpack.config.js的webpack配置文件
-           3.在webpack的配置文件中，配置如下 
-             model.exports={
-                 model:"" //用来指定构建模式,
-                 d:开发模式进行构建：转化的代码不会进行压缩与混淆，但会解决比如js的兼容性问题 (时间短)
-                 p：发布上线模式：进行构建会对转换的代码压缩与混淆(时间长)
-             
-                 只有项目上线了才用p模式
-            }  
-        3. 
-           1.在package.json中，配置一个脚本命令 "dev":"webpack"
-           2.在使用 npm run dev 命令对项目进行打包,一执行，就会执行dev 这个脚本，所对应的webpack命令
-           3.命令执行后会创建一个dist目录，里面main.js就是打包后的js代码，已经处理过了兼容性
-           4.将main.js处理兼容性的代码引入 
+         1.1.  重点：！ 项目中要想对 css,less 等文件进行打包压缩， 必须将这些文件用es6的 形式 import 导入到  webpack打包的入口文件， 这是重点!
+               重点：！ webpack只能打包.js文件，所以打包，都需要配置一个主入口文件(打包前的js) 出口文件(打包压缩后的文件) , 所以其他的非.js 文件，要想打包，都需要用es6 的import 导入方式，在webpack的打包入口文件引入，比如import './XXX.css'    
+
+         2.webpack的使用：
+            1.2在项目中npm install webpack-cli -D 命令安装webpack相关的包
+            2.在项目的根目录中，创建名为webpack.config.js的webpack配置文件
+            3.在webpack的配置文件中，初始化如下配置
+              model.exports={
+                    model:"development" //用来指定构建模式,
+
+                        development: 开发模式进行构建：转化的代码不会进行压缩与混淆，但会解决比如js的兼容性问题(时间短)
+                        production：发布上线模式：进行构建会对转换的代码压缩与混淆(时间长)
+                
+                    只有项目上线了才用p模式
+              }  
+            4. webpack的脚本命令 和 主入口文件，出口文件
+              1.在package.json中，配置一个脚本命令 "dev":"webpack"
+              2.在使用 npm run dev 命令对项目进行打包,一执行，就会执行dev 这个脚本，所对应的webpack命令
+              3.命令执行后会创建一个dist目录，里面main.js就是打包后的js代码，已经处理过了兼容性 
+                (在webpack 4.0 中 src 目录下的index.js 默认就是打包的主入口文件,dist 目录下的main.js 就是webpack将index.js 打包压缩后的出口文件)
+              4.将main.js处理兼容性的代码引入 
 
            5.development: 开发模式进行构建：转化的代码不会进行压缩与混淆，但会解决比如js的兼容性问题(时间短)
              production：发布上线模式：进行构建会对转换的代码压缩与混淆(时间长)
@@ -49,38 +53,61 @@
 
 
             8.webpack中的加载器：
+
+              
               在实际开发中，webpack默认只能打包处理.js后缀结尾的模块，其他非.js后缀结尾的模块，webpack处理不了
               需要调用loader加载器才可以正常打包，否则会报错,比如
               less-loader 可以打包处理.less相关的文件
               sass-loader可以处理打包.scss相关的文件
               url-loader可以处理css中与url路径相关的文件
 
+
+              重点：！ 项目中要想对 css,less 等文件进行打包压缩， 必须将这些文件用es6的 形式 import 导入到  webpack打包的入口文件， 这是重点!  
+
+
+
+
               1.打包处理css文件:如果webpack没有对应的处理css的loader，那么在打包构建项目时会因为没有对应的loader加载器报错
-                1.运行npm i style-loader css-loader -D 命令安装css文件的loader
+                1.运行 npm i style-loader css-loader -D 命令安装css文件的loader
                 2.在webpack.config.js的module->rules数组中，添加loader规则如下
                 module:{
                   rules:[
                     {}
                   ]
                 }
-        -->
-        <!-- <script src="./index.js"></script>  -->
-    <!-- <script src="../di</script>st/bundle.js"></script> -->
-    <script src="../dist/bundle.js"></script>
 
-    <ul>
-        <li>这是li</li>
-        <li>这是li</li>
-        <li>这是li</li>
-        <li>这是li</li>
-        <li>这是li</li>
-        <li>这是li</li>
-        <li>这是li</li>
-        <li>这是li</li>
-        <li>这是li</li>
-        <li>这是li</li>
-        <li>这是li</li>
-    </ul>
+               2.less和sass都是css的预编译语言 ，webpack也为sass和less提供了loader加载器
+                  运行npm i sacss-loader node-sacss-loader 
+               3. sass处理，命令安装 npm install sass-loader node-sass --save-d  
+                  在webpack。config.js中配置 loader 
+               4.css样式标中 引用的图片和字体文件，也需要对应的loader加载器，因为webpack只识别.js 
+                 npm i url-loader file-loader -D 命令 安装对应的加载器
+
+               5.集成bable的loader处理js高级语法的兼容性问题
+                 安装babel转换器，
+                  "@babel/core": "^7.13.15",
+                  "@babel/preset-env": "^7.13.15",
+                  "babel-loader": "^8.2.2",
+                在项目的根目录创建babel的配置文件babel.config.js 并初始化基本配置如下
+                
+        -->
+  <!-- <script src="./index.js"></script>  -->
+  <!-- <script src="../di</script>st/bundle.js"></script> -->
+  <script src="../dist/bundle.js"></script>
+
+  <ul>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+  </ul>
 </body>
 
 </html>

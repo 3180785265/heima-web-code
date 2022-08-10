@@ -13,16 +13,7 @@ module.exports = {
     output: { // 出口
       path: path.join(__dirname, './dist'), //输出文件的存放路径
       filename: 'bundle.js',
-    
     },
-    
-    devServer: {
-      static: "./",
-      open: true,//初次打包完成后，自动打开浏览器
-      host: '127.0.0.1',//实时打包所使用的主机地址
-      port: 80 //实时打包锁使用的端口号
-    }
-    
 
 }
 

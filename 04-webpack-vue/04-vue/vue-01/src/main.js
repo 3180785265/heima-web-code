@@ -8,7 +8,14 @@ import Vue from 'vue'
 // import App from '@/学习笔记/06-拿到事件对象、阻止标签的默认行为.vue'
 // import App from '@/学习笔记/07-拿到事件修饰符.vue'
 // import App from '@/学习笔记/08-反转字符串.vue'
-import App from '@/学习笔记/08-反转字符串.vue'
+// import App from '@/学习笔记/08-反转字符串.vue'
+// import App from '@/学习笔记/09-vue指令-v-model使用.vue'
+// import App from '@/学习笔记/10-vue指令-v-model绑定不同表单标签.vue'
+// import App from '@/学习笔记/11-v-model的修饰符.vue'
+// import App from '@/学习笔记/11-v-model的修饰符.vue'
+// import App from '@/学习笔记/13-v-if和v-show指令.vue'
+// import App from '@/学习笔记/14_案例_折叠面板.vue'
+ import App from '@/学习笔记/15-v-for指令.vue'
 
 Vue.config.productionTip = false //3.只会在控制台有一句提示消息
 

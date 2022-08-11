@@ -14,9 +14,18 @@
             由于导入的index.js中使用了es6模块化，会出现javaScript不兼容浏览器问题，会不支持es6的模块化，
             所以我们要把index.js 转换成浏览器兼容的代码，才能够使用 ，webpack能自动进行优化，配合一些加载器，对less,sacss 进行打包，对js 的 es6 进行打包兼容
 
-         1.1.  重点：！ 项目中要想对 css,less 等文件进行打包压缩， 必须将这些文件用es6的 形式 import 导入到  webpack打包的入口文件， 这是重点!
+         1.1.  重点:    webpack 建的项目，所有的代码文件，都要和 "入口"  有直接或间接的关系才会被webpack一起打包压缩成 出口文件，在dist文件下
+         
+                  // 2.通过webpack.config.js 配置打包的入口与出口
+                  entry: path.join(__dirname, './src/index.js'), // 打包入口文件的路径
+                  output: { // 出口
+                    path: path.join(__dirname, './dist'), //输出文件的存放路径
+                    filename: 'bundle.js',
+                  },
+                  
+               重点：！ 项目中要想对 css,less 等文件进行打包压缩， 必须将这些文件用es6的 形式 import 导入到  webpack打包的入口文件， 这是重点!
                重点：！ webpack只能打包.js文件，所以打包，都需要配置一个主入口文件(打包前的js) 出口文件(打包压缩后的文件) , 所以其他的非.js 文件，要想打包，都需要用es6 的import 导入方式，在webpack的打包入口文件引入，比如import './XXX.css'    
-
+            
          2.webpack的使用：
             1.2在项目中npm install webpack-cli -D 命令安装webpack相关的包
             2.在项目的根目录中，创建名为webpack.config.js的webpack配置文件

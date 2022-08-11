@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<!-- 
+
+    vue单文件组件的基本语法
+    每一个单页面组件都是.vue 
+    单文件组件的组成解构
+    <template>: 组件的模块区域,用来定义vue组件的模板内容
+        <template>
+            <div>
+                
+            </div>
+        </template>
+
+    script: 用来定义vue组件的业务逻辑的区域 
+    <script>
+    export default {
+        
+    }
+    </script>
+
+    style: 用来定义当前vue组件的私有样式，其中建议为每个style 添加scoped属性，防止多个vue组件中的样式冲突问题
+
+
+
+1.  vue框架
+    更少的时间，干更多的活，开发网站速度快
+
+    以前 循环一个li标签，需要for循环中创建dom
+    而使用了vue的指令，v-for,就能把vue绑定的数组渲染多个li出来
+
+2.  @vue-cli的作用:
+    @vue-cli时vue官方提供的一个全局模块包(得到vue命令),这个包用于创建脚手架项目
+    脚手架时为了保证各施工过程顺利进行而搭建的工作平台(安装之前必须要有下载node.js才能通过npm命令下载)
+    好处：
+    1.开箱即用
+    2.零配置webpack,新的开发模式需要有webpack的支持，需要通过webpack打包之后，再将代码返回给浏览器
+      自己配置webpack是很痛苦的，@vue-cli已经将webpack做成了零配置
+    3.babel支持
+    4.less,css支持
+    5.开发服务器支持
+
+3.  @vue-cli安装:
+    1.@vue-cli是一个全局的模块包，是一个包所以就要通过npm去下载这个包并且是全局安装在电脑上的
+      npm install -g @vue/cli 或者  yarn global add @vue/cli   命令去安装这个npm的全局模块包 
+
+    2.vue  -V  能检查  @vue-cli 包 是否安装成功
+      安装之前必须要有下载node.js才能通过npm命令下载
+
+      安装了这个脚手架之后，就有了vue的命令，就必须我安装的node.js 就有了node的npm命令
+      安装了 @vue-cli 我就有了vue的命令
+    3.用@vue-cli 命令  vue create vue-demo  创建一个vue项目
+    yarn serve 启动项目
+    
+    4.脚手架有哪些主要文件?
+       1.node_modules: 都是下载的第三方包
+       2.public/index.html: 浏览器运行的网页
+       3.src/main.js:  webpack打包的入口js文件
+       4.src/App.vue:  vue页面的主入口,其他的页面都需要通过这个主入口页面来显示
+       5.package.json: 记录依赖包的包版本和包名
+
+
+    1. vue的main.js入口和其他代码文件的引入关系
+       入口main.js文件，通过 import App from './App.vue' 引入了 vue 主入口文件
+       而 App.vue 则是引入了其他的所有的组件(router路由)，就和main.js产生了间接的关系
+       这样就让main.js主入口文件和其他的所有文件产生了关系，让webpack能够编译打包，main.js 中的new vue()，就是将App.vue 页面打包，渲染到public/index.html中的id为app的标签中
+       而public/index.html  就是浏览器访问vue项目的文件
+
+
+    2. new vue()的作用
+        // 1.引入vue对象
+        import Vue from 'vue'  
+        // 2.App.vue文件里对象引入过来(vue项目页面入口)
+        import App from './App.vue'
+
+        Vue.config.productionTip = false //3.只会在控制台有一句提示消息
+
+        
+        // 4.new Vue()表示开始实例化vue 
+        new Vue({
+        // 5.render()表示准备渲染App.vue页面
+        render: h => h(App),
+
+        //6.$mount('#app') 表示将App.vue页面渲染到 public/index.html 中的标签id为app的标签上
+        }).$mount('#app')
+
+    3.修改脚手架的端口号:
+        项目中是没有web.config.js文件的，vue-cli脚手架项目用的是vue.config.js
+        在项目根目录下新建一个vue.config.js,  修改脚手架的端口号
+        // 这是vue脚手架的默认配置文件
+
+        // webpack+node环境 -导出配置对象
+        module.exports = {
+            sevServer: {
+                port: 3000,//端口号
+                open: true //表示让浏览器自动打开
+            }
+        }
+
+    4. eslint是一种代码检查的工具
+       如果写代码违反了eslint的规则-报错
+       演示：在main.js中随意定义变量，不使用，eslint报错,这是eslint的强代码检查，可以关闭掉     
+        module.exports = {
+            sevServer: {
+                port: 3000,//端口号
+                open: true //表示让浏览器自动打开
+            },
+            lintOnSave: false // 关闭eslint的检查
+        }
+
+
+        总结:
+        main.js和App.vue,以及index.html作用和关系
+        1.main.js，是webpack打包的入口
+        2.App.vue是vue页面入口
+        3.index.html 浏览器运行的文件
+
+ -->

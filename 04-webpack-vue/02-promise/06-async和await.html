@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function fn1() {
+            return new Promise(function (resove, reject) {
+                resove('返回结果')
+            })
+
+
+        }
+        function fn2() {
+            return new Promise(function (resove, reject) {
+
+                setTimeout(() => {
+                    reject('读取失败')
+                }, 1000);
+                
+            })
+
+
+        }
+
+
+        async function fun() {
+
+            /* 
+                 1.用.then()的方式拿到promise的结果, 容易造成代码的冗余
+                   promise 的异步任务可以返回结果，比如成功的结果,通过resove()的参数返回，
+                   和失败的结果通过reject()函数的参数返回,在下一个.then()的回调函数可以获取结果 
+                 fn().then(result => {
+                     console.log(result)
+                     return "返回的结果"
+                 })
+                 .then(result => {
+                     console.log(result)
+                 })
+ 
+            */
+
+            //  2.用await 拿到promise 的执行结果，简化到用then() 的方式
+            //  3.使用 try{} catch(e){} 捕获promise 异步任务中可能产生的错误异常，并在catch(e){} 代码块中处理
+            try {
+                const t2 = await fn1();
+                const t1 = await fn2();
+                console.log(t1)
+                console.log(t2)
+            } catch (error) {
+                console.log(error)
+            }
+
+            console.log('??????')
+
+
+        }
+
+         fun()
+
+
+
+    </script>
+</body>
+
+</html>
+<!-- 
+    .then() 链式调用的优点: 解决了回调地狱的问题
+    .then() 链式调用的缺点: 代码冗余，阅读性查，不易理解
+
+
+    async await 是为了简化.then() 的形式，解决代码冗余的现象，就不用写很多个的then()了
+    就不必在用.then() 的方式拿到promise的结果了，而是通过await拿到结果,
+    但是方法中用到了await,就必须async修饰
+
+
+    如果不加await,  返回的是一个promise 的实例
+    如果加了await,  返回值就不在是promise 的实例，而是返回结果
+
+
+    主要用在，如果某一个方法的返回值是一个promise 实例对象，修饰一个await , 它的返回值就不在是promise 实例了，而是获取异步任务返回的结果
+    如果一个方法内部，用到了await，那么这个方法必须用async修饰
+
+
+
+
+
+    1.promise , 可以实现异步，处理失败和成功的结果，
+    2.通过.then() 函数实现链式调用处理结果，解决回调地狱，
+    3.then()函数默认会创建promise对象并return，方便下一个then()链式调用
+    4.then()的方式还不够完美，代码可读性差，通过awati 和async 简化，如果我们只想获取promise处理的结果，直接在promise返回值前面加await,表示强制等待promise的处理结果
+    5.在async方法中，第一个await之前的代码会同步执行，await之后的代码会异步执行
+    
+    
+    也就是说await 之前的代码会被加到同步栈中，await和await之后的代码属于异步代码，会被加到异步队列
+
+    只有等同步代码执行完，才会去执行异步代码
+
+
+    面对这种情况，可以给调用的async方法，在加一个await 表示强制等待
+
+
+
+
+->

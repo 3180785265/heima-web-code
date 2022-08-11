@@ -93,6 +93,6 @@ export default {
             3.v-for="(item,index)  in  arr"
             
 
-
+            v-for 指令 用于循环遍历标签, 并且可以在v-for的标签内部取出变量使用
  -->
 

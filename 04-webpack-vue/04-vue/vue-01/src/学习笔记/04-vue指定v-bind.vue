@@ -6,16 +6,23 @@
         <a v-bind:href="url">点击去百度</a>
         <br>
         <!-- 简写 -->
-        <a :href="url">点击去百度</a>
+        <img :src="imageUrl"/>
+        <br>
+        <img :src="oInUrl"/>
     </div>
 </template>
 
 <script>
+import oInUrl  from'@/assets/1.gif'
 export default {
     // 1.准备变量
     data() {
         return {
-            url: "http://www.baidu.com"
+            url: "http://www.baidu.com",
+            urls: "http://www.baidu.com",
+            oInUrl:oInUrl,
+
+            imageUrl:'https://pics0.baidu.com/feed/00e93901213fb80ec905c2ac4654e924b8389401.png?token=2b1c7664a6fc2cfa69d07b186849684b'
         }
     },
 }

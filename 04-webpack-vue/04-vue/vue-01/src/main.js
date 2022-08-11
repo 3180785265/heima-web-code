@@ -5,7 +5,10 @@ import Vue from 'vue'
 // import App from '@/学习笔记/03-vue插值表达式.vue'
 // import App from '@/学习笔记/04-vue指定v-bind.vue'
 // import App from '@/学习笔记/05-vue指令v-on绑定事件.vue'
-import App from '@/学习笔记/05-vue指令v-on绑定事件.vue'
+// import App from '@/学习笔记/06-拿到事件对象、阻止标签的默认行为.vue'
+// import App from '@/学习笔记/07-拿到事件修饰符.vue'
+// import App from '@/学习笔记/08-反转字符串.vue'
+import App from '@/学习笔记/08-反转字符串.vue'
 
 Vue.config.productionTip = false //3.只会在控制台有一句提示消息
 

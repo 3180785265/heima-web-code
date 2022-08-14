@@ -5,10 +5,13 @@
         <p>{{ intro }}</p>
 
         <button @click="kjBtn">砍价</button>
+
     </div>
 </template>
 
 <script>
+import eventBus from '@/EventBus'
+
 export default {
     // 1.子组件内 定义props变量，准备接收
     props: ['index', 'title', 'price', 'intro'],
@@ -18,14 +21,13 @@ export default {
 
 
         kjBtn() {
-            /*  2. 直接修改子组件的props变量，但是父组件的变量是没有修改的并且Vue不允许子组件直接修改props变量
-                   会出现子组件props和父组件传值的变量不一致，还会出现报错
-                    this.price--
-           */
-
-            //3.使用 this.$emit("事件名","事件回调函数的实参")
-            
+    
+            //1.使用 this.$emit("事件名","事件回调函数的实参")  触发父组件的自定义事件
             this.$emit("subprice", this.index, 1)
+            
+
+            // 2.使用 eventBus.$emit("事件名","自定义事件的实参"....) 跨组件通信,触发 List组件中的事件,
+            eventBus.$emit("send",index,price)
 
         }
     },

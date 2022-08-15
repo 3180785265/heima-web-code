@@ -1,5 +1,5 @@
 {
-  "name": "vue-04",
+  "name": "vue-05",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,6 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "axios": "^0.27.2",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },

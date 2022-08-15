@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 2. ...c 表示接收剩余的参数,  ...c 就表示成了用一个数组接收
+        function fun(a, b, ...c) {
+            console.log(a, b, c)
+        }
+
+        // 1. 将剩余的参数  3，4，5  传给 参数 c 
+        fun(1, 2, 3, 4, 5)
+
+
+
+
+        function fun2(...ars) {
+            console.log(ars)
+        }
+
+        fun2(4, 4, 5, 6, 7,)
+
+
+
+
+
+
+        // 3.spread 语法: 将数组展开为一个列表
+        let arr = ['html', 'css', 'js']
+        console.log(...arr); // html css js     它会把一个数组展开为列表
+
+
+        // 3.对象的扩展运算符... 用于取出参数对象的所有可遍历的键值对属性，拷贝到当前对象之中
+
+        let obj = { user: "xiaoming", age: 19 }
+        let obj2 = { sex: '男', ...obj }
+        console.log(obj2)
+
+
+       // 4.对象的扩展运算符也可以用于数组，将数组转化为可迭代对象
+        let arr2 = ['html', 'css'];
+        let obj3 = { ...arr2 };
+        console.log(obj3); 
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+
+    扩展运算符
+
+
+    1.rest 参数
+    1.如果想把剩余的参数，都接收到一个变量里面
+    2.这种方式，叫做剩余参数,  function fun(a, b, ...c){},  ...c  就表示一个数组 
+
+
+    3.rest剩余参数是es6的新写法，它比arguments更灵活
+
+     rest剩余参数写法: 表示能接收更多的参数, 剩余参数这个变量就是一个伪数组
+     function fun2(...ars) {
+            console.log(ars)
+    }
+
+        fun2(4, 4, 5, 6, 7,)
+
+
+    2.spread 语法:数组扩展运算符也叫 spread 语法，spread 语法与 rest 参数完全相反，它会把可迭代对象 arr 用逗号展开为一个参数序列
+                  它会把一个数组展开为列表
+
+    let arr = ['html', 'css', 'js']
+    console.log(...arr); // html css js     它会把一个数组展开为列表
+
+
+
+                扩展运算符使用场景
+
+                1.浅拷贝数组和对象
+                let arr = ['html', 'css']
+                let newarr = [...arr];
+                console.log(newarr)
+
+                let obj = {name: 'jsx'};
+                let newobj = {...obj};
+                console.log(newobj)
+
+
+                2.合并数组、连接数组
+                let arr1 = ['jsx', 'ljj'];
+                let arr2 = ['html', 'css'];
+                let allarr = [...arr1, ...arr2];
+                console.log(allarr);
+
+
+                3.函数传递参数
+                function func(...arg){
+                    console.log(arg); // ['jsx', 'ljj']
+                }
+                func('jsx', 'ljj')
+                func(...['jsx', 'ljj'])
+
+
+                4.解构赋值,解构赋值剩余的参数
+                let [numMin, ...numMax] = [1, 2, 3, 4];
+ -->

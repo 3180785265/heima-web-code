@@ -1,0 +1,9 @@
+1.分为三部分
+
+
+    1.将头部和输入框分为一部分  TodoHeader.vue
+
+    2. 将内容分为一部分 TodoMain.vue
+
+    3.将底部分为一部分 TodoFooter.vue 
+

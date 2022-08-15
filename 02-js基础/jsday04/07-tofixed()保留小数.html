@@ -9,26 +9,14 @@
 </head>
 
 <body>
+    <p></p>
+    <span></span>
     <script>
-        let n = 3;
+        let num = 3.1315926;
 
+        document.querySelector('span').innerHTML = num.toFixed(2)
+        document.querySelector('p').innerHTML = Math.PI.toFixed(2)
     </script>
 </body>
 
 </html>
-
-
-<!-- 
-    简单类型:
-    引用类型:
-
-
-    0821 集
-
-
-
-    数组的es6 API  
-
-    arr.forEach((val,index)=>{})
-    arr.filter( (val,index)=>return  boolean ):  条件成立，添加到数组返回
- -->

@@ -9,10 +9,10 @@
     <!-- 合计 -->
     <div>
       <span>合计:</span>
-      <span class="price">¥{{totalPrice}}</span>
+      <span class="price">¥{{ totalPrice }}</span>
     </div>
     <!-- 按钮 -->
-    <button type="button" class="footer-btn btn btn-primary">结算 ( {{totalPrice}} )</button>
+    <button type="button" class="footer-btn btn btn-primary">结算{{ totalCount }}</button>
   </div>
 </template>
 
@@ -46,7 +46,11 @@ export default {
 
     // 依赖goods数组，计算总价格属性
     totalPrice() {
-      return this.goods.reduce( (num, obj) =>num += obj.goods_price*obj.goods_count, 0)
+      return this.goods.reduce((num, obj) => num += obj.goods_price * obj.goods_count, 0)
+
+    },
+    totalCount() {
+      return this.goods.reduce((num, obj) => num += obj.goods_count, 0)
 
     }
   }

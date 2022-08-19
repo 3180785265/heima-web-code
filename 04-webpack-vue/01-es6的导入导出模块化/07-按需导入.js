@@ -1,5 +1,5 @@
 
-//1. 导入模块成员, 并使用as 进行重命名
+//1. 可以导入多个模块成员, 并使用as 进行重命名(也可以配合默认导入导出使用)
 import info, { s1 as str1, s2 as str2, say } from './06-按需导出.js'
 
 console.log(str1)

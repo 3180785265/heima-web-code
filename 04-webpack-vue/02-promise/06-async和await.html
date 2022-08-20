@@ -24,7 +24,7 @@
                 setTimeout(() => {
                     reject('读取失败')
                 }, 1000);
-                
+
             })
 
 
@@ -63,7 +63,47 @@
 
         }
 
-         fun()
+
+        fun()
+
+        //  在声明一个异步函数，
+        async function fun2() {
+            // 如果需要在调用一个 async 的函数，并强制等待里面的异步任务完成，就必须在加上一个await, 调用这个函数的functoin 就要加上 async
+            await fun();
+
+            return new Promise((resove, reject) => {
+                // 模拟一个异步任务
+
+                // promise会强制等待 resove()执行结果
+
+                setTimeout(() => {
+                    reject('异常...')
+
+                }, 1400);
+            })
+        }
+
+
+        // async 修饰的函数，默认返回的是一个promise对象.
+        // async 函数 如果直接return一个直接值，async 会把这个直接量通过Promise.resove()封装成一个Promise对象返回。
+        // console.log( fun2())
+
+
+        async function fun3() {
+
+            try {
+                // await 会强制等待异步任务执行完， 并且会将resove()的值返回, 如果执行失败或者reject()了，可以用try catch() 包裹，处理掉异常
+                let s = await fun2()
+                console.log(s)
+            } catch (error) {
+                console.log(error)
+
+            }
+
+        }
+
+        fun3()
+
 
 
 
@@ -72,14 +112,26 @@
 
 </html>
 <!-- 
-    .then() 链式调用的优点: 解决了回调地狱的问题
-    .then() 链式调用的缺点: 代码冗余，阅读性查，不易理解
+    1..then() 链式调用的优点: 解决了回调地狱的问题
+    2..then() 链式调用的缺点: 代码冗余，阅读性查，不易理解
 
+    3. async 是异步的意思，用于声明一个一个functoin是异步的。
+        async修饰的函数如果有主动return返回值，会被包装成一个Promise对象返回,
+        如果没有主动return，也会返回一个Promise,但是里面包装的结果是undefined
 
+    4. await是用于强制阻塞等待Promise中的异步方法执行完，等待Promise对象的resolve(),得到resolve的值作为 await表达式的执行结果作为返回值
+
+    5. 为什么在方法内用了await就必须要在funcoin 声明async修饰 ?
+       因为被await修饰就代表会被阻塞等待一个异步任务执行完，才能它执行后面的代码，而使用了async修饰的函数就会让整个被调用async函数异步执行。不会阻塞async函数后面的执行
+    
+    6. 如果想让async 修饰的函数异步执行，在调用时就要用 await表达式，当然调用它的函数也要用async修饰！
+    
+    7.await 会强制等待异步任务执行完， 并且会将resove()的值返回, 如果执行失败或者reject()了，可以用try catch() 包裹，处理掉异常
+    
     async await 是为了简化.then() 的形式，解决代码冗余的现象，就不用写很多个的then()了
     就不必在用.then() 的方式拿到promise的结果了，而是通过await拿到结果,
     但是方法中用到了await,就必须async修饰
-
+    
 
     如果不加await,  返回的是一个promise 的实例
     如果加了await,  返回值就不在是promise 的实例，而是返回结果

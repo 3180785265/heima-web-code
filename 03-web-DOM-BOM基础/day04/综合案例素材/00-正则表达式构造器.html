@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+                正则表达式中间的内容都会当做匹配字符串来使用，而不是数据变量
+                        如果需要根据变量动态的创建正则表达式，则手动new RegExp
+                        RegExp 是一个正则表达式构造函数，有两个参数
+                        参数1： 匹配模式字符串，它会根据这个字符串创建正则对象
+                        参数2： 匹配模式，需要写到字符串中 
+        */
+
+        let q = '激情一夏'
+        const reg = new RegExp(q, 'gi') // 可以理解为相当于 /this.g/ig，只不过代码中不能这么做需要通过RegExp
+
+        let str='今年的夏天，我要激情一夏！'
+
+        console.log(str.replace(reg, '***'))
+
+    </script>
+</body>
+
+</html>

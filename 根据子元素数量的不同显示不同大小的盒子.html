@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 1000px;
+            height: 400px;
+            background-color: rgb(154, 154, 154);
+            margin: 500px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+
+        /* 如果是10个 */
+        .box.box-item-10 .item {
+            width: 10%;
+            box-sizing: border-box;
+            border: 1px solid rgb(154, 154, 154);
+
+            height: 200px;
+            background-color: #fff;
+            list-style: none;
+        }
+
+        /* 如果是5个 */
+        .box.box-item-5 .item {
+            width: 20%;
+            box-sizing: border-box;
+            border: 1px solid rgb(154, 154, 154);
+
+            height: 200px;
+            background-color: #fff;
+            list-style: none;
+        }
+
+        .box.box-item-2 .item {
+            width: 50%;
+            box-sizing: border-box;
+            border: 1px solid rgb(154, 154, 154);
+
+            height: 200px;
+            background-color: #fff;
+            list-style: none;
+        }
+
+        /* 
+            如果是7张，1000px，每张200px
+        */
+        .box.box-item-7 .item {
+            width: 20%;
+            box-sizing: border-box;
+            border: 1px solid rgb(154, 154, 154);
+
+            height: 200px;
+            background-color: #fff;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <div class="item"></div>
+
+
+
+    </div>
+
+
+    <script>
+        let box = document.querySelector('.box')
+        let num = 7;
+        if (num === 10) {
+            box.classList.add('box-item-10')
+        } else if (num === 5) {
+            box.classList.add('box-item-5')
+
+        }else if (num === 7) {
+            box.classList.add('box-item-7')
+
+        }
+
+        for (let index = 1; index < num; index++) {
+
+
+
+            let li = document.createElement('div');
+            li.className = 'item'
+            box.appendChild(li)
+
+
+        }
+    </script>
+</body>
+
+</html>

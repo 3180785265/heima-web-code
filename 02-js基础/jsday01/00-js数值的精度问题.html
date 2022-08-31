@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），
+
+        Math.pow(2, 53) // 9007199254740992
+
+        console.log(9007199254740992) // 9007199254740992
+        console.log(9007199254740993)   // 9007199254740992
+
+        Math.pow(2, 53) === Math.pow(2, 53) + 1
+
+
+
+        //    上面代码中，超出 2 的 53 次方之后，一个数就不精确了。
+
+
+        // 2. ES6 引入了 Number.MAX_SAFE_INTEGER 和 Number.MIN_SAFE_INTEGER 这两个常量，用来表示这个范围的上下限。
+
+        9007199254740992
+        Number.MAX_SAFE_INTEGER === Math.pow(2, 53) - 1  // true
+
+        Number.MAX_SAFE_INTEGER === 9007199254740991  // true
+
+
+        Number.MIN_SAFE_INTEGER === -Number.MAX_SAFE_INTEGER  // true
+
+        Number.MIN_SAFE_INTEGER === -9007199254740991 // true
+
+
+        // 3.后端返回的数据一般都是 JSON 格式的字符串。
+        // 比如这是一段json字符串(用'' 字符串包裹 {} 对象，变JSON字符串)
+        let JSONStr = '{ "id": 9007199254740995, "name": "Jack", "age": 18 }';
+
+        
+        /* 
+
+        3.1. 如果JSON字符不做任何处理，你能方便的获取到字符串中的指定数据吗？非常麻烦。所以我们要把它转换为 JavaScript 对象,以对象形式获取
+                我们一般要将后端返回的JSON字符数据用JSON.parse() 转换为 JavaScript对象
+        3.2. 幸运的是 axios 为了方便我们使用数据，它会在内部使用 JSON.parse() 把后端返回的数据转为 JavaScript 对象。
+        
+        */
+
+        console.log(JSONBig.parse(JSONStr))// {id: 9007199254740996, name: 'Jack', age: 18}
+        console.log(JSONBig.stringify())
+        /*
+         3.3. console.log(JSON.parse(JSONStr)) 解析成js 对象之后，id值就出现精度问题了
+              可以看到，超出安全整数范围的 id 无法精确表示，这个问题并不是 axios 的错。
+
+         3.4  了解了什么是大整数的概念，接下来的问题是如何解决？
+              json-bigint 是一个第三方包，它可以帮我们很好的处理这个问题。
+
+              使用它的第一步就是把它安装到你的项目中。
+              npm i json-bigint
+             
+              JSONBig 可以处理数据中超出 JavaScript 安全整数范围的问题
+              1.JSONBig.parse() //把JSON格式的字符串转换为 JavaScript对象
+                JSONBig.parse().toString()获取字符串
+              2. JSONBig.stringfiy()  
+        */
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+
+    关于后端返回数据中的大数字问题
+        之所以请求文章详情返回 404 是因为我们请求发送的文章 ID （article.art_id）不正确。
+        JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），
+        超过这个范围，无法精确表示这个值，这使得 JavaScript 不适合进行科学和金融方面的精确计算。
+
+
+
+ -->

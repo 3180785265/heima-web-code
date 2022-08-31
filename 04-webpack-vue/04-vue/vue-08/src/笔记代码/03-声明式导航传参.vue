@@ -105,5 +105,5 @@ export default {
                     组件内使用 $route.query.参数名  取值
 
 
-
+              3. 也可以用对象的语法传参{name:'',params:{key:value}}
      -->

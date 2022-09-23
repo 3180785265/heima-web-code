@@ -18,6 +18,7 @@
 
          -->
         <img :src="oInUrl"/>
+        
     </div>
 </template>
 

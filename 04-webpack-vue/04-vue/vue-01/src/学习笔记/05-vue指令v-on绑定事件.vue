@@ -16,6 +16,7 @@
 
         <br>
         <button @click="addCountFn(20)">简写+20</button>
+        
     </div>
 </template>
 
@@ -52,9 +53,12 @@ export default {
         3.v-on:事件名='methods中的函数名(实参)'
 
          1.让变量改变的话，绑定了这个变量的视图也就会跟着改变
-         2.methods函数中的this export default 的{} 对象，也就是说谁调用我，我就指向了谁，所以能通过this.调用变量 
+         2.methods函数中的this 指的是 export default 的{} 对象，也就是说谁调用我，我就指向了谁，所以能通过this.调用变量 
  
  
 
         4. v-on:事件名="函数名" 可以简写成 @事件名='函数名'
+
+
+        5. 在模板中使用变量，无需加 this ,因为插值表达式，v-bind 引用树形都没有加this
  -->

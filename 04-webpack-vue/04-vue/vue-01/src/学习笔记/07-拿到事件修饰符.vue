@@ -10,6 +10,7 @@
         <!-- 2.绑定键盘按下事件 -->
         <input type="text" @keydown.enter="enterFn">
         <input type="text" @keydown.esc="escFn">
+        <input type="password" @keyup.enter="enterFn">
     </div>
 </template>
 

@@ -126,4 +126,7 @@ export default {
             方式1：  query=> $route.query.参数名
             方式2：  params=> $route.params.参数名
 
+
+            如果路由是 params 类型，可以在router.js 路径中定义 参数  /:参数名
+
 -->

@@ -4,6 +4,8 @@ import Vue from 'vue'
 // import App from '@/学习笔记/02-局部组件和全局组件-commpoent的使用.vue'
 // import App from '@/学习笔记/04-父子组件通信.vue'
 import App from '@/学习笔记/05-跨组件传值EventBus.vue'
+// import App from '@/学习笔记/06-组件v-module事件.vue'
+// import App from '@/学习笔记/07-自定义组件v-module事件.vue'
 
 /* 
 

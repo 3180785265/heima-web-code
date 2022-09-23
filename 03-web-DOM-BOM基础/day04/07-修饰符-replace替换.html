@@ -28,8 +28,10 @@
             let text = textarea.value.replace(/射|she|怀孕/ig, '*') //加  g  代表能全局匹配，全部都替换掉
             div.innerHTML = text
         })
-
-
+        
+        // 2.如果不加正则表达式，只能替换一个字符，如果加了正则g 能替换掉全部
+        //  射射射.replace(射, '*')     *射射
+        //  射射射.replace(/射/g, '*')  ***
     </script>
 </body>
 

@@ -19,6 +19,7 @@ export default {
     },
     methods:{
         one(e){
+            console.log(e)
             e.preventDefault();
             
         },

@@ -23,11 +23,11 @@ export default {
         kjBtn() {
     
             //1.使用 this.$emit("事件名","事件回调函数的实参")  触发父组件的自定义事件
-            this.$emit("subprice", this.index, 1)
+            // this.$emit("subprice", this.index, 1)
             
 
             // 2.使用 eventBus.$emit("事件名","自定义事件的实参"....) 跨组件通信,触发 List组件中的事件,
-            eventBus.$emit("send",index,price)
+            eventBus.$emit("send",this.index,1)
 
         }
     },

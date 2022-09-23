@@ -8,6 +8,7 @@
         <h1>{{ msg }}</h1>
         <h1>{{ obj.name }}</h1>
         <h1>{{ obj.age > 18 ? '成年' : '未成年' }}</h1>
+        <input type="text" v-model="msg">输入框
     </div>
 </template>
 
@@ -47,7 +48,7 @@ export default {
 
     4. vue的mvvm，让我们不在去自己操作dom，极大简化了开发的效率
       以前都是操作dom，而vue是基于mvvm的思想
-      用数据驱动视图改变，操作dom的失去，vue源码自己做了
+      用数据驱动视图改变，操作dom的过程，vue源码自己做了
       mvvm是一个设计模式，它进行了分层,分为了三大块
       view : 浏览器的dom 
       viewModel: 对应的是vue的源码,它会干两件事，会监听值得改变，将改变得值同步到view中，

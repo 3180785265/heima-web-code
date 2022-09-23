@@ -8,6 +8,9 @@
          -->
         <input type="text" v-model="username">
         <input type="text" v-model="password">
+
+        <input type="checkbox" name="" id="">1
+        <input type="checkbox" name="" id="">2
     </div>
   </div>
 </template>
@@ -17,7 +20,7 @@ export default {
     data() {
         return {
             username:"",
-            password:''
+            password:'',
         }
     },
  

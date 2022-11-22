@@ -2,16 +2,15 @@
 
   <div>
     <div class="footer_wrap">
-    
-      <!--
-        1.用 a 标签的href属性, 使用hash时的方式改变url，从而切换不同的组件，
-          但是这种会有缺点，需要我们自己写高亮的css
 
-            <a href="#/find">发现音乐</a>
-            <a href="#/my">我的音乐</a>
-            <a href="#/part">朋友</a>
+      <!--
+           1.用 a 标签的href属性, 使用hash时的方式改变url，从而切换不同的组件，
+             但是这种会有缺点，需要我们自己写高亮的css
        -->
-    
+      <a href="#/find">发现音乐</a>
+      <a href="#/my">我的音乐</a>
+      <a href="#/part">朋友</a>
+
     </div>
     <div class="top">
       <!-- 1.用router-view组件，设置挂载点，当浏览器url上的hash值路径切换，
@@ -171,9 +170,9 @@ export default {
            7.使用router-view作为挂载点，切换不同的路由页面: 
 
             1.用router-view组件，在页面的某一个局部位置设置挂载点，当浏览器url上的hash值路径切换，
-              显示规则里对应的组件到这里显示,
-           2.原理：每当url的#后边hash值切换，便会到路由数组中找到路径映射对应的组件，
-           然后渲染到 <router-view> 组件的位置上显示
+              显示规则里对应的组件会到routerView组件位置渲染显示,
+           2.原理：每当url的#后边hash值切换，会获取浏览器hash值路径,到路由数组中找到路径映射对应的组件，
+           然后将组件渲染到 <router-view> 组件的位置上显示
 
 
      -->

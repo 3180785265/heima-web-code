@@ -8,11 +8,14 @@
 
             <!-- 1.使用 template 配合 v-slot:名字 来分发对应标签 -->
             <template v-slot:title>古诗啦啦啦</template>
+            
+            <!-- 2.使用 slot='插槽名'  也可以插入插槽 -->
+            <template slot='title'>古诗啦啦啦</template>
 
-            <!-- 2.template 中 v-slot:名字  可以简写成 #插槽名字 -->
+            <!-- 3.template 中 v-slot:名字  可以简写成 #插槽名字 -->
             <template #content>
 
-                <p>寒雨连江夜入吴,</p>
+                <p>寒雨连江夜入吴,</p>  
                 <p>平明送客楚山孤。</p>
                 <p>洛阳亲友如相问，</p>
                 <p>一片冰心在玉壶。</p>
@@ -48,5 +51,5 @@ export default {
                 1.slot标签占位, 并用name 属性区分名字
                 2.使用组件,在标签夹着的地方, 用template 配合 v-slot:名字 来替换不同区域的slot插槽
                 
-                3.简写方式: template 中 v-slot:名字  可以简写成 #插槽名字
+                3.简写方式: template 中 v-slot:名字  可以简写成 #插槽名字,  也可以 简写为 slot="插槽名字"
      -->

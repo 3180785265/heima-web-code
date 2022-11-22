@@ -42,17 +42,17 @@ export default {
                         //2. 放置子模块的属性,每个子模块中同样都有自己的 state miutations actoins 
                         modules: {
                             user: {
-                            state: {
-                                token: "12345"
-                            }
+                                state: {
+                                    token: "12345"
+                                }
                             },
 
 
                             setting: {
-                            state: {
-                                name: "Vuex实例"
+                                state: {
+                                    name: "Vuex实例"
 
-                            }
+                                }
                             }
                         }
 

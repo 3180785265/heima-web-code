@@ -7,8 +7,8 @@ import Vue from 'vue'
 // import App from '@/学习笔记/05-组件插槽的默认内容.vue'
 // import App from '@/学习笔记/06-具名插槽.vue'
 // import App from '@/学习笔记/07-作用域插槽.vue'
-// import App from '@/学习笔记/08-作用域插槽的使用场景.vue'
-import App from '@/学习笔记/09-自定义指令'
+import App from '@/学习笔记/08-作用域插槽的使用场景.vue'
+// import App from '@/学习笔记/09-自定义指令'
 
 
 // 1.全局指令注册, 能被所有的vue实例使用

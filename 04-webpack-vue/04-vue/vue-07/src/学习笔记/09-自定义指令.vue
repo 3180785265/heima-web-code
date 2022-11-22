@@ -52,5 +52,7 @@ export default {
         2.使用update(): 当指定传入的vue变量数据或者标签更新时，此方式执行
 
 
+        3. el : 指定所在的DOM对象
+           binding: 里面的value属性，就是传递的参数
 
    -->

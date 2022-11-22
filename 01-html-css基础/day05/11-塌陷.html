@@ -12,9 +12,16 @@
             width: 300px;
             height: 300px;
             background-color: pink;
+            
+            /* 给父元素设置 padding 或者 border 分隔掉子元素的margin-top
+                一般父元素都不会有padding或者margin，所以统一用overflow: hidden合适
+            */
+            /* border: 1px solid #333; */
+            /* padding-top: 50px; */
+
 
             /* 父元素加overflow:hidden  防止塌陷 */
-            overflow: hidden
+            /* overflow: hidden */
         }
 
         .d2 {

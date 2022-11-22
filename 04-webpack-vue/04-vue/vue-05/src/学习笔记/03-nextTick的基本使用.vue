@@ -5,6 +5,8 @@
         <h1 id="h" ref="myH">我是一个孤独可怜又能吃的h1</h1>
         <p>2. 获取组件对象 - 可调用组件内一切</p>
         <Demo ref="de"></Demo>
+
+
         <p>3. vue更新DOM是异步的</p>
         <p ref="myP">{{ count }}</p>
         <button @click="btn">点击count+1, 马上提取p标签内容</button>
@@ -19,7 +21,7 @@ export default {
         // vue监测数据更新, 开启一个DOM更新队列(异步任务)
             this.count++; 
             //1. 值为0,  原因: Vue变量改变还要更新对应dom,而viewModel底层帮我们更新DOM是一个异步任务,不会立马就执行,所以更新dom的异步任务还没执行,同步代码就会先执行了所以获取的是旧dom的innerHTML
-            console.log(this.$refs.myP.innerHTML);  
+            console.log(this.$refs.myP.innerHTML);  //获取的是旧的DOM元素，更新DOM是vue的异步任务，此时DOM还没有更新所以是旧的
 
            
             //2. 解决: this.$nextTick()

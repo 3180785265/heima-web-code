@@ -1,7 +1,10 @@
 import Vue from 'vue'
 // import App from './App.vue'
+import App from '@/笔记代码/01-Vue-Router路由的基本使用.vue'
+// import App from '@/笔记代码/02-生命式导航RouterLink组件的使用.vue'
+// import App from '@/笔记代码/03-声明式导航传参.vue'
 // import App from '@/笔记代码/04-编程式导航的使用.vue'
-import App from '@/笔记代码/05-编程式路由导航的传参.vue'
+// import App from '@/笔记代码/05-编程式路由导航的传参.vue'
 Vue.config.productionTip = false
 
 // 1.下载完vue-router后，import 导入
@@ -14,6 +17,7 @@ import Part from '@/views/Part.vue'
 import NotFound from '@/views/NotFound.vue'
 
 // 3.注册全局组件，使用Vue.use(VueRouter)后，会将VueRouter包中的 RouterLink和RouterView 组件,全局注册到Vue中，方便全局使用
+// use() 原理是使用Vue.component() 将组件注册到vue中，就可以全局使用
 Vue.use(VueRouter);
 
 // 4.创建路由规则数组,添加路由和组件的映射
@@ -54,7 +58,7 @@ const routes = [
 // 5.生成路由对象,传入路由规则作为参数配置项
 const router = new VueRouter({
   routes, //4.1routers是固定的key，值必须是一个规则数组
-  mode: "history" //设置路由为history模式(不显示#)
+  // mode: "history" //设置路由为history模式(不显示#)
 })
 
 // 6.把路由对象注入到vue实例中，this可以访问到$router和$route

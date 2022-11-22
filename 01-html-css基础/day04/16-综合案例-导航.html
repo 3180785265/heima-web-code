@@ -18,22 +18,110 @@
             color: #fff;
             transition: all 3s;
 
-
+            position: relative;
         }
 
         a:hover {
             background-color: yellow;
+        }
+     
+
+        a .menu {
+            position: absolute;
+            top: 40px;
+            left: 31px;
+            color: red;
+            /* display: none; */
+            opacity: 0;
+            background-color: green;
+            transition: all 0.4s;
+            width: 100px;
+            z-index: 1;
+            border-radius: 10px;
+
+        }
+
+        .menu.active {
+            display: block;
+            opacity: 1;
+
         }
     </style>
 </head>
 
 <body>
 
-    <a href="#">导航1</a>
-    <a href="#">导航2</a>
-    <a href="#">导航3</a>
-    <a href="#">导航4</a>
-    <a href="#">导航5</a>
+    <a href="#">
+        <div class="menu">
+            11111
+        </div>
+        导航1
+    </a>
+    <a href="#">
+        导航2
+        <div class="menu">222</div>
+    </a>
+    <a href="#">
+        导航3
+        <div class="menu">333</div>
+    </a>
+    <a href="#">
+        导航4
+        <div class="menu">444</div>
+
+    </a>
+    <a href="#">
+        导航5
+        <div class="menu">555</div>
+    </a>
 </body>
+
+<script>
+
+    let list = document.querySelectorAll('a');
+
+    for (let index = 0; index < list.length; index++) {
+
+
+        //给div绑定鼠标移入事件
+        list[index].addEventListener('mouseenter', function () {
+            
+            // 排他，每次给当前元素绑定avtivi之前，将其他元素的active删除
+            let menuAvtive = document.querySelector('.menu.active')
+
+            if(menuAvtive){
+                menuAvtive.classList.remove('active')
+            }  
+            //给当前元素添加avtive
+            list[index].querySelector('.menu').classList.add('active');
+
+        })
+
+        list[index].addEventListener('mouseleave', function () {
+            
+            // 排他，每次给当前元素绑定avtivi之前，将其他元素的active删除
+            let menuAvtive = document.querySelector('.menu.active')
+
+            if(menuAvtive){
+                menuAvtive.classList.remove('active')
+            }  
+       
+
+        })
+
+    
+
+
+
+
+
+        //给div把绑定鼠标移出事件
+        list[index].children[0].addEventListener('mouseenter', function () {
+            this.classList.add('active');
+
+        })
+    }
+
+</script>
 
 </html>

@@ -25,7 +25,7 @@ export default {
 
         所有得数据,更新，操作都在一起，项目越来越大，难以维护
 
-        于是分为了模块化,每一个模块都有自己的state
+        于是分为了模块化,每一个模块都有自己的state,actoins,miutatoins
 
         1.语法: 
           modules: {

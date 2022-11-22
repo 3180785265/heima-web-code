@@ -46,11 +46,22 @@ export default {
 
     // 依赖goods数组，计算总价格属性
     totalPrice() {
-      return this.goods.reduce((num, obj) => num += obj.goods_price * obj.goods_count, 0)
+      return this.goods.reduce((num, obj) => {
+        if (obj.goods_state) {
+         return num += obj.goods_price * obj.goods_count
+        }
+        return num
+        
+      }, 0)
 
     },
     totalCount() {
-      return this.goods.reduce((num, obj) => num += obj.goods_count, 0)
+      return this.goods.reduce((num, obj) => {
+          return !obj.goods_state ? num : num += obj.goods_count;
+
+       
+
+      }, 0)
 
     }
   }

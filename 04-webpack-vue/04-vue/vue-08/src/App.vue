@@ -139,7 +139,7 @@ export default {
             vue-router: 
             本质上是一个第三方的包. 
             npm  下载第三方包到 node_moduls中使用
-            vue-router模块包中有两种组件: RouterLink 和 RouterView 组件
+            vue-router模块包中有两种组件: RouterLink(封装a标签的组件) 和 RouterView(渲染路由页面组件) 两个组件
             vue-router 的声明式导航,会自带激活的css class的类名
 
 
@@ -150,7 +150,7 @@ export default {
 
             vue组件的分类?
 
-            1. 页面组件：  在单页面中展示的,要使用路由切换的组件。  也就是配合路由使用的组件
+            1. 页面组件：  在单页面中展示的,要使用路由切换的组件。  也就是配合路由使用的组件(需要定义路由)
             
             2. 复用组件(comment)：  遇到有相同的业务需求，需要重复渲染结构一样的标签。
                 封装成复用的组件 (被页面组件引入复用的组件,所以无需定义对应的路由)

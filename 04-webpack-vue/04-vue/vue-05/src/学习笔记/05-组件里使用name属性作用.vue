@@ -7,7 +7,7 @@
 <script>
 import Com from '@/components/Com.vue'
 export default {
-  comments:{
+  components:{
     [Com.name]: Com
   }
 }

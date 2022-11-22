@@ -29,7 +29,7 @@ export default {
     console.log(this.msg) //undefined
   },
   //2. data和methods初始化以后执行,所以这个阶段可以访问data和methods,但是这个阶段还不能获取真实的dom
-  // 场景: 网络静秋，注册全局事件等
+  // 场景: 网络请求，注册全局事件等
   created() {
     console.log("created--执行了")
     console.log(this.msg) //hello vue 

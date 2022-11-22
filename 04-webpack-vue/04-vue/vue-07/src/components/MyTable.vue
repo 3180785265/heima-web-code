@@ -20,7 +20,7 @@
                              2.给插槽使用变量,
                          -->
 
-                        <slot :row="obj.headImgUrl">
+                        <slot name="tdImg" :row="obj.headImgUrl">
                             <!-- 3.如果没有使用插槽，则默认显示这个 -->
                             {{ obj.headImgUrl }}
 

@@ -1,7 +1,7 @@
 <template>
 
     <div>
-        <!-- 原始的方式调用 -->
+        <!-- 原始的方式调用,调用user模块中的state数据 -->
         <p>token值: {{$store.state.user.token}}</p>
 
         <!-- 基于getters快捷方式访问 -->

@@ -28,18 +28,28 @@ export default {
         于是分为了模块化,每一个模块都有自己的state,actoins,miutatoins
 
         1.语法: 
-          modules: {
+        const store = new Vuex.Store({
 
-              user: {
-                state: {
-                  token: "12345"
+            ...省略无用代码
+
+       // 定义modules节点，导入其他Vuex模块
+            modules: {
+
+                user: {
+                  state: {
+                    token: "12345"
+                  }
+                },
+                setting: {
+                  state: {
+                    name: ""
+
+                  }
                 }
-              },
-              setting: {
-                name:"Vuex实例"
-              }
 
-          }
+            }
+
+        })  
 
           2.取值 this.$store.state.子模块名称.属性名
           3.但是通过 this.$store.state.子模块名称.属性名 这种方式有点麻烦，

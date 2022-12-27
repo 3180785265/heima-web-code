@@ -13,9 +13,10 @@ export default {
         ...mapGetters(['name', 'token'])
     },
     methods: {
-        ...mapActions(['user/asyncToken']),
-        ...mapMutations(['user/updateToken']),
+        ...mapActions(['user/asyncToken']),//actions辅助函数引入分模块的语法
+        ...mapMutations(['user/updateToken']), //mutations辅助函数引入分模块的语法
         
+        //..... 讲师没有讲分模块引入其他state变量，可能是这样写...mapState(['user/token','setting/name'])   但是这种写法没有必要，所以我们都是直接原生调用
 
         updateToken() {
             //如果没有给模块加命名空间 namespaced：true，就会被注册到全局。可以直接调用
@@ -43,7 +44,7 @@ export default {
     1. Vuex的 Module模块化问题
 
         1.默认情况下，每个模块内部的 actoin，miutatoin，和getter 是注册在全局命名空间
-        的，这就造成在任意.vue 文件中 调用.store不需要区分模块名就可以调用
+        的，这就造成在任意.vue 文件中 调用.store不需要区分模块名就可以调用,但是这样调用模块 变量/方法就容易混淆
 
         2.如果我们想让模块具有高封闭性
         可以采用

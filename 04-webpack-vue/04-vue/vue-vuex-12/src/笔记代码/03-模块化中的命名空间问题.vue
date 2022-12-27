@@ -22,7 +22,7 @@ export default {
             //如果没有给模块加命名空间 namespaced：true，就会被注册到全局。可以直接调用
             // 如果给vuex模块加了如果加了namespaced:true 属性，调用时就必须要用 模块名+/ 的形式区分调用什么模块
             // 1.原始调用
-            // this.$store.commit('updateToken',111) 
+            // this.$store.commit('updateToken',111)
 
 
             // 2.如果有给模块加命名空间,则需要采用路径 / 的形式区分模块去调用 

@@ -81,3 +81,31 @@ ul {
     list-style: none;
 }
 </style>
+    computed: {
+      //选中的服务保证
+      selectServiceList: {
+        get() {
+          let list = [];
+          if (this.value.serviceIds === undefined || this.value.serviceIds == null || this.value.serviceIds === '') return list;
+          let ids = this.value.serviceIds.split(',');
+          for (let i = 0; i < ids.length; i++) {
+            list.push(Number(ids[i]));
+          }
+          return list;
+        },
+        set(newValue) {
+          let serviceIds = '';
+          if (newValue != null && newValue.length > 0) {
+            for (let i = 0; i < newValue.length; i++) {
+              serviceIds += newValue[i] + ',';
+            }
+            if (serviceIds.endsWith(',')) {
+              serviceIds = serviceIds.substr(0, serviceIds.length - 1)
+            }
+            this.value.serviceIds = serviceIds;
+          } else {
+            this.value.serviceIds = null;
+          }
+        }
+      }
+    },

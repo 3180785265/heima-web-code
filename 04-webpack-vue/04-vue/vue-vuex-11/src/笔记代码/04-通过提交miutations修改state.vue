@@ -52,7 +52,7 @@ export default {
                                     
                                     
                                 addCount(state, payload) {
-                                state.count + 1//每次给count+1
+                                    state.count + 1//每次给count+1
                                 }
 
 

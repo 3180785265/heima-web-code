@@ -32,7 +32,8 @@ export default {
 }
 </script> 
 
-    <!--        
+    <!--
+        actions的辅助函数的优点也是和前面的state和miutaions辅助函数一样，让辅助函数去帮我们把 this.$store.dispatch()的调用封装一个方法          
                  
           actions也有辅助函数，可以将action导入到组件中
 

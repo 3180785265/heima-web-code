@@ -22,7 +22,7 @@ export default {
     // }
 
     full:{
-      // 1.给full赋值，触发setfangfa
+      // 1.给full赋值，触发set方法
       set(val){
         console.log(val)
       },

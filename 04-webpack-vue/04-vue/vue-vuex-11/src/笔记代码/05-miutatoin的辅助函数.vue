@@ -32,16 +32,18 @@ export default {
 
 
     methods: {
-        // 2. 在methods中用...mapMutations(['miutatoin名称']) 把位于mutations中的方法提取了出来,将它导入到methods中
+        // 2. 在methods中用...mapMutations(['miutatoin名称']) 把Vuex中位于mutations中的方法提取了出来,将它导入到methods中(好处是不用在去写this.$store.commit(),起到解耦 )
         ...mapMutations(['addCount']),
 
 
         /* 
            3.上面...mapMutations(['addCount'])代码的含义是将mutations的方法导入了methods中，等同于在methods中定义了一个方法通过 
-               this.$store.commit('miutaoin名称', 参数)去调用了miutotoin 方法 。
-            addCount() {
-                this.$store.commit('addCount', 10)  // 直接调用mutations 
+               this.$store.commit('miutaoin名称', 参数)去调用了miutotoin 方法 。 如下:
+            addCount(num) {
+                this.$store.commit('addCount', num)  // 直接调用mutations 
             }, 
+
+            
         
         
         */
@@ -59,7 +61,7 @@ export default {
 }
 </script>
 
-    <!--        
+    <!--        优点: Mutations辅助函数的优点是，赋值函数能够帮我们封装方法，我们可以直接调用    
 
                 mapMutations和mapState很像，它把位于mutations中的方法提取了出来，我们可以将它导入
                 1.使用辅助函数，并导入mutations

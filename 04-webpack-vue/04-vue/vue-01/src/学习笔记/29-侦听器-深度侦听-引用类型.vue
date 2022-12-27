@@ -20,7 +20,7 @@ export default {
     watch: {
         // 侦听器，深度监听引用数据类型的属性
          user:{
-            immediate:true,  //1.立即执行一次 handler(newVal ,oldVal) 函数
+            immediate:true,  //1.是否在页面加载完毕后，立即执行一次 handler(newVal ,oldVal) 函数
             deep:true,      //2.深度侦听复杂类型内属性的变化
             handler(newVal,oldVal){
                 //打印的是user对象

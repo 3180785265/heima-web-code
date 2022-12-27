@@ -39,6 +39,9 @@ export default {
 </script>
 
     <!--        
+            actions是异步的去修改数据，vuex中规定miutions只能同步修改数据，不能做异步的处理比如ajax，settimeout等异步的操作。
+            所以如果我们在修改state的时候要异步执行一些操作，，需要通过actions才能异步操作，然后actions在调用miutaions去修改数据
+
                     // 1.原始形式调用actoin
                     // commit是提交miutatoins
                     // dispatch 是调用actoin

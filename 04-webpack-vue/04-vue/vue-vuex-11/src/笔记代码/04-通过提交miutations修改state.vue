@@ -32,7 +32,9 @@ export default {
 
     <!--        
 
-            1.state的数据只有miutatoin能修改:  但是miutotion只能同步更新state数据, 无法在miutoin方法内做比如ajax，定时任务的一切异步操作
+            1.state的数据只有miutatoin能修改:  但是miutotion只能同步更新state数据, 无法在miutoin方法内做比如ajax，定时任务的一切异步操作, 
+                这种操作只能由actions才能异步的操作，然后由actions调用我们的miutaions修改数据
+
                 1.在 Vuex.Store对象中声明修改state的 mutation方法
                 2.mutation函数都两个重要参数 state和payload
                   state:   指的是当前vuex中的state对象

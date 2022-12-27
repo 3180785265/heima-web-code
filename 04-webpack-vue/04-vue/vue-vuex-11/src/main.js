@@ -42,7 +42,7 @@ const store = new Vuex.Store({
   */
   actions: {
     /*
-      4.2action方法,两个参数 context ,payload
+      4.2 action方法,两个参数 context ,payload
         1.context参数: 相当于组件中的 this.$store  实例 
         2.params:  actoin被调用时，调用者可传递的参数
     
